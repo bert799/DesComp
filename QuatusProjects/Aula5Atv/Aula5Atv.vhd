@@ -5,6 +5,7 @@ entity Aula5Atv is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
         larguraEnderecos : natural := 8;
+		  larguraEnderecosROM : natural := 9;
         simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
@@ -17,6 +18,52 @@ end entity;
 
 
 architecture arquitetura of Aula5Atv is
+
+--CLK
+	signal CLK : std_logic;
+
+--PC
+	signal MUXPC_PC : std_logic_vector(larguraEnderecosROM -1 downto 0);
+	signal PC_ROM1 : std_logic_vector(larguraEnderecosROM -1 downto 0);
+
+--IncrementaPC
+	alias PC_IncrementaPC : std_logic_vector(larguraEnderecosROM -1 downto 0) is PC_ROM1;
+	signal IncrementaPC_MUXPC : std_logic_vector(larguraEnderecosROM -1 downto 0);
+	
+--MUXPC
+	signal JMP : std_logic;
+	alias DEC1_MUXPC : std_logic is JMP;
+	 
+--DEC1	 
+	signal Sel_MUX1 : std_logic;
+	signal Habilita_REGA : std_logic;
+	signal Operacao_ULA1 : std_logic_vector(1 downto 0);
+	signal Habilita_ler_RAM : std_logic;
+	signal Habilita_escrever_RAM : std_logic;	 
+	signal Opcode : std_logic_vector(3 downto 0);
+	 
+--MUX1
+	signal Imediato: std_logic_vector(larguraDados-1 downto 0);
+	signal Dados_RAM1: std_logic_vector(larguraDados-1 downto 0);
+	signal MUX1_ULA1: std_logic_vector(larguraDados-1 downto 0);
+	alias ROM_MUX1: std_logic_vector(larguraDados-1 downto 0) is Imediato;
+	alias RAM1_MUX1: std_logic_vector(larguraDados-1 downto 0) is Dados_RAM1;
+
+--REGA
+	signal ULA1_REGA : std_logic_vector(larguraDados-1 downto 0);
+	signal REGA_ULA1 : std_logic_vector(larguraDados-1 downto 0);
+	alias REGA_RAM1 : std_logic_vector((larguraDados-1 downto 0) is REGA_ULA1;
+ 
+--ULA1
+	
+
+--ROM1
+	signal Instrucao: std_logic_vector(12 downto 0);
+	alias Endereco: std_logic_vector(larguraEnderecos-1 downto 0) is instrucao(7 downto 0);
+	alias Habilita_RAM: std_logic is instrucao(8);
+	
+--RAM1
+
 
 -- Faltam alguns sinais:
   signal saida_MUX_ULA_B : std_logic_vector (larguraDados-1 downto 0);
