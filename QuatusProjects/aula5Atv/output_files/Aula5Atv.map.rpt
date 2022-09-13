@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula5Atv
-Mon Sep 12 16:53:06 2022
+Mon Sep 12 23:15:49 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,8 +13,8 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
  10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula5Atv
  11. Parameter Settings for User Entity Instance: muxGenerico2x1:MUXPC
  12. Parameter Settings for User Entity Instance: registradorGenerico:PC
@@ -24,11 +24,12 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  16. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
  17. Parameter Settings for User Entity Instance: memoriaROM:ROM1
  18. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
- 19. Port Connectivity Checks: "registradorGenerico:REGA"
- 20. Port Connectivity Checks: "registradorGenerico:PC"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 19. Port Connectivity Checks: "flipFlop:FLGZERO"
+ 20. Port Connectivity Checks: "registradorGenerico:REGA"
+ 21. Port Connectivity Checks: "registradorGenerico:PC"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -55,13 +56,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Sep 12 16:53:06 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Sep 12 23:15:49 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula5Atv                                    ;
 ; Top-level Entity Name           ; Aula5Atv                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 10                                          ;
+; Total registers                 ; 147                                         ;
 ; Total pins                      ; 24                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -169,61 +170,61 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-6         ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd          ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd       ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd      ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd          ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd          ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd        ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd       ;         ;
-; Aula5Atv.vhd                     ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd            ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd          ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd       ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd      ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd          ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd          ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd        ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd       ;         ;
+; Aula5Atv.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd            ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/flipFlop.vhd            ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 10                       ;
-;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 18                       ;
-;     -- 7 input functions                    ; 0                        ;
-;     -- 6 input functions                    ; 1                        ;
-;     -- 5 input functions                    ; 4                        ;
-;     -- 4 input functions                    ; 1                        ;
-;     -- <=3 input functions                  ; 12                       ;
-;                                             ;                          ;
-; Dedicated logic registers                   ; 10                       ;
-;                                             ;                          ;
-; I/O pins                                    ; 24                       ;
-;                                             ;                          ;
-; Total DSP Blocks                            ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; memoriaROM:ROM1|memROM~2 ;
-; Maximum fan-out                             ; 9                        ;
-; Total fan-out                               ; 121                      ;
-; Average fan-out                             ; 1.59                     ;
-+---------------------------------------------+--------------------------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                           ;
++---------------------------------------------+-----------------------------------------+
+; Resource                                    ; Usage                                   ;
++---------------------------------------------+-----------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 118                                     ;
+;                                             ;                                         ;
+; Combinational ALUT usage for logic          ; 123                                     ;
+;     -- 7 input functions                    ; 2                                       ;
+;     -- 6 input functions                    ; 65                                      ;
+;     -- 5 input functions                    ; 17                                      ;
+;     -- 4 input functions                    ; 12                                      ;
+;     -- <=3 input functions                  ; 27                                      ;
+;                                             ;                                         ;
+; Dedicated logic registers                   ; 147                                     ;
+;                                             ;                                         ;
+; I/O pins                                    ; 24                                      ;
+;                                             ;                                         ;
+; Total DSP Blocks                            ; 0                                       ;
+;                                             ;                                         ;
+; Maximum fan-out node                        ; edgeDetector:\gravar:detectorSub0|saida ;
+; Maximum fan-out                             ; 146                                     ;
+; Total fan-out                               ; 1106                                    ;
+; Average fan-out                             ; 3.48                                    ;
++---------------------------------------------+-----------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,23 +232,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
-; |Aula5Atv                              ; 18 (1)              ; 10 (0)                    ; 0                 ; 0          ; 24   ; 0            ; |Aula5Atv                                   ; Aula5Atv            ; work         ;
+; |Aula5Atv                              ; 123 (1)             ; 147 (0)                   ; 0                 ; 0          ; 24   ; 0            ; |Aula5Atv                                   ; Aula5Atv            ; work         ;
+;    |ULASomaSub:ULA1|                   ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|ULASomaSub:ULA1                   ; ULASomaSub          ; work         ;
+;    |decoderInstru:DEC1|                ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|decoderInstru:DEC1                ; decoderInstru       ; work         ;
 ;    |edgeDetector:\gravar:detectorSub0| ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|edgeDetector:\gravar:detectorSub0 ; edgeDetector        ; work         ;
-;    |memoriaROM:ROM1|                   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|memoriaROM:ROM1                   ; memoriaROM          ; work         ;
+;    |flipFlop:FLGZERO|                  ; 4 (4)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|flipFlop:FLGZERO                  ; flipFlop            ; work         ;
+;    |memoriaRAM:RAM1|                   ; 56 (56)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|memoriaRAM:RAM1                   ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                   ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|memoriaROM:ROM1                   ; memoriaROM          ; work         ;
+;    |muxGenerico2x1:MUX1|               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|muxGenerico2x1:MUX1               ; muxGenerico2x1      ; work         ;
+;    |muxGenerico2x1:MUXPC|              ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|muxGenerico2x1:MUXPC              ; muxGenerico2x1      ; work         ;
 ;    |registradorGenerico:PC|            ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|registradorGenerico:PC            ; registradorGenerico ; work         ;
+;    |registradorGenerico:REGA|          ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|registradorGenerico:REGA          ; registradorGenerico ; work         ;
 ;    |somaConstante:incrementaPC|        ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5Atv|somaConstante:incrementaPC        ; somaConstante       ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; registradorGenerico:REGA|DOUT[0..7]   ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 8 ;                                             ;
-+---------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -255,14 +253,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 147   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Synchronous Load   ; 17    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 136   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Aula5Atv|decoderInstru:DEC1|saida[5] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Aula5Atv|decoderInstru:DEC1|saida[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -361,6 +369,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FLGZERO" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
 +------------------------------------------------------+
 ; Port Connectivity Checks: "registradorGenerico:REGA" ;
 +------+-------+----------+----------------------------+
@@ -385,23 +402,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 10                          ;
+; arriav_ff             ; 147                         ;
+;     ENA               ; 128                         ;
+;     ENA SLD           ; 8                           ;
 ;     SLD               ; 9                           ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 18                          ;
-;     arith             ; 9                           ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 123                         ;
+;     arith             ; 18                          ;
 ;         1 data inputs ; 9                           ;
-;     normal            ; 9                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 7                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 103                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 10                          ;
+;         6 data inputs ; 65                          ;
 ; boundary_port         ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.61                        ;
+; Max LUT depth         ; 8.20                        ;
+; Average LUT depth     ; 5.09                        ;
 +-----------------------+-----------------------------+
 
 
@@ -420,88 +444,81 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep 12 16:53:00 2022
+    Info: Processing started: Mon Sep 12 23:15:44 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula5Atv -c Aula5Atv
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd Line: 14
-    Info (12023): Found entity 1: ULASomaSub File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 5
-Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
-    Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd Line: 10
-    Info (12023): Found entity 1: decoderInstru File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file Aula5Atv.vhd
-    Info (12022): Found design unit 1: Aula5Atv-arquitetura File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 20
-    Info (12023): Found entity 1: Aula5Atv File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico4x1.vhd Line: 4
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaROM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd Line: 12
+    Info (12023): Found entity 1: decoderInstru File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/decoderInstru.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file aula5atv.vhd
+    Info (12022): Found design unit 1: Aula5Atv-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 20
+    Info (12023): Found entity 1: Aula5Atv File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/flipFlop.vhd Line: 12
+    Info (12023): Found entity 1: flipFlop File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/flipFlop.vhd Line: 4
 Info (12127): Elaborating entity "Aula5Atv" for the top level hierarchy
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:\gravar:detectorSub0" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 102
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUXPC" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 107
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 114
-Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 117
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 122
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 129
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 133
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 137
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:DEC1" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 140
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 148
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:\gravar:detectorSub0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 106
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUXPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 111
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 118
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 121
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 126
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 133
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 137
+Info (12128): Elaborating entity "flipFlop" for hierarchy "flipFlop:FLGZERO" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 140
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 143
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:DEC1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 146
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 154
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 27
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[0]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[1]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[2]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[3]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[4]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[5]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[6]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[7]" feeding internal logic into a wire File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 15
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[0]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[1]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[2]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[3]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[4]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[5]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[6]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[7]" feeding internal logic into a wire File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/memoriaRAM.vhd Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/Aula5Atv.vhd Line: 13
+Info (21057): Implemented 292 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 19 output pins
-    Info (21061): Implemented 18 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Mon Sep 12 16:53:06 2022
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:14
+    Info (21061): Implemented 268 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4905 megabytes
+    Info: Processing ended: Mon Sep 12 23:15:49 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 

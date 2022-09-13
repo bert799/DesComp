@@ -31,12 +31,13 @@ architecture arquitetura of Aula5Atv is
 	signal IncrementaPC_MUXPC : std_logic_vector(larguraEnderecosROM -1 downto 0);
 	
 --MUXPC
-	signal JMP : std_logic;
-	alias DEC1_MUXPC : std_logic is JMP;
+	signal Sel_MUXPC : std_logic;
+	alias DEC1_MUXPC : std_logic is Sel_MUXPC;
 	 
 --DEC1	 
 	signal Sel_MUX1 : std_logic;
 	signal Habilita_REGA : std_logic;
+	signal Habilita_FLGZERO : std_logic;
 	signal Operacao_ULA1 : std_logic_vector(1 downto 0);
 	signal Habilita_ler_RAM1 : std_logic;
 	signal Habilita_escrever_RAM1 : std_logic;	 
@@ -56,8 +57,11 @@ architecture arquitetura of Aula5Atv is
 	alias REGA_RAM1 : std_logic_vector(larguraDados-1 downto 0) is REGA_ULA1;
  
 --ULA1
+	signal ULA1_FLGZERO: std_logic;
 	
-
+--FLGZERO
+	signal FLGZERO_DEC1 : std_logic;
+	
 --ROM1
 	signal Instrucao: std_logic_vector(12 downto 0);
 	
@@ -131,17 +135,19 @@ REGA : entity work.registradorGenerico   generic map (larguraDados => larguraDad
 
 -- O port map completo da ULA:
 ULA1 : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
-          port map (entradaA => REGA_ULA1, entradaB => MUX1_ULA1, saida => ULA1_REGA, seletor => Operacao_ULA1);
+          port map (entradaA => REGA_ULA1, entradaB => MUX1_ULA1, saida => ULA1_REGA, flagZero => ULA1_FLGZERO, seletor => Operacao_ULA1);
+			 
+FLGZERO : entity work.flipFlop port map (DIN => ULA1_FLGZERO, DOUT => FLGZERO_DEC1, ENABLE => Habilita_FLGZERO, CLK => CLK, RST => '0');
 
 -- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
 ROM1 : entity work.memoriaROM port map (Endereco => PC_ROM1, Dado => Instrucao);
 
 Op_code <= Instrucao(12 downto 9);
-DEC1 : entity work.decoderInstru port map (opcode => Op_code, Saida => Sinais_Controle);
-JMP <= Sinais_Controle(6);
-Sel_MUX1 <= Sinais_Controle(5);
-Habilita_REGA <= Sinais_Controle(4);
-Operacao_ULA1 <= Sinais_Controle(3 downto 2);
+DEC1 : entity work.decoderInstru port map (opcode => Op_code, flagZero => FLGZERO_DEC1, Saida => Sinais_Controle, logica_desvio => Sel_MUXPC);
+Sel_MUX1 <= Sinais_Controle(6);
+Habilita_REGA <= Sinais_Controle(5);
+Operacao_ULA1 <= Sinais_Controle(4 downto 3);
+Habilita_FLGZERO <= Sinais_Controle(2);
 Habilita_ler_RAM1 <= Sinais_Controle(1);
 Habilita_escrever_RAM1 <= Sinais_Controle(0);
 
@@ -149,9 +155,8 @@ RAM1 : entity work.memoriaRAM generic map(dataWidth => larguraDados, addrWidth =
 			port map (addr => Endereco_RAM1, habilita => Habilita_RAM1, we => Habilita_escrever_RAM1, re => Habilita_ler_RAM1, clk => CLK, dado_in => REGA_RAM1, dado_out => RAM1_MUX1);
 
 -- A ligacao dos LEDs:
-LEDR (9) <= Sel_MUX1;
-LEDR (8) <= Habilita_REGA;
-LEDR (7 downto 0) <= REGA_ULA1;
+LEDR (9) <= Sel_MUXPC;
+LEDR (8 downto 0) <= MUXPC_PC;
 
 PC_OUT <= PC_ROM1;
 

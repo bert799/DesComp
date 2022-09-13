@@ -8,20 +8,20 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/simulation/qsim
+d/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/aula5Atv/simulation/qsim
 Eaula5atv
-Z1 w1663012522
-Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
-Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
-Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
-Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z6 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
-Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 4
-R0
+Z0 w1663035800
+Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 28
+Z10 dC:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/aula5Atv/simulation/qsim
 Z11 8Aula5Atv.vho
 Z12 FAula5Atv.vho
 l0
@@ -30,15 +30,16 @@ V3d?Xa<aBkhdGU2WJ_H=?43
 !s100 IPi:G4SgARS62zN827TJ]3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1663012523
+Z14 !s110 1663035801
 !i10b 1
-Z15 !s108 1663012523.000000
+Z15 !s108 1663035801.000000
 Z16 !s90 -work|work|Aula5Atv.vho|
 Z17 !s107 Aula5Atv.vho|
 !i113 1
 Z18 o-work work
 Z19 tExplicit 1 CvgOpt 0
 Astructure
+R1
 R2
 R3
 R4
@@ -47,13 +48,12 @@ R6
 R7
 R8
 R9
-R10
 DEx4 work 8 aula5atv 0 22 3d?Xa<aBkhdGU2WJ_H=?43
-!i122 4
-l160
-L75 1147
-V3U87RbiILfbinFESX3AXC3
-!s100 5bmFV;81S];gV;iRn1`CT0
+!i122 28
+l557
+L48 5394
+VM`eihM?fOAPzQn?FgWQP@2
+!s100 WEj<KMOhd>6Z``5HjNnNc0
 R13
 32
 R14
@@ -65,13 +65,13 @@ R17
 R18
 R19
 Eaula5atv_vhd_vec_tst
-Z20 w1663012521
-R8
-R9
-!i122 5
 R0
-Z21 8Waveform.vwf.vht
-Z22 FWaveform.vwf.vht
+R7
+R8
+!i122 29
+R10
+Z20 8Waveform1.vwf.vht
+Z21 FWaveform1.vwf.vht
 l0
 L32 1
 V[W1OAJgh_L4^WRIF`V8zT2
@@ -81,27 +81,27 @@ R13
 R14
 !i10b 1
 R15
-Z23 !s90 -work|work|Waveform.vwf.vht|
-Z24 !s107 Waveform.vwf.vht|
+Z22 !s90 -work|work|Waveform1.vwf.vht|
+Z23 !s107 Waveform1.vwf.vht|
 !i113 1
 R18
 R19
 Aaula5atv_arch
+R7
 R8
-R9
-Z25 DEx4 work 20 aula5atv_vhd_vec_tst 0 22 [W1OAJgh_L4^WRIF`V8zT2
-!i122 5
+Z24 DEx4 work 20 aula5atv_vhd_vec_tst 0 22 [W1OAJgh_L4^WRIF`V8zT2
+!i122 29
 l49
-Z26 L34 37
-Z27 VB08]ZR7bb45V48@PhdCI@1
-Z28 !s100 4V4X^dzSFCJdZ<V8fi`a@3
+Z25 L34 37
+Z26 V8U`PI61SR4njW^0l5^ehf1
+Z27 !s100 9glDBa`]@3KUW2NQ2>>X?1
 R13
 32
 R14
 !i10b 1
 R15
+R22
 R23
-R24
 !i113 1
 R18
 R19

@@ -17,7 +17,7 @@ begin
     begin
         -- The asynchronous reset signal has the highest priority
         if (RST = '1') then
-            DOUT <= (others => '0');    -- Código reconfigurável.
+            DOUT <= '0';    -- Código reconfigurável.
         else
             -- At a clock edge, if asynchronous signals have not taken priority,
             -- respond to the appropriate synchronous signal.
