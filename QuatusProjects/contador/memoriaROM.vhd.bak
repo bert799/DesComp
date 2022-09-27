@@ -37,12 +37,12 @@ architecture assincrona of memoriaROM is
         tmp(2)  := NOP & '0' & x"00";	 -- No Operation
         tmp(3)  := NOP & '0' & x"00";	 -- No Operation
         tmp(4)  := LDI & '0' & x"05";	 -- Carrega acumulador com valor 5
-        tmp(5)  := STA & '0' & x"00";	 -- Armazena 5 na posição 0 da memória
-        tmp(6)  := CEQ & '0' & x"00";   -- A comparação deve fazer o flagIgual ser 1
+        tmp(5)  := STA & '1' & x"00";	 -- Armazena 5 na posição 256 da memória
+        tmp(6)  := CEQ & '1' & x"00";   -- A comparação deve fazer o flagIgual ser 1
 		  tmp(7)  := JMP & '0' & x"01";   -- JMP to line 1, testa flag zero
 		  tmp(8)  := NOP & '0' & x"00";   -- No Operation
 		  tmp(9)  := LDI & '0' & x"04";   -- Carrega acumulador com valor 4
-		  tmp(10) := CEQ & '0' & x"00";   -- Compara com valor 5, deve fazer o flagIgual ser 0
+		  tmp(10) := CEQ & '1' & x"00";   -- Compara com valor 5, deve fazer o flagIgual ser 0
 		  tmp(11) := JEQ & '0' & x"03";   -- JMP to line 3, não deve ocorrer
 		  tmp(12) := JMP & '0' & x"0C";   -- JMP to line 12
         return tmp;

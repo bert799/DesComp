@@ -15,8 +15,8 @@ entity CPU is
 		RST				: in  std_logic;
 		Instruction_IN	: in  std_logic_vector (12 downto 0);
 		Data_IN			: in  std_logic_vector (7 downto 0);
-		RAM_WR			: out std_logic;
-		RAM_RD			: out std_logic;
+		WR					: out std_logic;
+		RD					: out std_logic;
 		Data_OUT			: out std_logic_vector (7 downto 0);
 		Data_Address	: out std_logic_vector (8 downto 0);
 		ROM_Address		: out std_logic_vector (8 downto 0)
@@ -70,8 +70,7 @@ architecture arquitetura of CPU is
 	signal Instrucao					: std_logic_vector(12 downto 0);
 	
 --RAM1
-	alias Endereco_RAM1				: std_logic_vector(larguraEnderecos-1 downto 0) is Instrucao(larguraEnderecos-1 downto 0);
-	alias Habilita_RAM1				: std_logic is instrucao(8);
+	alias Endereco_RAM1				: std_logic_vector(8 downto 0) is Instrucao(8 downto 0);
 
 
 begin
@@ -126,10 +125,10 @@ Habilita_escrever_RAM1 	<= Sinais_Controle(0);
 
 
 -- Saídas da CPU
-RAM_WR			<= Habilita_ler_RAM1;
-RAM_RD 			<= Habilita_escrever_RAM1;
+WR					<= Habilita_ler_RAM1;
+RD 				<= Habilita_escrever_RAM1;
 Data_OUT 		<= REGA_RAM1;
-Data_address	<= Endereco_RAM1
+Data_Address	<= Endereco_RAM1;
 ROM_Address		<= PC_ROM1;
 
 end architecture;
