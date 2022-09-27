@@ -1,0 +1,163 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Aula5Atv is
+  -- Total de bits das entradas e saidas
+  generic ( larguraDados : natural := 8;
+        larguraEnderecos : natural := 8;
+		  larguraEnderecosROM : natural := 9;
+        simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+  );
+  port   (
+    CLOCK_50 : in std_logic;
+    KEY: in std_logic_vector(3 downto 0);
+    PC_OUT: out std_logic_vector(8 downto 0);
+    LEDR  : out std_logic_vector(9 downto 0)
+  );
+end entity;
+
+
+architecture arquitetura of Aula5Atv is
+
+--CLK
+	signal CLK : std_logic;
+
+--PC
+	signal MUXPC_PC : std_logic_vector(larguraEnderecosROM -1 downto 0);
+	signal PC_ROM1 : std_logic_vector(larguraEnderecosROM -1 downto 0);
+
+--IncrementaPC
+	alias PC_IncrementaPC : std_logic_vector(larguraEnderecosROM -1 downto 0) is PC_ROM1;
+	signal IncrementaPC_MUXPC : std_logic_vector(larguraEnderecosROM -1 downto 0);
+	
+--MUXPC
+	signal Sel_MUXPC : std_logic;
+	alias DEC1_MUXPC : std_logic is Sel_MUXPC;
+	 
+--DEC1	 
+	signal Sel_MUX1 : std_logic;
+	signal Habilita_REGA : std_logic;
+	signal Habilita_FLGZERO : std_logic;
+	signal Operacao_ULA1 : std_logic_vector(1 downto 0);
+	signal Habilita_ler_RAM1 : std_logic;
+	signal Habilita_escrever_RAM1 : std_logic;	 
+	signal Op_code : std_logic_vector(3 downto 0);
+	signal Sinais_Controle : std_logic_vector (6 downto 0);
+	 
+--MUX1
+	signal Imediato: std_logic_vector(larguraDados-1 downto 0);
+	signal Dados_RAM1: std_logic_vector(larguraDados-1 downto 0);
+	signal MUX1_ULA1: std_logic_vector(larguraDados-1 downto 0);
+	alias ROM_MUX1: std_logic_vector(larguraDados-1 downto 0) is Imediato;
+	alias RAM1_MUX1: std_logic_vector(larguraDados-1 downto 0) is Dados_RAM1;
+
+--REGA
+	signal ULA1_REGA : std_logic_vector(larguraDados-1 downto 0);
+	signal REGA_ULA1 : std_logic_vector(larguraDados-1 downto 0);
+	alias REGA_RAM1 : std_logic_vector(larguraDados-1 downto 0) is REGA_ULA1;
+ 
+--ULA1
+	signal ULA1_FLGZERO: std_logic;
+	
+--FLGZERO
+	signal FLGZERO_DEC1 : std_logic;
+	
+--ROM1
+	signal Instrucao: std_logic_vector(12 downto 0);
+	
+--RAM1
+	alias Endereco_RAM1: std_logic_vector(larguraEnderecos-1 downto 0) is Instrucao(larguraEnderecos-1 downto 0);
+	alias Habilita_RAM1: std_logic is instrucao(8);
+
+
+-- Faltam alguns sinais:
+--  signal saida_MUX_ULA_B : std_logic_vector (larguraDados-1 downto 0);
+--  signal valor_MUX_A : std_logic_vector (larguraDados-1 downto 0);
+--  signal MUX_REG1 : std_logic_vector (larguraDados-1 downto 0);
+--  signal REG1_ULA_A : std_logic_vector (larguraDados-1 downto 0);
+--  signal Saida_ULA : std_logic_vector (larguraDados-1 downto 0);
+--  signal Sinais_Controle : std_logic_vector (5 downto 0);
+--  signal Codigo_operacao : std_logic_vector (12 downto 0);
+--  signal Endereco : std_logic_vector (8 downto 0);
+--  signal proxPC : std_logic_vector (8 downto 0);
+--  signal Operacao_ULA : std_logic_vector (1 downto 0);
+--  signal CLK : std_logic;
+--  signal SelMUX : std_logic;
+--  signal Habilita_A : std_logic;
+--  signal Reset_A : std_logic;
+--  signal Habilita_RAM : std_logic;
+--  signal Habilita_ler_RAM : std_logic;
+--  signal Habilita_escrever_RAM : std_logic;  
+--  signal Endereco_RAM : std_logic_vector(larguraDados-1 downto 0);
+--  signal Entrada_dados_RAM : std_logic_vector(larguraDados-1 downto 0);
+--  signal Saida_dados_RAM : std_logic_vector(larguraDados-1 downto 0);
+--  signal JMP : std_logic;
+--  signal MUX2_REGPC : std_logic_vector(8 downto 0);
+  
+
+begin
+
+-- Instanciando os componentes:
+
+-- Para simular, fica mais simples tirar o edgeDetector
+gravar:  if simulacao generate
+CLK <= KEY(0);
+else generate
+detectorSub0: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
+end generate;
+
+-- O port map completo do MUX.
+MUXPC :  entity work.muxGenerico2x1  generic map (larguraDados => 9)
+        port map( entradaA_MUX => IncrementaPC_MUXPC,
+                 entradaB_MUX =>  Instrucao(8 downto 0),
+                 seletor_MUX => DEC1_MUXPC,
+                 saida_MUX => MUXPC_PC);
+
+-- O port map completo do Program Counter.
+PC : entity work.registradorGenerico   generic map (larguraDados => 9)
+          port map (DIN => MUXPC_PC, DOUT => PC_ROM1, ENABLE => '1', CLK => CLK, RST => '0');
+
+incrementaPC :  entity work.somaConstante  generic map (larguraDados => 9, constante => 1)
+        port map( entrada => PC_IncrementaPC, saida => IncrementaPC_MUXPC);
+
+-- O port map completo do MUX.
+Imediato <= Instrucao(7 downto 0);
+MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+        port map( entradaA_MUX => RAM1_MUX1,
+                 entradaB_MUX =>  Imediato,
+                 seletor_MUX => Sel_MUX1,
+                 saida_MUX => MUX1_ULA1);
+					  
+-- O port map completo do Acumulador.
+REGA : entity work.registradorGenerico   generic map (larguraDados => larguraDados)
+          port map (DIN => ULA1_REGA, DOUT => REGA_ULA1, ENABLE => Habilita_REGA, CLK => CLK, RST => '0');
+
+-- O port map completo da ULA:
+ULA1 : entity work.ULASomaSub  generic map(larguraDados => larguraDados)
+          port map (entradaA => REGA_ULA1, entradaB => MUX1_ULA1, saida => ULA1_REGA, flagZero => ULA1_FLGZERO, seletor => Operacao_ULA1);
+			 
+FLGZERO : entity work.flipFlop port map (DIN => ULA1_FLGZERO, DOUT => FLGZERO_DEC1, ENABLE => Habilita_FLGZERO, CLK => CLK, RST => '0');
+
+-- Falta acertar o conteudo da ROM (no arquivo memoriaROM.vhd)
+ROM1 : entity work.memoriaROM port map (Endereco => PC_ROM1, Dado => Instrucao);
+
+Op_code <= Instrucao(12 downto 9);
+DEC1 : entity work.decoderInstru port map (opcode => Op_code, flagZero => FLGZERO_DEC1, Saida => Sinais_Controle, logica_desvio => Sel_MUXPC);
+Sel_MUX1 <= Sinais_Controle(6);
+Habilita_REGA <= Sinais_Controle(5);
+Operacao_ULA1 <= Sinais_Controle(4 downto 3);
+Habilita_FLGZERO <= Sinais_Controle(2);
+Habilita_ler_RAM1 <= Sinais_Controle(1);
+Habilita_escrever_RAM1 <= Sinais_Controle(0);
+
+RAM1 : entity work.memoriaRAM generic map(dataWidth => larguraDados, addrWidth => larguraEnderecos)
+			port map (addr => Endereco_RAM1, habilita => Habilita_RAM1, we => Habilita_escrever_RAM1, re => Habilita_ler_RAM1, clk => CLK, dado_in => REGA_RAM1, dado_out => RAM1_MUX1);
+
+-- A ligacao dos LEDs:
+LEDR (9) <= Sel_MUXPC;
+LEDR (8 downto 0) <= MUXPC_PC;
+
+PC_OUT <= PC_ROM1;
+
+end architecture;
