@@ -1,5 +1,5 @@
 Flow report for contador
-Tue Sep 27 11:34:21 2022
+Sat Oct 08 17:18:32 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Sep 27 11:34:21 2022       ;
+; Flow Status                     ; Successful - Sat Oct 08 17:18:32 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; contador                                    ;
 ; Top-level Entity Name           ; contador                                    ;
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 99                                          ;
+; Total registers                 ; 67                                          ;
 ; Total pins                      ; 26                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/27/2022 11:32:44 ;
+; Start date & time ; 10/08/2022 17:18:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; contador            ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 238300922516469.166428916415104        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 238300922516469.166526030302668        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --          ; --         ;
@@ -99,11 +99,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4898 MB             ; 00:00:12                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4721 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4723 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4719 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4723 MB             ; 00:00:00                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4936 MB             ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4720 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4725 MB             ; 00:00:00                           ;
 ; Total                ; 00:00:05     ; --                      ; --                  ; 00:00:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
@@ -116,8 +114,6 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; DESKTOP-JQGRM71  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-JQGRM71  ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; DESKTOP-JQGRM71  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-JQGRM71  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-JQGRM71  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -125,8 +121,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off contador -c contador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off contador -c contador --vector_source=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/Waveform.vwf --testbench_file=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim/ contador -c contador
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off contador -c contador --vector_source=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/Waveform.vwf --testbench_file=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim/Waveform.vwf.vht
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim/ contador -c contador
 

@@ -44,8 +44,8 @@ architecture arquitetura of contador is
 	alias RAM1_CPU_data_in 	: std_logic_vector (7 downto 0) is CPU_data_in;
 	
 --ROM1
-	signal instruction 		: std_logic_vector (12 downto 0);
-	alias ROM1_CPU 			: std_logic_vector (12 downto 0) is instruction;
+	signal instruction 		: std_logic_vector (14 downto 0);
+	alias ROM1_CPU 			: std_logic_vector (14 downto 0) is instruction;
 	
 --DEC3x8_1
 	signal blocos				: std_logic_vector (7 downto 0);
@@ -57,8 +57,6 @@ architecture arquitetura of contador is
 	alias bloco5 				: std_logic is blocos(5);
 	alias bloco6 				: std_logic is blocos(6);
 	alias bloco7 				: std_logic is blocos(7);
-
-  
 
 begin
 
@@ -95,6 +93,7 @@ RAM1 	: entity work.memoriaRAM generic map(dataWidth => larguraDados, addrWidth 
 DEC3x8_1 :  entity work.decoder3x8 port map (entrada	=> CPU_DEC3x8_1,
 															saida 	=> blocos);
 															
-PC_OUT <= ROM_address;
+PC_OUT 					<= ROM_address;
+LEDR(7 downto 0) 		<= CPU_data_out;
 															
 end architecture;
