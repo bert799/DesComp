@@ -506,7 +506,101 @@ dado_out[6] <= dado_out[6].DB_MAX_OUTPUT_PORT_TYPE
 dado_out[7] <= dado_out[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
+|contador|registradorGenerico:REG_LEDs
+DIN[0] => DOUT[0]~reg0.DATAIN
+DIN[1] => DOUT[1]~reg0.DATAIN
+DIN[2] => DOUT[2]~reg0.DATAIN
+DIN[3] => DOUT[3]~reg0.DATAIN
+DIN[4] => DOUT[4]~reg0.DATAIN
+DIN[5] => DOUT[5]~reg0.DATAIN
+DIN[6] => DOUT[6]~reg0.DATAIN
+DIN[7] => DOUT[7]~reg0.DATAIN
+DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT[7]~reg0.ENA
+ENABLE => DOUT[6]~reg0.ENA
+ENABLE => DOUT[5]~reg0.ENA
+ENABLE => DOUT[4]~reg0.ENA
+ENABLE => DOUT[3]~reg0.ENA
+ENABLE => DOUT[2]~reg0.ENA
+ENABLE => DOUT[1]~reg0.ENA
+ENABLE => DOUT[0]~reg0.ENA
+CLK => DOUT[0]~reg0.CLK
+CLK => DOUT[1]~reg0.CLK
+CLK => DOUT[2]~reg0.CLK
+CLK => DOUT[3]~reg0.CLK
+CLK => DOUT[4]~reg0.CLK
+CLK => DOUT[5]~reg0.CLK
+CLK => DOUT[6]~reg0.CLK
+CLK => DOUT[7]~reg0.CLK
+RST => DOUT[0]~reg0.ACLR
+RST => DOUT[1]~reg0.ACLR
+RST => DOUT[2]~reg0.ACLR
+RST => DOUT[3]~reg0.ACLR
+RST => DOUT[4]~reg0.ACLR
+RST => DOUT[5]~reg0.ACLR
+RST => DOUT[6]~reg0.ACLR
+RST => DOUT[7]~reg0.ACLR
+
+
+|contador|flipFlop:FF_LED8
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|contador|flipFlop:FF_LED9
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
 |contador|decoder3x8:DEC3x8_1
+entrada[0] => Equal0.IN2
+entrada[0] => Equal1.IN0
+entrada[0] => Equal2.IN2
+entrada[0] => Equal3.IN1
+entrada[0] => Equal4.IN2
+entrada[0] => Equal5.IN1
+entrada[0] => Equal6.IN2
+entrada[0] => Equal7.IN2
+entrada[1] => Equal0.IN1
+entrada[1] => Equal1.IN2
+entrada[1] => Equal2.IN0
+entrada[1] => Equal3.IN0
+entrada[1] => Equal4.IN1
+entrada[1] => Equal5.IN2
+entrada[1] => Equal6.IN1
+entrada[1] => Equal7.IN1
+entrada[2] => Equal0.IN0
+entrada[2] => Equal1.IN1
+entrada[2] => Equal2.IN1
+entrada[2] => Equal3.IN2
+entrada[2] => Equal4.IN0
+entrada[2] => Equal5.IN0
+entrada[2] => Equal6.IN0
+entrada[2] => Equal7.IN0
+saida[0] <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|decoder3x8:DEC3x8_2
 entrada[0] => Equal0.IN2
 entrada[0] => Equal1.IN0
 entrada[0] => Equal2.IN2

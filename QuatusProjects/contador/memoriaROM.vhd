@@ -32,11 +32,11 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := JMP & "00" & '0' & x"04";	-- JMP to line 4
-        tmp(1)  := JEQ & "00" & '0' & x"09";	-- JMP to line 9
-        tmp(2)  := NOP & "00" & '0' & x"00";	-- No Operation
-        tmp(3)  := NOP & "00" & '0' & x"00";	-- No Operation
-        tmp(4)  := LDI & "00" & '0' & x"05";	-- Carrega REG1 com valor 5
+        tmp(0)  := LDI & "00" & '0' & x"01";	-- JMP to line 4
+        tmp(1)  := STA & "00" & '0' & x"00";	-- JMP to line 9
+        tmp(2)  := SOMA & "00" & '0' & x"00";	-- No Operation
+        tmp(3)  := STA & "00" & '0' & x"01";	-- No Operation
+        tmp(4)  := LDA & "00" & '0' & x"05";	-- Carrega REG1 com valor 5
         tmp(5)  := STA & "00" & '0' & x"00";	-- Armazena 5 na posição 0 da memória
         tmp(6)  := CEQ & "00" & '0' & x"00";	-- A comparação deve fazer o flagIgual ser 1
 		  tmp(7)  := JMP & "00" & '0' & x"01";	-- JMP to line 1, testa flag zero
