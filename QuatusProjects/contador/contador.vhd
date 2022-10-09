@@ -142,7 +142,7 @@ FF_LED8 : entity work.flipFlop
 				 RST 		=> '0');
 
 
-FF_LED9_data_out <= bloco4 and endereco2 and wr;
+habilita_FF_LED9 <= bloco4 and endereco2 and wr;
 FF_LED9 : entity work.flipFlop 
 	port map (DIN 		=> CPU_FF_LED8_data_in,
 				 DOUT 	=> FF_LED9_data_out, 
@@ -161,7 +161,9 @@ DEC3x8_2 :  entity work.decoder3x8
 				 saida 	=> enderecos);
 			
 			
-PC_OUT 					<= ROM_address;
-LEDR(7 downto 0) 		<= CPU_data_out;
+PC_OUT 				<= ROM_address;
+LEDR(7 downto 0) 	<= REG_LEDs_data_out;
+LEDR(8)				<=	FF_LED8_data_out;
+LEDR(9)				<= FF_LED9_data_out;
 															
 end architecture;

@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim
 Econtador
-Z1 w1665260312
+Z1 w1665339893
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,7 +20,7 @@ Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 36
+!i122 40
 R0
 Z11 8contador.vho
 Z12 Fcontador.vho
@@ -30,9 +30,9 @@ V67Iz@h]^KjJhobFKbo;JE2
 !s100 UIQg3U:oL3;OOX25KRT:;0
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1665260312
+Z14 !s110 1665339894
 !i10b 1
-Z15 !s108 1665260312.000000
+Z15 !s108 1665339894.000000
 Z16 !s90 -work|work|contador.vho|
 Z17 !s107 contador.vho|
 !i113 1
@@ -49,11 +49,11 @@ R8
 R9
 R10
 DEx4 work 8 contador 0 22 67Iz@h]^KjJhobFKbo;JE2
-!i122 36
-l495
-L48 4623
-VO?4NXoQ]][[63=TeE>8D[1
-!s100 J9CTmO7EIlF[f?F1g_`I_2
+!i122 40
+l308
+L48 2911
+VhzM`1;h26Lnl7XRz3^@NY3
+!s100 ?@IbhE@iiZ@aoWYBc1nkg1
 R13
 32
 R14
@@ -65,43 +65,43 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-Z20 w1665260311
+R1
 R8
 R9
-!i122 37
+!i122 41
 R0
-Z21 8Waveform.vwf.vht
-Z22 FWaveform.vwf.vht
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
 l0
 L32 1
 VdlY?7K2]@onfaD9j9@zo:2
 !s100 3E>Znb`[6LD<SCQMT6[8<3
 R13
 32
-Z23 !s110 1665260313
+R14
 !i10b 1
-Z24 !s108 1665260313.000000
-Z25 !s90 -work|work|Waveform.vwf.vht|
-Z26 !s107 Waveform.vwf.vht|
+R15
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
 !i113 1
 R18
 R19
 Acontador_arch
 R8
 R9
-Z27 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
-!i122 37
+Z24 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
+!i122 41
 l49
-Z28 L34 37
-Z29 VOLlEH7J>9XzQ19dAK1?lI2
-Z30 !s100 c8kOmLOE7_<lb[Ug@Igo;0
+Z25 L34 37
+VOLlEH7J>9XzQ19dAK1?lI2
+!s100 c8kOmLOE7_<lb[Ug@Igo;0
 R13
 32
-R23
+R14
 !i10b 1
-R24
-R25
-R26
+R15
+R22
+R23
 !i113 1
 R18
 R19

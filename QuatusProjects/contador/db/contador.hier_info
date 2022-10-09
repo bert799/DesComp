@@ -15,16 +15,16 @@ PC_OUT[5] <= cpu:CPU1.ROM_Address[5]
 PC_OUT[6] <= cpu:CPU1.ROM_Address[6]
 PC_OUT[7] <= cpu:CPU1.ROM_Address[7]
 PC_OUT[8] <= cpu:CPU1.ROM_Address[8]
-LEDR[0] <= cpu:CPU1.Data_OUT[0]
-LEDR[1] <= cpu:CPU1.Data_OUT[1]
-LEDR[2] <= cpu:CPU1.Data_OUT[2]
-LEDR[3] <= cpu:CPU1.Data_OUT[3]
-LEDR[4] <= cpu:CPU1.Data_OUT[4]
-LEDR[5] <= cpu:CPU1.Data_OUT[5]
-LEDR[6] <= cpu:CPU1.Data_OUT[6]
-LEDR[7] <= cpu:CPU1.Data_OUT[7]
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
+LEDR[0] <= registradorgenerico:REG_LEDs.DOUT[0]
+LEDR[1] <= registradorgenerico:REG_LEDs.DOUT[1]
+LEDR[2] <= registradorgenerico:REG_LEDs.DOUT[2]
+LEDR[3] <= registradorgenerico:REG_LEDs.DOUT[3]
+LEDR[4] <= registradorgenerico:REG_LEDs.DOUT[4]
+LEDR[5] <= registradorgenerico:REG_LEDs.DOUT[5]
+LEDR[6] <= registradorgenerico:REG_LEDs.DOUT[6]
+LEDR[7] <= registradorgenerico:REG_LEDs.DOUT[7]
+LEDR[8] <= flipflop:FF_LED8.DOUT
+LEDR[9] <= flipflop:FF_LED9.DOUT
 
 
 |contador|edgeDetector:\gravar:detectorSub0

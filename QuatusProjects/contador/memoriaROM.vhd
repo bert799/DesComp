@@ -32,24 +32,18 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := LDI & "00" & '0' & x"01";	-- JMP to line 4
-        tmp(1)  := STA & "00" & '0' & x"00";	-- JMP to line 9
-        tmp(2)  := SOMA & "00" & '0' & x"00";	-- No Operation
-        tmp(3)  := STA & "00" & '0' & x"01";	-- No Operation
-        tmp(4)  := LDA & "00" & '0' & x"05";	-- Carrega REG1 com valor 5
-        tmp(5)  := STA & "00" & '0' & x"00";	-- Armazena 5 na posição 0 da memória
-        tmp(6)  := CEQ & "00" & '0' & x"00";	-- A comparação deve fazer o flagIgual ser 1
-		  tmp(7)  := JMP & "00" & '0' & x"01";	-- JMP to line 1, testa flag zero
-		  tmp(8)  := NOP & "00" & '0' & x"00";	-- No Operation
-		  tmp(9)  := LDI & "00" & '0' & x"04";	-- Carrega REG1 com valor 4
-		  tmp(10) := LDI & "01" & '0' & x"08";	-- Carrega REG2 com valor 8
-		  tmp(11) := STA & "01" & '0' & x"01";	-- Armazena 8 na posição 0 da memória
-		  tmp(12) := CEQ & "00" & '0' & x"00";	-- Compara com valor 5, deve fazer o flagIgual ser 0
-		  tmp(13) := JEQ & "00" & '0' & x"03";	-- JMP to line 3, não deve ocorrer
-		  tmp(14) := CEQ & "01" & '0' & x"01";	-- Compara com valor 8, deve fazer o flagIgual ser 1
-		  tmp(15) := JEQ & "00" & '0' & x"11";	-- JMP to line 17, deve ocorrer
-		  tmp(16) := JMP & "00" & '0' & x"10";	-- JMP to line 16
-		  tmp(17) := JMP & "00" & '0' & x"11";	-- JMP to line 17
+        tmp(0)  := LDI & "00" & '0' & x"01";	-- 
+        tmp(1)  := STA & "00" & '0' & x"00";	-- 
+        tmp(2)  := SOMA & "00" & '0' & x"00";	-- 
+        tmp(3)  := STA & "00" & '0' & x"01";	-- 
+        tmp(4)  := LDA & "00" & '0' & x"00";	-- 
+        tmp(5)  := STA & "00" & '1' & x"01";	-- 
+        tmp(6)  := STA & "00" & '1' & x"02";	-- 
+		  tmp(7)  := LDI & "00" & '0' & x"55";	-- 
+		  tmp(8)  := STA & "00" & '1' & x"00";	-- 
+		  tmp(9)  := LDI & "00" & '0' & x"AA";	-- 
+		  tmp(10) := STA & "00" & '1' & x"00";	-- 
+		  tmp(11) := JMP & "00" & '0' & x"0B";	-- 
 		  
         return tmp;
     end initMemory;
