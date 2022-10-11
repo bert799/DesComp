@@ -8,37 +8,38 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim
+dC:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim
 Econtador
-Z1 w1665339893
-Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
-Z3 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
-Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
-Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
-Z6 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
-Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
-Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-Z10 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 40
-R0
+Z0 w1665494388
+Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
+Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
+Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 46
+Z10 d/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/contador/simulation/qsim
 Z11 8contador.vho
 Z12 Fcontador.vho
 l0
 L39 1
-V67Iz@h]^KjJhobFKbo;JE2
-!s100 UIQg3U:oL3;OOX25KRT:;0
+VR8PJhVYOYK8GnUHMjA]HC1
+!s100 hh^6YWBbUUaZIa0JW;L<Z3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1665339894
+Z14 !s110 1665494389
 !i10b 1
-Z15 !s108 1665339894.000000
+Z15 !s108 1665494389.000000
 Z16 !s90 -work|work|contador.vho|
 Z17 !s107 contador.vho|
 !i113 1
 Z18 o-work work
 Z19 tExplicit 1 CvgOpt 0
 Astructure
+R1
 R2
 R3
 R4
@@ -47,13 +48,12 @@ R6
 R7
 R8
 R9
-R10
-DEx4 work 8 contador 0 22 67Iz@h]^KjJhobFKbo;JE2
-!i122 40
-l308
-L48 2911
-VhzM`1;h26Lnl7XRz3^@NY3
-!s100 ?@IbhE@iiZ@aoWYBc1nkg1
+DEx4 work 8 contador 0 22 R8PJhVYOYK8GnUHMjA]HC1
+!i122 46
+l340
+L56 4250
+VCMLd_242QaA2VR[kBlMn11
+!s100 nF^]eP4LAbmQZJYR4GQ`Y2
 R13
 32
 R14
@@ -65,13 +65,13 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-R1
+Z20 w1665494387
+R7
 R8
-R9
-!i122 41
-R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+!i122 47
+R10
+Z21 8Waveform1.vwf.vht
+Z22 FWaveform1.vwf.vht
 l0
 L32 1
 VdlY?7K2]@onfaD9j9@zo:2
@@ -81,27 +81,27 @@ R13
 R14
 !i10b 1
 R15
-Z22 !s90 -work|work|Waveform.vwf.vht|
-Z23 !s107 Waveform.vwf.vht|
+Z23 !s90 -work|work|Waveform1.vwf.vht|
+Z24 !s107 Waveform1.vwf.vht|
 !i113 1
 R18
 R19
 Acontador_arch
+R7
 R8
-R9
-Z24 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
-!i122 41
-l49
-Z25 L34 37
-VOLlEH7J>9XzQ19dAK1?lI2
-!s100 c8kOmLOE7_<lb[Ug@Igo;0
+Z25 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
+!i122 47
+l65
+Z26 L34 61
+Z27 VNdkaVP@:PMc9B3fMzQ6jh0
+Z28 !s100 PWYhEGBmVi=h>VgiA@`Xg1
 R13
 32
 R14
 !i10b 1
 R15
-R22
 R23
+R24
 !i113 1
 R18
 R19

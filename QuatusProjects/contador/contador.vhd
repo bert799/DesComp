@@ -11,9 +11,12 @@ entity contador is
 	);
 	port   (
 		CLOCK_50 : in  std_logic;
+		FPGA_RESET_N : std_logic;
 		KEY 		: in  std_logic_vector(5 downto 0);
+		SW			: in  std_logic_vector(9 downto 0);
 		PC_OUT 	: out std_logic_vector(8 downto 0);
-		LEDR  	: out std_logic_vector(9 downto 0)
+		LEDR  	: out std_logic_vector(9 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector(6 downto 0)
 	);
 end entity;
 
@@ -35,11 +38,13 @@ architecture arquitetura of contador is
 	alias CPU_REG_LEDs_data_in 	: std_logic_vector (7 downto 0) is CPU_data_out;
 	alias CPU_FF_LED8_data_in 		: std_logic is CPU_data_out(0);
 	alias CPU_FF_LED9_data_in 		: std_logic is CPU_data_out(0);
+	alias CPU_REGSEG_data_in		: std_logic_vector(3 downto 0) is CPU_data_out(3 downto 0);
 	
 	signal CPU_data_address 		: std_logic_vector (8 downto 0);
 	alias CPU_DEC3x8_1 				: std_logic_vector (2 downto 0) is CPU_data_address(8 downto 6);
 	alias CPU_DEC3x8_2 				: std_logic_vector (2 downto 0) is CPU_data_address(2 downto 0);
 	alias CPU_RAM1_address 			: std_logic_vector (5 downto 0) is CPU_data_address(5 downto 0);
+	alias selSEG						: std_logic is CPU_data_address(5);
 	
 	signal ROM_address 				: std_logic_vector (8 downto 0);
 	alias CPU_ROM1 					: std_logic_vector (8 downto 0) is ROM_address(8 downto 0);
@@ -84,7 +89,48 @@ architecture arquitetura of contador is
 --FF_LED9
 	signal habilita_FF_LED9			: std_logic;
 	signal FF_LED9_data_out			: std_logic;
+	
+--REGSEG0
+	signal REGSEG0_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG0			: std_logic;
 
+--SEG0
+	signal SEG0_data_out 			: std_logic_vector(6 downto 0);
+
+--REGSEG1
+	signal REGSEG1_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG1			: std_logic;
+	
+--SEG1
+	signal SEG1_data_out 			: std_logic_vector(6 downto 0);
+
+--REGSEG2
+	signal REGSEG2_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG2			: std_logic;
+	
+--SEG2
+	signal SEG2_data_out 			: std_logic_vector(6 downto 0);
+
+--REGSEG3
+	signal REGSEG3_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG3			: std_logic;
+	
+--SEG3
+	signal SEG3_data_out 			: std_logic_vector(6 downto 0);
+
+--REGSEG4
+	signal REGSEG4_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG4			: std_logic;
+	
+--SEG4
+	signal SEG4_data_out 			: std_logic_vector(6 downto 0);
+
+--REGSEG5
+	signal REGSEG5_data_out 		: std_logic_vector(3 downto 0);
+	signal habilita_REGSEG5			: std_logic;
+	
+--SEG5
+	signal SEG5_data_out 			: std_logic_vector(6 downto 0);
 
 begin
 
@@ -124,7 +170,7 @@ RAM1 	: entity work.memoriaRAM generic map(dataWidth => larguraDados, addrWidth 
 				 dado_out 	=> RAM1_CPU_data_in);
 			
 
-habilita_REG_LEDs <= bloco4 and endereco0 and wr;			
+habilita_REG_LEDs <= bloco4 and endereco0 and wr and not(selSEG);			
 REG_LEDs : entity work.registradorGenerico   generic map (larguraDados => larguraDados)
 	port map (DIN 		=> CPU_REG_LEDs_data_in, 
 				 DOUT 	=> REG_LEDs_data_out, 
@@ -133,7 +179,7 @@ REG_LEDs : entity work.registradorGenerico   generic map (larguraDados => largur
 				 RST 		=> '0');
 						
 						
-habilita_FF_LED8 <= bloco4 and endereco1 and wr;						 
+habilita_FF_LED8 <= bloco4 and endereco1 and wr and not(selSEG);						 
 FF_LED8 : entity work.flipFlop 
 	port map (DIN 		=> CPU_FF_LED8_data_in,
 				 DOUT 	=> FF_LED8_data_out, 
@@ -142,7 +188,7 @@ FF_LED8 : entity work.flipFlop
 				 RST 		=> '0');
 
 
-habilita_FF_LED9 <= bloco4 and endereco2 and wr;
+habilita_FF_LED9 <= bloco4 and endereco2 and wr and not(selSEG);
 FF_LED9 : entity work.flipFlop 
 	port map (DIN 		=> CPU_FF_LED8_data_in,
 				 DOUT 	=> FF_LED9_data_out, 
@@ -159,11 +205,123 @@ DEC3x8_1 :  entity work.decoder3x8
 DEC3x8_2 :  entity work.decoder3x8 
 	port map (entrada	=> CPU_DEC3x8_2,
 				 saida 	=> enderecos);
+
+				 
+habilita_REGSEG0 <= bloco4 and endereco0 and selSEG and wr;
+				 
+REGSEG0 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG0_data_out, 
+				 ENABLE 	=> habilita_REGSEG0, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');
+				 
+SEG0 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG0_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG0_data_out);
+
+				 
+habilita_REGSEG1 <= bloco4 and endereco1 and selSEG and wr;				 
+
+REGSEG1 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG1_data_out, 
+				 ENABLE 	=> habilita_REGSEG1, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');			
 			
+SEG1 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG1_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG1_data_out);
 			
+
+habilita_REGSEG2 <= bloco4 and endereco2 and selSEG and wr;
+			
+REGSEG2 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG2_data_out, 
+				 ENABLE 	=> habilita_REGSEG2, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');
+			
+SEG2 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG2_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG2_data_out);
+
+
+habilita_REGSEG3 <= bloco4 and endereco3 and selSEG and wr;				 
+				 
+REGSEG3 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG3_data_out, 
+				 ENABLE 	=> habilita_REGSEG3, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');			
+		
+SEG3 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG3_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG3_data_out);
+
+
+habilita_REGSEG4 <= bloco4 and endereco4 and selSEG and wr;				 
+				 
+REGSEG4 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG4_data_out, 
+				 ENABLE 	=> habilita_REGSEG4, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');				 
+				 
+SEG4 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG4_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG4_data_out);			
+
+
+habilita_REGSEG5 <= bloco4 and endereco5 and selSEG and wr;
+				 
+REGSEG5 : entity work.registradorGenerico   generic map (larguraDados => 4)
+	port map (DIN 		=> CPU_REGSEG_data_in, 
+				 DOUT 	=> REGSEG5_data_out, 
+				 ENABLE 	=> habilita_REGSEG5, 
+				 CLK 		=> CLK, 
+				 RST 		=> '0');
+				 
+SEG5 :  entity work.conversorHex7Seg
+	port map (dadoHex 	=> REGSEG5_data_out,
+				 apaga 		=> '0',
+				 negativo 	=> '0',
+				 overFlow 	=> '0',
+				 saida7seg 	=> SEG5_data_out);
+				 
+	
 PC_OUT 				<= ROM_address;
-LEDR(7 downto 0) 	<= REG_LEDs_data_out;
-LEDR(8)				<=	FF_LED8_data_out;
-LEDR(9)				<= FF_LED9_data_out;
+--LEDR(7 downto 0) 	<= REG_LEDs_data_out;
+LEDR(4)				<= habilita_REGSEG0;
+LEDR(5)				<= habilita_REGSEG1;
+LEDR(6)				<= habilita_REGSEG2;
+LEDR(7)				<= habilita_REGSEG3;
+LEDR(8)				<=	habilita_REGSEG4;
+LEDR(9)				<= habilita_REGSEG5;
+HEX0 					<= SEG0_data_out;
+HEX1 					<= SEG1_data_out;
+HEX2 					<= SEG2_data_out;
+HEX3 					<= SEG3_data_out;
+HEX4 					<= SEG4_data_out;
+HEX5 					<= SEG5_data_out; 
 															
 end architecture;
