@@ -10,7 +10,7 @@ z2
 cModel Technology
 dC:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/contador/simulation/qsim
 Econtador
-Z0 w1665494388
+Z0 w1665497815
 Z1 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ^K2eeK[IVbX]]MLcdOEI91
 Z2 DPx8 cyclonev 19 cyclonev_components 0 22 GFL[QAd@dAZF:`jjOGn9>2
 Z3 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3dzZ?YU_4FC5UU0cTXRET1
@@ -20,7 +20,7 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 46
+!i122 52
 Z10 d/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/contador/simulation/qsim
 Z11 8contador.vho
 Z12 Fcontador.vho
@@ -30,9 +30,9 @@ VR8PJhVYOYK8GnUHMjA]HC1
 !s100 hh^6YWBbUUaZIa0JW;L<Z3
 Z13 OV;C;2020.1;71
 32
-Z14 !s110 1665494389
+Z14 !s110 1665497815
 !i10b 1
-Z15 !s108 1665494389.000000
+Z15 !s108 1665497815.000000
 Z16 !s90 -work|work|contador.vho|
 Z17 !s107 contador.vho|
 !i113 1
@@ -49,11 +49,11 @@ R7
 R8
 R9
 DEx4 work 8 contador 0 22 R8PJhVYOYK8GnUHMjA]HC1
-!i122 46
-l340
-L56 4250
-VCMLd_242QaA2VR[kBlMn11
-!s100 nF^]eP4LAbmQZJYR4GQ`Y2
+!i122 52
+l358
+L56 3970
+V4M;cZ>?R5gTo8EfjHI;hJ3
+!s100 EljVcAQPBDb?;9c1]=<`M0
 R13
 32
 R14
@@ -65,10 +65,10 @@ R17
 R18
 R19
 Econtador_vhd_vec_tst
-Z20 w1665494387
+Z20 w1665497814
 R7
 R8
-!i122 47
+!i122 53
 R10
 Z21 8Waveform1.vwf.vht
 Z22 FWaveform1.vwf.vht
@@ -90,11 +90,11 @@ Acontador_arch
 R7
 R8
 Z25 DEx4 work 20 contador_vhd_vec_tst 0 22 dlY?7K2]@onfaD9j9@zo:2
-!i122 47
+!i122 53
 l65
-Z26 L34 61
-Z27 VNdkaVP@:PMc9B3fMzQ6jh0
-Z28 !s100 PWYhEGBmVi=h>VgiA@`Xg1
+Z26 L34 159
+VV>n1==EE:lP2;OK8So=aO3
+!s100 SHN5nL8Y8NkKT0HHJ[6760
 R13
 32
 R14

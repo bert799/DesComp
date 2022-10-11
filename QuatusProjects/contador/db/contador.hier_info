@@ -1,22 +1,23 @@
 |contador
 CLOCK_50 => edgedetector:gravar:detectorSub0.clk
-FPGA_RESET_N => ~NO_FANOUT~
+FPGA_RESET_N => buffer_3_state_1porta:buff_RESET.entrada
+KEY[0] => buffer_3_state_1porta:buff_KEY0.entrada
 KEY[0] => edgedetector:gravar:detectorSub0.entrada
-KEY[1] => ~NO_FANOUT~
-KEY[2] => ~NO_FANOUT~
-KEY[3] => ~NO_FANOUT~
+KEY[1] => buffer_3_state_1porta:buff_KEY1.entrada
+KEY[2] => buffer_3_state_1porta:buff_KEY2.entrada
+KEY[3] => buffer_3_state_1porta:buff_KEY3.entrada
 KEY[4] => ~NO_FANOUT~
 KEY[5] => ~NO_FANOUT~
-SW[0] => ~NO_FANOUT~
-SW[1] => ~NO_FANOUT~
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
-SW[7] => ~NO_FANOUT~
-SW[8] => ~NO_FANOUT~
-SW[9] => ~NO_FANOUT~
+SW[0] => buffer_3_state_8portas:buf3_8por.entrada[0]
+SW[1] => buffer_3_state_8portas:buf3_8por.entrada[1]
+SW[2] => buffer_3_state_8portas:buf3_8por.entrada[2]
+SW[3] => buffer_3_state_8portas:buf3_8por.entrada[3]
+SW[4] => buffer_3_state_8portas:buf3_8por.entrada[4]
+SW[5] => buffer_3_state_8portas:buf3_8por.entrada[5]
+SW[6] => buffer_3_state_8portas:buf3_8por.entrada[6]
+SW[7] => buffer_3_state_8portas:buf3_8por.entrada[7]
+SW[8] => buffer_3_state_1porta:buff_SW8.entrada
+SW[9] => buffer_3_state_1porta:buff_SW9.entrada
 PC_OUT[0] <= cpu:CPU1.ROM_Address[0]
 PC_OUT[1] <= cpu:CPU1.ROM_Address[1]
 PC_OUT[2] <= cpu:CPU1.ROM_Address[2]
@@ -26,16 +27,16 @@ PC_OUT[5] <= cpu:CPU1.ROM_Address[5]
 PC_OUT[6] <= cpu:CPU1.ROM_Address[6]
 PC_OUT[7] <= cpu:CPU1.ROM_Address[7]
 PC_OUT[8] <= cpu:CPU1.ROM_Address[8]
-LEDR[0] <= <GND>
-LEDR[1] <= <GND>
-LEDR[2] <= <GND>
-LEDR[3] <= <GND>
-LEDR[4] <= habilita_REGSEG0.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[5] <= habilita_REGSEG1.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[6] <= habilita_REGSEG2.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[7] <= habilita_REGSEG3.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[8] <= habilita_REGSEG4.DB_MAX_OUTPUT_PORT_TYPE
-LEDR[9] <= habilita_REGSEG5.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[0] <= registradorgenerico:REG_LEDs.DOUT[0]
+LEDR[1] <= registradorgenerico:REG_LEDs.DOUT[1]
+LEDR[2] <= registradorgenerico:REG_LEDs.DOUT[2]
+LEDR[3] <= registradorgenerico:REG_LEDs.DOUT[3]
+LEDR[4] <= registradorgenerico:REG_LEDs.DOUT[4]
+LEDR[5] <= registradorgenerico:REG_LEDs.DOUT[5]
+LEDR[6] <= registradorgenerico:REG_LEDs.DOUT[6]
+LEDR[7] <= registradorgenerico:REG_LEDs.DOUT[7]
+LEDR[8] <= flipflop:FF_LED8.DOUT
+LEDR[9] <= flipflop:FF_LED9.DOUT
 HEX0[0] <= conversorhex7seg:SEG0.saida7seg[0]
 HEX0[1] <= conversorhex7seg:SEG0.saida7seg[1]
 HEX0[2] <= conversorhex7seg:SEG0.saida7seg[2]
@@ -1334,5 +1335,74 @@ saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_8portas:buf3_8por
+entrada[0] => saida[0].DATAIN
+entrada[1] => saida[1].DATAIN
+entrada[2] => saida[2].DATAIN
+entrada[3] => saida[3].DATAIN
+entrada[4] => saida[4].DATAIN
+entrada[5] => saida[5].DATAIN
+entrada[6] => saida[6].DATAIN
+entrada[7] => saida[7].DATAIN
+habilita => saida[0].OE
+habilita => saida[1].OE
+habilita => saida[2].OE
+habilita => saida[3].OE
+habilita => saida[4].OE
+habilita => saida[5].OE
+habilita => saida[6].OE
+habilita => saida[7].OE
+saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_SW8
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_SW9
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_KEY0
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_KEY1
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_KEY2
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_KEY3
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador|buffer_3_state_1porta:buff_RESET
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 

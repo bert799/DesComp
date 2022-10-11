@@ -131,6 +131,18 @@ architecture arquitetura of contador is
 	
 --SEG5
 	signal SEG5_data_out 			: std_logic_vector(6 downto 0);
+	
+-- SW
+	signal habilita_buf3_8por 		: std_logic;
+	signal habilita_SW8 				: std_logic;
+	signal habilita_SW9 				: std_logic;
+	
+--	KEY
+	signal habilita_KEY0				: std_logic;
+	signal habilita_KEY1				: std_logic;
+	signal habilita_KEY2				: std_logic;
+	signal habilita_KEY3				: std_logic;
+	signal habilita_RESET			: std_logic;
 
 begin
 
@@ -308,15 +320,75 @@ SEG5 :  entity work.conversorHex7Seg
 				 overFlow 	=> '0',
 				 saida7seg 	=> SEG5_data_out);
 				 
-	
+
+habilita_buf3_8por <= bloco5 and endereco0 and not(selSEG) and rd;			 
+				 
+buf3_8por :  entity work.buffer_3_state_8portas
+	port map (entrada 	=> SW(7 downto 0), 
+				 habilita 	=>  habilita_buf3_8por, 
+				 saida 		=> CPU_data_in);
+
+				 
+habilita_SW8 <= bloco5 and endereco1 and not(selSEG) and rd;			 
+
+buff_SW8 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> SW(8), 
+				 habilita 	=>  habilita_SW8, 
+				 saida 		=> CPU_data_in(0));
+
+
+habilita_SW9 <= bloco5 and endereco2 and not(selSEG) and rd;
+
+buff_SW9 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> SW(9), 
+				 habilita 	=>  habilita_SW9, 
+				 saida 		=> CPU_data_in(0));
+
+
+habilita_KEY0 <= bloco5 and endereco0 and selSEG and rd;				 
+				 
+buff_KEY0 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> KEY(0), 
+				 habilita 	=>  habilita_KEY0, 
+				 saida 		=> CPU_data_in(0));
+
+
+habilita_KEY1 <= bloco5 and endereco1 and selSEG and rd;					 
+				 
+buff_KEY1 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> KEY(1), 
+				 habilita 	=>  habilita_KEY1, 
+				 saida 		=> CPU_data_in(0));
+
+
+habilita_KEY2 <= bloco5 and endereco2 and selSEG and rd;					 
+
+buff_KEY2 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> KEY(2), 
+				 habilita 	=>  habilita_KEY2, 
+				 saida 		=> CPU_data_in(0));
+
+
+habilita_KEY3 <= bloco5 and endereco3 and selSEG and rd;	
+
+buff_KEY3 :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> KEY(3), 
+				 habilita 	=>  habilita_KEY3, 
+				 saida 		=> CPU_data_in(0));
+
+				 
+habilita_RESET <= bloco5 and endereco4 and selSEG and rd;	
+
+buff_RESET :  entity work.buffer_3_state_1porta
+	port map (entrada 	=> FPGA_RESET_N, 
+				 habilita 	=>  habilita_RESET, 
+				 saida 		=> CPU_data_in(0));
+			
+			
 PC_OUT 				<= ROM_address;
---LEDR(7 downto 0) 	<= REG_LEDs_data_out;
-LEDR(4)				<= habilita_REGSEG0;
-LEDR(5)				<= habilita_REGSEG1;
-LEDR(6)				<= habilita_REGSEG2;
-LEDR(7)				<= habilita_REGSEG3;
-LEDR(8)				<=	habilita_REGSEG4;
-LEDR(9)				<= habilita_REGSEG5;
+LEDR(7 downto 0) <= REG_LEDs_data_out;
+LEDR(8)				<=	FF_LED8_data_out;
+LEDR(9)				<= FF_LED9_data_out;
 HEX0 					<= SEG0_data_out;
 HEX1 					<= SEG1_data_out;
 HEX2 					<= SEG2_data_out;

@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/11/2022 10:19:47"
+-- Generated on "10/11/2022 11:16:54"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          contador
 -- 
@@ -91,4 +91,102 @@ LOOP
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_KEY_0;
+
+-- SW[9]
+t_prcs_SW_9: PROCESS
+BEGIN
+	SW(9) <= '1';
+WAIT;
+END PROCESS t_prcs_SW_9;
+
+-- SW[8]
+t_prcs_SW_8: PROCESS
+BEGIN
+	SW(8) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_8;
+
+-- SW[7]
+t_prcs_SW_7: PROCESS
+BEGIN
+	SW(7) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_7;
+
+-- SW[6]
+t_prcs_SW_6: PROCESS
+BEGIN
+	SW(6) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_6;
+
+-- SW[5]
+t_prcs_SW_5: PROCESS
+BEGIN
+	SW(5) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_5;
+
+-- SW[4]
+t_prcs_SW_4: PROCESS
+BEGIN
+	SW(4) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_4;
+
+-- SW[3]
+t_prcs_SW_3: PROCESS
+BEGIN
+	SW(3) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_3;
+
+-- SW[2]
+t_prcs_SW_2: PROCESS
+BEGIN
+	SW(2) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_2;
+
+-- SW[1]
+t_prcs_SW_1: PROCESS
+BEGIN
+	SW(1) <= '1';
+WAIT;
+END PROCESS t_prcs_SW_1;
+
+-- SW[0]
+t_prcs_SW_0: PROCESS
+BEGIN
+	SW(0) <= '0';
+WAIT;
+END PROCESS t_prcs_SW_0;
+
+-- KEY[1]
+t_prcs_KEY_1: PROCESS
+BEGIN
+	KEY(1) <= '1';
+WAIT;
+END PROCESS t_prcs_KEY_1;
+
+-- KEY[2]
+t_prcs_KEY_2: PROCESS
+BEGIN
+	KEY(2) <= '0';
+WAIT;
+END PROCESS t_prcs_KEY_2;
+
+-- KEY[3]
+t_prcs_KEY_3: PROCESS
+BEGIN
+	KEY(3) <= '1';
+WAIT;
+END PROCESS t_prcs_KEY_3;
+
+-- FPGA_RESET_N
+t_prcs_FPGA_RESET_N: PROCESS
+BEGIN
+	FPGA_RESET_N <= '0';
+WAIT;
+END PROCESS t_prcs_FPGA_RESET_N;
 END contador_arch;
