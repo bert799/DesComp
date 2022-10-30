@@ -19,14 +19,9 @@ architecture assincrona OF ROMMIPS IS
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
         -- Inicializa os endereços:
-        tmp(0) := x"AA";
-        tmp(1) := x"42";
-        tmp(2) := x"43";
-        tmp(3) := x"44";
-        tmp(4) := x"45";
-        tmp(5) := x"46";
-        tmp(6) := x"47";
-        tmp(7) := x"55";
+        tmp(0) := 6x"00" & "01001" & "01010" & "01000" & "00000" & 6x"20";
+        tmp(1) := 6x"00" & "01000" & "01011" & "01000" & "00000" & 6x"22";
+        tmp(2) := 32x"00";
         return tmp;
     end initMemory;
 

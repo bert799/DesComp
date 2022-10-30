@@ -15,7 +15,7 @@ architecture comportamento of ULASomaSub is
    signal soma :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
    signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
     begin
-      soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
-      subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
+      soma      <= STD_LOGIC_VECTOR(signed(entradaA) + signed(entradaB));
+      subtracao <= STD_LOGIC_VECTOR(signed(entradaA) - signed(entradaB));
       saida <= soma when (seletor = '1') else subtracao;
 end architecture;
