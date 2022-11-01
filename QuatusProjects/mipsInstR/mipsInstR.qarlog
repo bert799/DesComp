@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.qarlog
+
+Archive:	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.qar
+Date:		Mon Oct 31 09:20:58 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/ROMMIPS.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/ULASomaSub.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/Waveform.vwf
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/bancoReg.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.qpf
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.qsf
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/registradorGenerico.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/somaConstante.vhd
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/somadorGenerico.vhd
+/home/borg/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 11 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Oct 31 21:36:41 2022
+Source archive file:	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR.qar
+Archive was extracted into	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/mipsInstR/mipsInstR_restored/
+		 - successfully.

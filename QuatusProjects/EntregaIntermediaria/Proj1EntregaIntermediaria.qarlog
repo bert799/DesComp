@@ -1,0 +1,41 @@
+Quartus Prime Archive log --	C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/Proj1EntregaIntermediaria.qarlog
+
+Archive:	C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/Proj1EntregaIntermediaria.qar
+Date:		Sun Oct 23 23:39:43 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/Proj1EntregaIntermediaria.qpf
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/Proj1EntregaIntermediaria.qsf
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/Proj1EntregaIntermediaria.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/ULA.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/bancoRegistradoresArqRegMem.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/buffer_3_state.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/buffer_3_state_8portas.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/buffer_3_state_mask.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/conversorHex7Seg.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/db/Proj1EntregaIntermediaria.cmp.rdb
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/decoder3x8.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/decoderEnderecos.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/decoderInstru.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/edgeDetector.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/flipFlop.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/logicaDesvio.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/memoriaRAM.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/memoriaROM.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/muxGenerico2x1.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/muxGenerico4x1.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/processador.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/registradorGenerico.vhd
+C:/Users/franc/Desktop/Insper/DesComp/Projeto/Proj1EntregaIntermediaria/somaConstante.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 24 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Oct 27 16:15:40 2022
+Source archive file:	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/EntregaIntermediaria/Proj1EntregaIntermediaria.qar
+Archive was extracted into	/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/EntregaIntermediaria/Proj1EntregaIntermediaria_restored/
+		 - successfully.

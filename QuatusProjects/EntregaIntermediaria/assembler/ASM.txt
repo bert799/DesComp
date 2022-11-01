@@ -1,0 +1,307 @@
+SETUP:
+LDI R[0] $0
+STA R[0] @0
+LDI R[2] $0         # Limpando o registrador das unidades
+LDI R[3] $0         # Limpando o registrador das dezenas
+LDI R[4] $0         # Limpando o registrador das centenas
+STA R[0] @10        # Espaço na memória dedicado ao milhar
+STA R[0] @11        # Espaço na memória dedicado à dezena de milhar
+STA R[0] @12        # Espaço na memória dedicado à centena de milhar
+LDI R[0] $1
+STA R[0] @1
+STA R[0] @3         # Utilizado para máscara de Bit menos significativo
+LDI R[0] $9
+STA R[0] @2         # Comparação para definir o aumento do próximo HEX
+STA R[0] @20        # Redefinindo todos os HEX para 0
+STA R[0] @21
+STA R[0] @22
+STA R[0] @23
+STA R[0] @24
+STA R[0] @25
+LDI R[0] $128
+STA R[0] @4         # Utilizado para máscara de Bit mais significativo
+STA R[0] @511       # Limpando o botão de Incremento
+STA R[0] @510       # Limpando o botão de Alterar Limite
+STA R[0] @507       # Limpando o botão de RESET
+# ========================================================= #
+#                      LOOP PRINCIPAL                       #
+# ========================================================= #
+LOOP:
+LDA R[1] @352
+OPAND R[1] @3
+CEQ R[1] @0         # O botão de incremento não foi clicado
+JEQ @TROCALIMITE
+JSR @INCREMENTA
+JSR @VERIFICA
+TROCALIMITE:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0         # O botão de troca de limite não foi clicado
+JEQ @LOOP
+JSR @SETLIMITE
+JMP @LOOP
+# ========================================================= #
+#                     INCREMENTA VALOR                      #
+# ========================================================= #
+INCREMENTA:
+STA @511
+CEQ R[2] @2
+JEQ @ATDEZ
+SOMA R[2] @1
+STA R[2] @288
+RET
+ATDEZ:             # Atualiza o dígito das dezenas
+LDI R[2] $0
+STA R[2] @288
+CEQ R[3] @2
+JEQ @ATCEN
+SOMA R[3] @1
+STA R[3] @289
+RET
+ATCEN:             # Atualiza o dígito das centenas
+LDI R[3] $0
+STA R[3] @289
+CEQ R[4] @2
+JEQ @ATMIL
+SOMA R[4] @1
+STA R[4] @290
+RET
+ATMIL:             # Atualiza o dígito dos milhares
+LDI R[4] $0
+STA R[4] @290
+LDA R[5] @10
+CEQ R[5] @2
+JEQ @ATDMIL
+SOMA R[5] @1
+STA R[5] @291
+STA R[5] @10
+RET
+ATDMIL:            # Atualiza o dígito das dezenas de milhar
+LDI R[5] $0
+STA R[5] @291
+STA R[5] @10
+LDA R[5] @11
+CEQ R[5] @2
+JEQ @ATCMIL
+SOMA R[5] @1
+STA R[5] @292
+STA R[5] @11
+RET
+ATCMIL:            # Atualiza o dígito das centenas de milhar
+LDI R[5] $0
+STA R[5] @292
+STA R[5] @11
+LDA R[5] @12
+CEQ R[5] @2
+JEQ @MAXOVERFLOW   # Caso exceda o limite máximo do contador
+SOMA R[5] @1
+STA R[5] @293
+STA R[5] @12
+RET
+# ========================================================= #
+#                     VERIFICA LIMITE                       #
+# ========================================================= #
+## A verificação começa com a centena de milhar
+VERIFICA:
+LDA R[7] @25
+SUB R[7] @12
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+LDA R[7] @12
+CEQ R[7] @25
+JEQ @VERDMIL
+RET
+VERDMIL:
+LDA R[7] @24
+SUB R[7] @11
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+LDA R[7] @11
+CEQ R[7] @24
+JEQ @VERMIL
+RET
+VERMIL:
+LDA R[7] @23
+SUB R[7] @10
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+LDA R[7] @10
+CEQ R[7] @23
+JEQ @VERCEN
+RET
+VERCEN:
+STA R[4] @30
+LDA R[7] @22
+SUB R[7] @30
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+CEQ R[4] @22
+JEQ @VERDEZ
+RET
+VERDEZ:
+STA R[3] @30
+LDA R[7] @21
+SUB R[7] @30
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+CEQ R[3] @21
+JEQ @VERUNI
+RET
+VERUNI:
+STA R[2] @30
+LDA R[7] @20
+SUB R[7] @30
+OPAND R[7] @4
+CEQ R[7] @4
+JEQ @OVERLIMIT
+CEQ R[2] @20
+JEQ @LIMITE
+RET
+# =================== Chegou no limite ==================== #
+LIMITE:
+LDI R[0] $255
+STA R[0] @256
+JMP @END
+# ========================================================= #
+#                        SET LIMITE                         #
+# ========================================================= #
+SETLIMITE:
+STA @510
+LDI R[0] $0
+STA R[0] @288
+STA R[0] @289
+STA R[0] @290
+STA R[0] @291
+STA R[0] @292
+STA R[0] @293
+LDI R[6] @1
+STA R[6] @257
+WAITUNI:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITUNI
+STA @510
+LDA R[6] @320
+STA R[6] @20
+STA R[6] @288
+WAITDEZ:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITDEZ
+STA @510
+LDA R[6] @320
+STA R[6] @21
+STA R[6] @289
+WAITCEN:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITCEN
+STA @510
+LDA R[6] @320
+STA R[6] @22
+STA R[6] @290
+WAITMIL:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITMIL
+STA @510
+LDA R[6] @320
+STA R[6] @23
+STA R[6] @291
+WAITDMIL:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITDMIL
+STA @510
+LDA R[6] @320
+STA R[6] @24
+STA R[6] @292
+WAITCMIL:
+LDA R[1] @353
+OPAND R[1] @3
+CEQ R[1] @0
+JEQ @WAITCMIL
+STA @510
+LDA R[6] @320
+STA R[6] @25
+STA R[6] @293
+# ============ Retornando o valor do contador ============= #
+STA R[2] @288
+STA R[3] @289
+STA R[4] @290
+LDA R[5] @10
+STA R[5] @291
+LDA R[5] @11
+STA R[5] @292
+LDA R[5] @12
+STA R[5] @293
+LDI R[6] @0
+STA R[6] @257
+RET
+# ========================================================= #
+#                         OVERFLOW                          #
+# ========================================================= #
+MAXOVERFLOW:
+LDI R[2] $9
+LDI R[3] $9
+LDI R[4] $9
+STA R[2] @10
+STA R[2] @11
+STA R[2] @12
+STA R[2] @288
+STA R[2] @289
+STA R[2] @290
+STA R[2] @291
+STA R[2] @292
+STA R[2] @293
+JMP @OVERFLOW
+OVERLIMIT:
+LDI R[0] $255
+STA R[0] @256
+JMP @OVERFLOW
+OVERFLOW:
+STA @511
+LDI R[0] $1
+STA R[0] @258
+JMP @END
+# ========================================================= #
+#                         LOOP END                          #
+# ========================================================= #
+END:
+LDA R[1] @356
+OPAND R[1] @3
+CEQ R[1] @1
+JEQ @CLEAR
+LDA R[1] @352
+OPAND R[1] @3
+CEQ R[1] @1
+JEQ @OVERFLOW
+JMP @END
+# ========================================================= #
+#                          CLEAR                            #
+# ========================================================= #
+CLEAR:
+LDI R[0] $0
+STA R[0] @288
+STA R[0] @289
+STA R[0] @290
+STA R[0] @291
+STA R[0] @292
+STA R[0] @293
+STA R[0] @256
+STA R[0] @257
+STA R[0] @258
+STA R[0] @511
+STA R[0] @510
+STA R[0] @507
+JMP @SETUP

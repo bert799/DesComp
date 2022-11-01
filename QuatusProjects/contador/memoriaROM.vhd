@@ -24,6 +24,8 @@ architecture assincrona of memoriaROM is
   constant JMP  : std_logic_vector(3 downto 0) := "0110"; -- JMP incondicional
   constant JEQ  : std_logic_vector(3 downto 0) := "0111"; -- Jump se é igual
   constant CEQ  : std_logic_vector(3 downto 0) := "1000"; -- Checa se é igual a valor guardado na memória
+  constant JSR  : std_logic_vector(3 downto 0) := "1001";
+  constant RET  : std_logic_vector(3 downto 0) := "1010";
   
   type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 
@@ -32,23 +34,25 @@ architecture assincrona of memoriaROM is
   begin
       -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
       -- Inicializa os endereços:
-        tmp(0)  := LDA & "00" & '1' & x"40";	-- 
-        tmp(1)  := STA & "00" & '1' & x"20";	-- 
-        tmp(2)  := LDA & "00" & '1' & x"41";	-- 
-        tmp(3)  := STA & "00" & '1' & x"21";	-- 
-        tmp(4)  := LDA & "00" & '1' & x"42";	-- 
-        tmp(5)  := STA & "00" & '1' & x"22";	-- 
-        tmp(6)  := LDA & "00" & '1' & x"60";	-- 
-		  tmp(7)  := STA & "00" & '1' & x"23";	-- 
-		  tmp(8)  := LDA & "00" & '1' & x"61";	-- 
-		  tmp(9)  := STA & "00" & '1' & x"24";	-- 
-		  tmp(10) := LDA & "00" & '1' & x"62";	--
-		  tmp(11) := STA & "00" & '1' & x"25";
-		  tmp(12) := LDA & "00" & '1' & x"63";
-		  tmp(13) := STA & "00" & '1' & x"01";
-		  tmp(14) := LDA & "00" & '1' & x"64";
-		  tmp(15) := STA & "00" & '1' & x"02";
-		  tmp(16) := JMP & "00" & '0' & x"00";	-- 
+        tmp(0)  := LDI & "00" & '0' & x"00";	-- 
+        tmp(1)  := STA & "00" & '0' & x"00";	-- 
+        tmp(2)  := LDA & "00" & '0' & x"02";	-- 
+        tmp(3)  := LDI & "00" & '0' & x"01";	-- 
+        tmp(4)  := STA & "00" & '0' & x"01";	-- 
+        tmp(5)  := NOP & "00" & '0' & x"00";
+		  tmp(6)  := LDA & "00" & '0' & x"60";  
+        tmp(7)  := STA & "00" & '1' & x"20";	-- 
+		  tmp(8)  := CEQ & "00" & '0' & x"00";	-- 
+		  tmp(9)  := JEQ & "00" & '0' & x"10";	-- 
+		  tmp(10)  := JSR & "00" & '0' & x"32";	-- 
+		  tmp(11) := NOP & "00" & '0' & x"00";	--
+		  tmp(12) := JMP & "00" & '0' & x"05";
+		  tmp(32) := STA & "00" & '1' & x"FF";
+		  tmp(33) := LDA & "00" & '0' & x"02";
+		  tmp(34) := SOMA & "00" & '0' & x"01";
+		  tmp(35) := STA & "00" & '0' & x"02";
+		  tmp(36) := STA & "00" & '1' & x"02";	-- 
+		  tmp(37) := RET & "00" & '0' & x"00";
 		  
         return tmp;
     end initMemory;

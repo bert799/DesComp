@@ -20,6 +20,8 @@ architecture comportamento of decoderInstru is
   constant JMP  : std_logic_vector(3 downto 0) := "0110";
   constant JEQ  : std_logic_vector(3 downto 0) := "0111"; -- Jump se é igual
   constant CEQ  : std_logic_vector(3 downto 0) := "1000"; -- Checa se é igual a valor guardado na memória
+  constant JSR  : std_logic_vector(3 downto 0) := "1001";
+  constant RET  : std_logic_vector(3 downto 0) := "1010";
 
   begin
 saida <= "0000000" when opcode = NOP else
@@ -31,6 +33,8 @@ saida <= "0000000" when opcode = NOP else
 			"0000000" when opcode = JMP else
 			"0000000" when opcode = JEQ else
 			"0000110" when opcode = CEQ else
+			"10010X0XX000" when opcode = JSR else
+			"00100X0XX000" when opcode = RET else
          "0000000";  -- NOP para os opcodes Indefinidos
 			
 logica_desvio <= '1' when (opcode = JMP or (opcode = JEQ and flagZero = '1')) else

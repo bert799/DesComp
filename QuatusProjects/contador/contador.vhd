@@ -139,6 +139,8 @@ architecture arquitetura of contador is
 	
 --	KEY
 	signal habilita_KEY0				: std_logic;
+	signal limpa_leitura 			: std_logic;
+	signal FF_KEY0_data_out 		: std_logic;
 	signal habilita_KEY1				: std_logic;
 	signal habilita_KEY2				: std_logic;
 	signal habilita_KEY3				: std_logic;
@@ -345,10 +347,19 @@ buff_SW9 :  entity work.buffer_3_state_1porta
 				 saida 		=> CPU_data_in(0));
 
 
+limpa_leitura <= data_address(0) and data_address(1) and data_address(2) and data_address(3) and data_address(4) and data_address(5) and data_address(6) and data_address(7) and data_address(9) and wr;				 
+				 
+FF_KEY0 : entity work.flipFlop 
+	port map (DIN 		=> '1',
+				 DOUT 	=> FF_KEY0_data_out, 
+				 ENABLE  => '1', 
+				 CLK 		=> CLK, 
+				 RST 		=> limpa_leitura);
+				 
 habilita_KEY0 <= bloco5 and endereco0 and selSEG and rd;				 
 				 
 buff_KEY0 :  entity work.buffer_3_state_1porta
-	port map (entrada 	=> KEY(0), 
+	port map (entrada 	=> FF_KEY0_data_out, 
 				 habilita 	=>  habilita_KEY0, 
 				 saida 		=> CPU_data_in(0));
 
@@ -386,7 +397,7 @@ buff_RESET :  entity work.buffer_3_state_1porta
 			
 			
 PC_OUT 				<= ROM_address;
-LEDR(7 downto 0) <= REG_LEDs_data_out;
+LEDR(7 downto 0) 	<= REG_LEDs_data_out;
 LEDR(8)				<=	FF_LED8_data_out;
 LEDR(9)				<= FF_LED9_data_out;
 HEX0 					<= SEG0_data_out;
