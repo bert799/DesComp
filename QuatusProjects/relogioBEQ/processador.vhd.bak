@@ -1,0 +1,141 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity processador is
+  generic   (
+    largura_dados  : natural :=  8;
+    largura_enderecos  : natural :=  9
+  );
+
+  port   (
+    -- FPGA in
+    CLK : in std_logic;
+	 
+	 
+    -- Input ports
+    Data_IN  :  in  std_logic_vector(largura_dados-1 downto 0);
+    Instruction_IN  : in  std_logic_vector(15 downto 0);
+
+
+    -- Output ports
+    Data_OUT :  out  std_logic_vector(largura_dados-1 downto 0);
+	 Data_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
+	 ROM_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
+	 Control :  out  std_logic_vector(3 downto 0)
+  );
+end entity;
+
+
+architecture arquitetura of processador is
+
+  signal MUX_ULA_B : std_logic_vector (largura_dados-1 downto 0);
+  signal REG1_ULA_A : std_logic_vector (largura_dados-1 downto 0);
+  signal Saida_ULA : std_logic_vector (largura_dados-1 downto 0);
+  signal Sinais_Controle : std_logic_vector (11 downto 0);
+  signal Endereco : std_logic_vector (largura_enderecos-1 downto 0);
+  signal proxPC : std_logic_vector (largura_enderecos-1 downto 0);
+  signal IncrementaPC_OUT : std_logic_vector (largura_enderecos-1 downto 0);
+  signal SelMUXJump : std_logic_vector (1 downto 0);
+  signal Data_RAM_OUT : std_logic_vector (largura_dados-1 downto 0);
+  signal FlagZ, FFZ_OUT : std_logic;
+  signal REGRET_MUX : std_logic_vector (largura_enderecos-1 downto 0);
+  
+  
+  
+  -- Alias
+  alias Opcode: std_logic_vector(3 downto 0) is Instruction_IN(15 downto 12);
+  alias RegAddress: std_logic_vector(2 downto 0) is Instruction_IN(11 downto 9);
+  alias Imediato:  std_logic_vector(7 downto 0) is Instruction_IN(7 downto 0);
+  alias Address:  std_logic_vector(8 downto 0) is Instruction_IN(8 downto 0);
+  
+  
+  alias Habilita_RET: std_logic is Sinais_Controle(11);
+  alias JMP: std_logic is Sinais_Controle(10);
+  alias RET: std_logic is Sinais_Controle(9);
+  alias JSR: std_logic is Sinais_Controle(8);
+  alias JEQ: std_logic is Sinais_Controle(7); 
+  alias selMUX: std_logic is Sinais_Controle(6);
+  alias Habilita_BANCO_REG: std_logic is Sinais_Controle(5);
+  alias Operacao_ULA: std_logic_vector(1 downto 0) is Sinais_Controle(4 downto 3);
+  alias Habilita_REGZ: std_logic is Sinais_Controle(2);
+  alias hab_read_RAM: std_logic is Sinais_Controle(1);
+  alias hab_write_RAM: std_logic is Sinais_Controle(0);
+
+begin
+
+
+-- PC - Program Counter:
+PC : entity work.registradorGenerico   generic map (larguraDados => largura_enderecos)
+          port map (DIN => proxPC, DOUT => Endereco, ENABLE => '1', CLK => CLK, RST => '0');
+
+incrementaPC :  entity work.somaConstante  generic map (larguraDados => largura_enderecos, constante => 1)
+        port map( entrada => Endereco, saida => IncrementaPC_OUT);
+
+-- LOG_DESVIO - Lógica de Desvio	  
+LOG_DESVIO : entity work.logicaDesvio
+        port map (JMP => JMP,
+						RET => RET,
+						JSR => JSR,
+						JEQ => JEQ,
+						FZ  => FFZ_OUT,
+		            saida => SelMUXJump);
+		  
+-- MUX - escolhe entre a Próxima Instrução e o Destino do JUMP.
+MUXJUMP :  entity work.muxGenerico4x1  generic map (larguraDados => largura_enderecos)
+        port map( entradaA_MUX => IncrementaPC_OUT,
+                 entradaB_MUX =>  Address,
+					  entradaC_MUX =>  REGRET_MUX,
+					  entradaD_MUX => "000000000",
+                 seletor_MUX => SelMUXJump,
+                 saida_MUX => proxPC);
+
+
+-- REGRET - Registrador de Retorno.
+REGRET : entity work.registradorGenerico   generic map (larguraDados => largura_enderecos)
+          port map (DIN => IncrementaPC_OUT, DOUT => REGRET_MUX, ENABLE => Habilita_RET, CLK => CLK, RST => '0');
+
+	
+-- MUX - escolhe entre a a informação Imediata (ROM) e armazenada no endereço (RAM).
+MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => largura_dados)
+        port map( entradaA_MUX => Data_IN,
+                  entradaB_MUX =>  Imediato,
+                  seletor_MUX => SelMUX,
+                  saida_MUX => MUX_ULA_B);					  
+
+
+-- O port map completo do Banco de Registradores para a Arquitetura Registrador Memória.
+BANCOREG : entity work.bancoRegistradoresArqRegMem   generic map (larguraDados => largura_dados, larguraEndBancoRegs => 3)
+          port map ( clk => CLK,
+							endereco => RegAddress,
+							dadoEscrita => Saida_ULA,
+							habilitaEscrita => Habilita_BANCO_REG,
+							saida  => REG1_ULA_A); 
+			 
+-- O port map completo da ULA:
+ULA : entity work.ULA  generic map(larguraDados => largura_dados)
+          port map (entradaA => REG1_ULA_A, 
+			           entradaB => MUX_ULA_B, 
+						  saida => Saida_ULA, 
+						  seletor => Operacao_ULA,
+						  flagZ => FlagZ);
+			 
+
+FFZ : entity work.flipFlop
+          port map (DIN => FlagZ, DOUT => FFZ_OUT, ENABLE => Habilita_REGZ, CLK => CLK, RST => '0');
+
+			 
+
+-- arquivo decoderInstru.vhd para salvar a decodificação do opCode do computador
+DEC : entity work.decoderInstru
+          port map (opcode => Opcode, saida => Sinais_Controle);
+
+			 
+ROM_Address <= Endereco;
+Data_Address <= Address;
+Data_OUT <= REG1_ULA_A;
+Control(3) <= CLK;
+Control(2) <= '0';
+Control(1) <= hab_read_RAM;
+Control(0) <= hab_write_RAM;
+end architecture;

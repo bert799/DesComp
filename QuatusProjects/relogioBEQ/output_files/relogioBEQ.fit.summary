@@ -1,20 +1,20 @@
-Fitter Status : Successful - Tue Nov  1 15:09:48 2022
+Fitter Status : Successful - Wed Nov 02 13:09:00 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : relogioBEQ
 Top-level Entity Name : relogioBEQ
 Family : Cyclone V
-Device : 5CEBA7F23C7
+Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 455 / 56,480 ( < 1 % )
-Total registers : 646
-Total pins : 68 / 240 ( 28 % )
+Logic utilization (in ALMs) : 455 / 18,480 ( 2 % )
+Total registers : 645
+Total pins : 68 / 224 ( 30 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 7,024,640 ( 0 % )
-Total RAM Blocks : 0 / 686 ( 0 % )
-Total DSP Blocks : 0 / 156 ( 0 % )
+Total block memory bits : 0 / 3,153,920 ( 0 % )
+Total RAM Blocks : 0 / 308 ( 0 % )
+Total DSP Blocks : 0 / 66 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
 Total HSSI PMA TX Serializers : 0
-Total PLLs : 0 / 7 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
 Total DLLs : 0 / 4 ( 0 % )

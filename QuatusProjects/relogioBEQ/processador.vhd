@@ -32,7 +32,7 @@ architecture arquitetura of processador is
   signal MUX_ULA_B : std_logic_vector (largura_dados-1 downto 0);
   signal REG1_ULA_A : std_logic_vector (largura_dados-1 downto 0);
   signal Saida_ULA : std_logic_vector (largura_dados-1 downto 0);
-  signal Sinais_Controle : std_logic_vector (11 downto 0);
+  signal Sinais_Controle : std_logic_vector (12 downto 0);
   signal Endereco : std_logic_vector (largura_enderecos-1 downto 0);
   signal proxPC : std_logic_vector (largura_enderecos-1 downto 0);
   signal IncrementaPC_OUT : std_logic_vector (largura_enderecos-1 downto 0);
@@ -40,6 +40,7 @@ architecture arquitetura of processador is
   signal Data_RAM_OUT : std_logic_vector (largura_dados-1 downto 0);
   signal FlagZ, FFZ_OUT : std_logic;
   signal REGRET_MUX : std_logic_vector (largura_enderecos-1 downto 0);
+  signal Endereco_relativo : std_logic_vector (largura_enderecos-1 downto 0);
   
   
   
@@ -48,8 +49,9 @@ architecture arquitetura of processador is
   alias RegAddress: std_logic_vector(2 downto 0) is Instruction_IN(11 downto 9);
   alias Imediato:  std_logic_vector(7 downto 0) is Instruction_IN(7 downto 0);
   alias Address:  std_logic_vector(8 downto 0) is Instruction_IN(8 downto 0);
+    
   
-  
+  alias Pulo_relativo : std_logic is Sinais_Controle(12);
   alias Habilita_RET: std_logic is Sinais_Controle(11);
   alias JMP: std_logic is Sinais_Controle(10);
   alias RET: std_logic is Sinais_Controle(9);
@@ -71,6 +73,9 @@ PC : entity work.registradorGenerico   generic map (larguraDados => largura_ende
 
 incrementaPC :  entity work.somaConstante  generic map (larguraDados => largura_enderecos, constante => 1)
         port map( entrada => Endereco, saida => IncrementaPC_OUT);
+		  
+somaPC : entity work.somadorGenerico  generic map (larguraDados => largura_enderecos)
+        port map( entradaA => Endereco, entradaB =>  Address, saida => Endereco_relativo);
 
 -- LOG_DESVIO - Lógica de Desvio	  
 LOG_DESVIO : entity work.logicaDesvio
@@ -79,6 +84,7 @@ LOG_DESVIO : entity work.logicaDesvio
 						JSR => JSR,
 						JEQ => JEQ,
 						FZ  => FFZ_OUT,
+						RTV => Pulo_relativo,
 		            saida => SelMUXJump);
 		  
 -- MUX - escolhe entre a Próxima Instrução e o Destino do JUMP.
@@ -86,7 +92,7 @@ MUXJUMP :  entity work.muxGenerico4x1  generic map (larguraDados => largura_ende
         port map( entradaA_MUX => IncrementaPC_OUT,
                  entradaB_MUX =>  Address,
 					  entradaC_MUX =>  REGRET_MUX,
-					  entradaD_MUX => "000000000",
+					  entradaD_MUX => Endereco_relativo,
                  seletor_MUX => SelMUXJump,
                  saida_MUX => proxPC);
 
