@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Dado_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "re",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "Endereco[0]",
+					"strict" : false
+				},
+				{
+					"name" : "we",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Dado_in[8]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
