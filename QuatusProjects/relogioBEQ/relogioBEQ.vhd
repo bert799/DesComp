@@ -5,7 +5,7 @@ entity relogioBEQ is
   -- Total de bits das entradas e saidas
   generic ( largura_dados : natural := 8;
             largura_endereco : natural := 9;
-            simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+            simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLOCK_50 : in std_logic;
@@ -41,6 +41,8 @@ architecture arquitetura of relogioBEQ is
   
   signal KEY0_DS, FFKEY0_OUT, FFKEYRES_OUT :  std_logic;
   signal KEY1_DS, FFKEY1_OUT, KEYRES_DS    :  std_logic;
+  
+  signal SP : std_logic_vector(3 downto 0);
   
   -- Alias:
   alias Wr:    std_logic is Barramento_Controle(0);
@@ -94,6 +96,7 @@ PROCESSADOR : entity work.processador   generic map (largura_dados => largura_da
 						  Data_OUT       => Barramento_Escrita,
 						  Data_Address   => Barramento_Enderecos,
 						  ROM_Address    => ROM_Address,
+						  SP 				  => SP,
 						  Control        => Barramento_Controle);
 
 
@@ -149,10 +152,17 @@ LEDR(9) <= LED9_OUT;
 
 
 -------- HEXs -----------
+--REGHEX0 : entity work.registradorGenerico   generic map (larguraDados => 4)
+--          port map (DIN => Barramento_Escrita(3 downto 0), 
+--			           DOUT => HEX0_OUT,
+--						  ENABLE => HabilitaHEX0, 
+--						  CLK => CLK, 
+--						  RST => '0');
+
 REGHEX0 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
+          port map (DIN => SP, 
 			           DOUT => HEX0_OUT,
-						  ENABLE => HabilitaHEX0, 
+						  ENABLE => '1', 
 						  CLK => CLK, 
 						  RST => '0');
 						  
@@ -163,17 +173,31 @@ REGHEX1 : entity work.registradorGenerico   generic map (larguraDados => 4)
 						  CLK => CLK, 
 						  RST => '0');
 						  
+--REGHEX2 : entity work.registradorGenerico   generic map (larguraDados => 4)
+--          port map (DIN => Barramento_Escrita(3 downto 0), 
+--			           DOUT => HEX2_OUT,
+--						  ENABLE => HabilitaHEX2, 
+--						  CLK => CLK, 
+--						  RST => '0');
+
 REGHEX2 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
+          port map (DIN => ROM_Address(3 downto 0), 
 			           DOUT => HEX2_OUT,
-						  ENABLE => HabilitaHEX2, 
+						  ENABLE => '1', 
 						  CLK => CLK, 
 						  RST => '0');
 						  
+--REGHEX3 : entity work.registradorGenerico   generic map (larguraDados => 4)
+--          port map (DIN => Barramento_Escrita(3 downto 0), 
+--			           DOUT => HEX3_OUT,
+--						  ENABLE => HabilitaHEX3, 
+--						  CLK => CLK, 
+--						  RST => '0');
+
 REGHEX3 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
+          port map (DIN => ROM_Address(7 downto 4), 
 			           DOUT => HEX3_OUT,
-						  ENABLE => HabilitaHEX3, 
+						  ENABLE => '1', 
 						  CLK => CLK, 
 						  RST => '0');
 						  

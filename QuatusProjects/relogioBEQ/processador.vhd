@@ -22,7 +22,8 @@ entity processador is
     Data_OUT :  out  std_logic_vector(largura_dados-1 downto 0);
 	 Data_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
 	 ROM_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
-	 Control :  out  std_logic_vector(3 downto 0)
+	 Control :  out  std_logic_vector(3 downto 0);
+	 SP : out std_logic_vector(3 downto 0)
   );
 end entity;
 
@@ -32,7 +33,7 @@ architecture arquitetura of processador is
   signal MUX_ULA_B : std_logic_vector (largura_dados-1 downto 0);
   signal REG1_ULA_A : std_logic_vector (largura_dados-1 downto 0);
   signal Saida_ULA : std_logic_vector (largura_dados-1 downto 0);
-  signal Sinais_Controle : std_logic_vector (12 downto 0);
+  signal Sinais_Controle : std_logic_vector (13 downto 0);
   signal Endereco : std_logic_vector (largura_enderecos-1 downto 0);
   signal proxPC : std_logic_vector (largura_enderecos-1 downto 0);
   signal IncrementaPC_OUT : std_logic_vector (largura_enderecos-1 downto 0);
@@ -51,8 +52,8 @@ architecture arquitetura of processador is
   alias Address:  std_logic_vector(8 downto 0) is Instruction_IN(8 downto 0);
     
   
-  alias Pulo_relativo : std_logic is Sinais_Controle(12);
-  alias Habilita_RET: std_logic is Sinais_Controle(11);
+  alias Pulo_relativo : std_logic is Sinais_Controle(13);
+  alias PushPop: std_logic_vector(1 downto 0) is Sinais_Controle(12 downto 11);
   alias JMP: std_logic is Sinais_Controle(10);
   alias RET: std_logic is Sinais_Controle(9);
   alias JSR: std_logic is Sinais_Controle(8);
@@ -97,9 +98,14 @@ MUXJUMP :  entity work.muxGenerico4x1  generic map (larguraDados => largura_ende
                  saida_MUX => proxPC);
 
 
--- REGRET - Registrador de Retorno.
-REGRET : entity work.registradorGenerico   generic map (larguraDados => largura_enderecos)
-          port map (DIN => IncrementaPC_OUT, DOUT => REGRET_MUX, ENABLE => Habilita_RET, CLK => CLK, RST => '0');
+
+-- StackRET - stack de Retorno.
+StackRET : entity work.stackSubRotina   generic map (larguraDados => largura_enderecos)
+          port map (clk => CLK,
+						  PushPop => PushPop,
+						  Dado_in => IncrementaPC_OUT,
+						  Dado_out=> REGRET_MUX,
+						  SP => SP(2 downto 0));
 
 	
 -- MUX - escolhe entre a a informação Imediata (ROM) e armazenada no endereço (RAM).

@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity decoderInstru is
   port ( opcode : in std_logic_vector(3 downto 0);
-         saida : out std_logic_vector(12 downto 0)
+         saida : out std_logic_vector(13 downto 0)
   );
 end entity;
 
@@ -25,19 +25,19 @@ architecture comportamento of decoderInstru is
   constant RJEQ  : std_logic_vector(3 downto 0) := "1101";
   
   begin
-saida <= "0000000011000" when opcode = NOP   else
-         "0000000111010" when opcode = LDA   else
-         "0000000101010" when opcode = SOMA  else
-         "0000000100010" when opcode = SUB   else
-         "0000001111000" when opcode = LDI   else
-			"0000000011001" when opcode = STA   else
-			"0010000011000" when opcode = JMP   else
-			"0000010011000" when opcode = JEQ   else
-			"0000000011110" when opcode = CEQ   else
-			"0100100011000" when opcode = JSR   else
-			"0001000011000" when opcode = RET   else
-			"0000000110010" when opcode = OPAND else
-			"1010000011000" when opcode = RJMP else
-			"1000010011000" when opcode = RJEQ else
-         "0000000011000";  -- NOP para os opcodes Indefinidos
+saida <= "00000000011000" when opcode = NOP   else
+         "00000000111010" when opcode = LDA   else
+         "00000000101010" when opcode = SOMA  else
+         "00000000100010" when opcode = SUB   else
+         "00000001111000" when opcode = LDI   else
+			"00000000011001" when opcode = STA   else
+			"00010000011000" when opcode = JMP   else
+			"00000010011000" when opcode = JEQ   else
+			"00000000011110" when opcode = CEQ   else
+			"00100100011000" when opcode = JSR   else
+			"01001000011000" when opcode = RET   else
+			"00000000110010" when opcode = OPAND else
+			"10010000011000" when opcode = RJMP else
+			"10000010011000" when opcode = RJEQ else
+         "00000000011000";  -- NOP para os opcodes Indefinidos
 end architecture;

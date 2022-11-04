@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Nov 02 13:07:58 2022
+Analysis & Synthesis Status : Successful - Thu Nov 03 23:53:27 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : relogioBEQ
 Top-level Entity Name : relogioBEQ
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 635
+Total registers : 95
 Total pins : 68
 Total virtual pins : 0
 Total block memory bits : 0

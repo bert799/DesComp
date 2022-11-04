@@ -1,5 +1,5 @@
 Flow report for relogioBEQ
-Wed Nov 02 13:09:09 2022
+Thu Nov 03 23:53:51 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Nov 02 13:09:09 2022       ;
+; Flow Status                     ; Successful - Thu Nov 03 23:53:51 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogioBEQ                                  ;
 ; Top-level Entity Name           ; relogioBEQ                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 455 / 18,480 ( 2 % )                        ;
-; Total registers                 ; 645                                         ;
+; Logic utilization (in ALMs)     ; 64 / 18,480 ( < 1 % )                       ;
+; Total registers                 ; 108                                         ;
 ; Total pins                      ; 68 / 224 ( 30 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/02/2022 13:07:52 ;
+; Start date & time ; 11/03/2022 23:53:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; relogioBEQ          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 238300922516469.166740527203208        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 238300922516469.166753040103220        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -106,12 +106,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4941 MB             ; 00:00:12                           ;
-; Fitter               ; 00:01:01     ; 1.1                     ; 7056 MB             ; 00:05:55                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4827 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 2.1                     ; 5189 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4724 MB             ; 00:00:01                           ;
-; Total                ; 00:01:13     ; --                      ; --                  ; 00:06:15                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4910 MB             ; 00:00:12                           ;
+; Fitter               ; 00:00:15     ; 1.1                     ; 7036 MB             ; 00:01:22                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4821 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.4                     ; 5173 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4719 MB             ; 00:00:01                           ;
+; Total                ; 00:00:26     ; --                      ; --                  ; 00:01:40                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

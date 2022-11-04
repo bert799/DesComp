@@ -1,21 +1,22 @@
 |relogioBEQ
-CLOCK_50 => processador:PROCESSADOR.CLK
-CLOCK_50 => memoriaram:MEM.clk
-CLOCK_50 => registradorgenerico:REG8LED.CLK
-CLOCK_50 => flipflop:FFLED8.CLK
-CLOCK_50 => flipflop:FFLED9.CLK
-CLOCK_50 => registradorgenerico:REGHEX0.CLK
-CLOCK_50 => registradorgenerico:REGHEX1.CLK
-CLOCK_50 => registradorgenerico:REGHEX2.CLK
-CLOCK_50 => registradorgenerico:REGHEX3.CLK
-CLOCK_50 => registradorgenerico:REGHEX4.CLK
-CLOCK_50 => registradorgenerico:REGHEX5.CLK
-CLOCK_50 => edgedetector:DSKEY0.clk
-CLOCK_50 => edgedetector:DSKEY1.clk
-CLOCK_50 => edgedetector:DSKEYRES.clk
+CLOCK_50 => ~NO_FANOUT~
 KEY[0] => edgedetector:DSKEY0.entrada
 KEY[1] => edgedetector:DSKEY1.entrada
 KEY[2] => buffer_3_state_mask:B3S_KEY2.entrada
+KEY[3] => processador:PROCESSADOR.CLK
+KEY[3] => memoriaram:MEM.clk
+KEY[3] => registradorgenerico:REG8LED.CLK
+KEY[3] => flipflop:FFLED8.CLK
+KEY[3] => flipflop:FFLED9.CLK
+KEY[3] => registradorgenerico:REGHEX0.CLK
+KEY[3] => registradorgenerico:REGHEX1.CLK
+KEY[3] => registradorgenerico:REGHEX2.CLK
+KEY[3] => registradorgenerico:REGHEX3.CLK
+KEY[3] => registradorgenerico:REGHEX4.CLK
+KEY[3] => registradorgenerico:REGHEX5.CLK
+KEY[3] => edgedetector:DSKEY0.clk
+KEY[3] => edgedetector:DSKEY1.clk
+KEY[3] => edgedetector:DSKEYRES.clk
 KEY[3] => buffer_3_state_mask:B3S_KEY3.entrada
 FPGA_RESET_N => edgedetector:DSKEYRES.entrada
 SW[0] => buffer_3_state_8portas:B3S_SW0to7.entrada[0]
@@ -84,7 +85,7 @@ LEDR[9] <= flipflop:FFLED9.DOUT
 
 |relogioBEQ|processador:PROCESSADOR
 CLK => registradorgenerico:PC.CLK
-CLK => registradorgenerico:REGRET.CLK
+CLK => stacksubrotina:StackRET.clk
 CLK => bancoregistradoresarqregmem:BANCOREG.clk
 CLK => flipflop:FFZ.CLK
 CLK => Control[3].DATAIN
@@ -168,6 +169,10 @@ Control[0] <= decoderinstru:DEC.saida[0]
 Control[1] <= decoderinstru:DEC.saida[1]
 Control[2] <= <GND>
 Control[3] <= CLK.DB_MAX_OUTPUT_PORT_TYPE
+SP[0] <= stacksubrotina:StackRET.SP[0]
+SP[1] <= stacksubrotina:StackRET.SP[1]
+SP[2] <= stacksubrotina:StackRET.SP[2]
+SP[3] <= <GND>
 
 
 |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC
@@ -336,52 +341,140 @@ saida_MUX[7] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 saida_MUX[8] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|relogioBEQ|processador:PROCESSADOR|registradorGenerico:REGRET
+|relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET
+clk => stack:StackRotinas.clk
+clk => registradorgenerico:StackPointer.CLK
+PushPop[0] => muxgenerico4x1:MUXStackSubRotina.seletor_MUX[0]
+PushPop[1] => muxgenerico4x1:MUXStackSubRotina.seletor_MUX[1]
+Dado_in[0] => stack:StackRotinas.Dado_in[0]
+Dado_in[1] => stack:StackRotinas.Dado_in[1]
+Dado_in[2] => stack:StackRotinas.Dado_in[2]
+Dado_in[3] => stack:StackRotinas.Dado_in[3]
+Dado_in[4] => stack:StackRotinas.Dado_in[4]
+Dado_in[5] => stack:StackRotinas.Dado_in[5]
+Dado_in[6] => stack:StackRotinas.Dado_in[6]
+Dado_in[7] => stack:StackRotinas.Dado_in[7]
+Dado_in[8] => stack:StackRotinas.Dado_in[8]
+Dado_out[0] <= stack:StackRotinas.Dado_out[0]
+Dado_out[1] <= stack:StackRotinas.Dado_out[1]
+Dado_out[2] <= stack:StackRotinas.Dado_out[2]
+Dado_out[3] <= stack:StackRotinas.Dado_out[3]
+Dado_out[4] <= stack:StackRotinas.Dado_out[4]
+Dado_out[5] <= stack:StackRotinas.Dado_out[5]
+Dado_out[6] <= stack:StackRotinas.Dado_out[6]
+Dado_out[7] <= stack:StackRotinas.Dado_out[7]
+Dado_out[8] <= stack:StackRotinas.Dado_out[8]
+SP[0] <= registradorgenerico:StackPointer.DOUT[0]
+SP[1] <= registradorgenerico:StackPointer.DOUT[1]
+SP[2] <= registradorgenerico:StackPointer.DOUT[2]
+
+
+|relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas
+clk => mem~13.CLK
+clk => mem~0.CLK
+clk => mem~1.CLK
+clk => mem~2.CLK
+clk => mem~3.CLK
+clk => mem~4.CLK
+clk => mem~5.CLK
+clk => mem~6.CLK
+clk => mem~7.CLK
+clk => mem~8.CLK
+clk => mem~9.CLK
+clk => mem~10.CLK
+clk => mem~11.CLK
+clk => mem~12.CLK
+clk => mem.CLK0
+Dado_in[0] => mem~12.DATAIN
+Dado_in[0] => mem.DATAIN
+Dado_in[1] => mem~11.DATAIN
+Dado_in[1] => mem.DATAIN1
+Dado_in[2] => mem~10.DATAIN
+Dado_in[2] => mem.DATAIN2
+Dado_in[3] => mem~9.DATAIN
+Dado_in[3] => mem.DATAIN3
+Dado_in[4] => mem~8.DATAIN
+Dado_in[4] => mem.DATAIN4
+Dado_in[5] => mem~7.DATAIN
+Dado_in[5] => mem.DATAIN5
+Dado_in[6] => mem~6.DATAIN
+Dado_in[6] => mem.DATAIN6
+Dado_in[7] => mem~5.DATAIN
+Dado_in[7] => mem.DATAIN7
+Dado_in[8] => mem~4.DATAIN
+Dado_in[8] => mem.DATAIN8
+Endereco[0] => mem~3.DATAIN
+Endereco[0] => mem.WADDR
+Endereco[0] => mem.RADDR
+Endereco[1] => mem~2.DATAIN
+Endereco[1] => mem.WADDR1
+Endereco[1] => mem.RADDR1
+Endereco[2] => mem~1.DATAIN
+Endereco[2] => mem.WADDR2
+Endereco[2] => mem.RADDR2
+Dado_out[0] <= mem.DATAOUT
+Dado_out[1] <= mem.DATAOUT1
+Dado_out[2] <= mem.DATAOUT2
+Dado_out[3] <= mem.DATAOUT3
+Dado_out[4] <= mem.DATAOUT4
+Dado_out[5] <= mem.DATAOUT5
+Dado_out[6] <= mem.DATAOUT6
+Dado_out[7] <= mem.DATAOUT7
+Dado_out[8] <= mem.DATAOUT8
+
+
+|relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer
 DIN[0] => DOUT[0]~reg0.DATAIN
 DIN[1] => DOUT[1]~reg0.DATAIN
 DIN[2] => DOUT[2]~reg0.DATAIN
-DIN[3] => DOUT[3]~reg0.DATAIN
-DIN[4] => DOUT[4]~reg0.DATAIN
-DIN[5] => DOUT[5]~reg0.DATAIN
-DIN[6] => DOUT[6]~reg0.DATAIN
-DIN[7] => DOUT[7]~reg0.DATAIN
-DIN[8] => DOUT[8]~reg0.DATAIN
 DOUT[0] <= DOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DOUT[1] <= DOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 DOUT[2] <= DOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[3] <= DOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[4] <= DOUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[5] <= DOUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[6] <= DOUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[7] <= DOUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-DOUT[8] <= DOUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-ENABLE => DOUT[8]~reg0.ENA
-ENABLE => DOUT[7]~reg0.ENA
-ENABLE => DOUT[6]~reg0.ENA
-ENABLE => DOUT[5]~reg0.ENA
-ENABLE => DOUT[4]~reg0.ENA
-ENABLE => DOUT[3]~reg0.ENA
 ENABLE => DOUT[2]~reg0.ENA
 ENABLE => DOUT[1]~reg0.ENA
 ENABLE => DOUT[0]~reg0.ENA
 CLK => DOUT[0]~reg0.CLK
 CLK => DOUT[1]~reg0.CLK
 CLK => DOUT[2]~reg0.CLK
-CLK => DOUT[3]~reg0.CLK
-CLK => DOUT[4]~reg0.CLK
-CLK => DOUT[5]~reg0.CLK
-CLK => DOUT[6]~reg0.CLK
-CLK => DOUT[7]~reg0.CLK
-CLK => DOUT[8]~reg0.CLK
 RST => DOUT[0]~reg0.ACLR
 RST => DOUT[1]~reg0.ACLR
 RST => DOUT[2]~reg0.ACLR
-RST => DOUT[3]~reg0.ACLR
-RST => DOUT[4]~reg0.ACLR
-RST => DOUT[5]~reg0.ACLR
-RST => DOUT[6]~reg0.ACLR
-RST => DOUT[7]~reg0.ACLR
-RST => DOUT[8]~reg0.ACLR
+
+
+|relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer
+entradaA[0] => Add0.IN3
+entradaA[1] => Add0.IN2
+entradaA[2] => Add0.IN1
+entradaB[0] => Add0.IN6
+entradaB[1] => Add0.IN5
+entradaB[2] => Add0.IN4
+saida[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina
+entradaA_MUX[0] => saida_MUX.DATAB
+entradaA_MUX[1] => saida_MUX.DATAB
+entradaA_MUX[2] => saida_MUX.DATAB
+entradaB_MUX[0] => saida_MUX.DATAB
+entradaB_MUX[1] => saida_MUX.DATAB
+entradaB_MUX[2] => saida_MUX.DATAB
+entradaC_MUX[0] => saida_MUX.DATAB
+entradaC_MUX[1] => saida_MUX.DATAB
+entradaC_MUX[2] => saida_MUX.DATAB
+entradaD_MUX[0] => saida_MUX.DATAA
+entradaD_MUX[1] => saida_MUX.DATAA
+entradaD_MUX[2] => saida_MUX.DATAA
+seletor_MUX[0] => Equal0.IN0
+seletor_MUX[0] => Equal1.IN1
+seletor_MUX[0] => Equal2.IN1
+seletor_MUX[1] => Equal0.IN1
+seletor_MUX[1] => Equal1.IN0
+seletor_MUX[1] => Equal2.IN0
+saida_MUX[0] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+saida_MUX[1] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+saida_MUX[2] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogioBEQ|processador:PROCESSADOR|muxGenerico2x1:MUX1
@@ -622,6 +715,7 @@ saida[9] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[10] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[11] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 saida[12] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[13] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogioBEQ|memoriaROM:ROM1

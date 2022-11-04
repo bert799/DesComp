@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogioBEQ
-Wed Nov 02 13:07:58 2022
+Thu Nov 03 23:53:27 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,53 +13,61 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |relogioBEQ
- 11. Parameter Settings for User Entity Instance: processador:PROCESSADOR
- 12. Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:PC
- 13. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somaConstante:incrementaPC
- 14. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somadorGenerico:somaPC
- 15. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico4x1:MUXJUMP
- 16. Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:REGRET
- 17. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico2x1:MUX1
- 18. Parameter Settings for User Entity Instance: processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG
- 19. Parameter Settings for User Entity Instance: processador:PROCESSADOR|ULA:ULA
- 20. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 21. Parameter Settings for User Entity Instance: memoriaRAM:MEM
- 22. Parameter Settings for User Entity Instance: registradorGenerico:REG8LED
- 23. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0
- 24. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1
- 25. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2
- 26. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3
- 27. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4
- 28. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5
- 29. Port Connectivity Checks: "flipFlop:FFKEYRES"
- 30. Port Connectivity Checks: "flipFlop:FFKEY1"
- 31. Port Connectivity Checks: "flipFlop:FFKEY0"
- 32. Port Connectivity Checks: "conversorHex7Seg:H5"
- 33. Port Connectivity Checks: "conversorHex7Seg:H4"
- 34. Port Connectivity Checks: "conversorHex7Seg:H3"
- 35. Port Connectivity Checks: "conversorHex7Seg:H2"
- 36. Port Connectivity Checks: "conversorHex7Seg:H1"
- 37. Port Connectivity Checks: "conversorHex7Seg:H0"
- 38. Port Connectivity Checks: "registradorGenerico:REGHEX5"
- 39. Port Connectivity Checks: "registradorGenerico:REGHEX4"
- 40. Port Connectivity Checks: "registradorGenerico:REGHEX3"
- 41. Port Connectivity Checks: "registradorGenerico:REGHEX2"
- 42. Port Connectivity Checks: "registradorGenerico:REGHEX1"
- 43. Port Connectivity Checks: "registradorGenerico:REGHEX0"
- 44. Port Connectivity Checks: "flipFlop:FFLED9"
- 45. Port Connectivity Checks: "flipFlop:FFLED8"
- 46. Port Connectivity Checks: "registradorGenerico:REG8LED"
- 47. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECLSB"
- 48. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECMSB"
- 49. Port Connectivity Checks: "processador:PROCESSADOR|flipFlop:FFZ"
- 50. Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:REGRET"
- 51. Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:PC"
- 52. Post-Synthesis Netlist Statistics for Top Partition
- 53. Elapsed Time Per Partition
- 54. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |relogioBEQ
+ 13. Parameter Settings for User Entity Instance: processador:PROCESSADOR
+ 14. Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:PC
+ 15. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somaConstante:incrementaPC
+ 16. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somadorGenerico:somaPC
+ 17. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico4x1:MUXJUMP
+ 18. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET
+ 19. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas
+ 20. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer
+ 21. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer
+ 22. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina
+ 23. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico2x1:MUX1
+ 24. Parameter Settings for User Entity Instance: processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG
+ 25. Parameter Settings for User Entity Instance: processador:PROCESSADOR|ULA:ULA
+ 26. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 27. Parameter Settings for User Entity Instance: memoriaRAM:MEM
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REG8LED
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3
+ 33. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4
+ 34. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5
+ 35. Port Connectivity Checks: "flipFlop:FFKEYRES"
+ 36. Port Connectivity Checks: "flipFlop:FFKEY1"
+ 37. Port Connectivity Checks: "flipFlop:FFKEY0"
+ 38. Port Connectivity Checks: "conversorHex7Seg:H5"
+ 39. Port Connectivity Checks: "conversorHex7Seg:H4"
+ 40. Port Connectivity Checks: "conversorHex7Seg:H3"
+ 41. Port Connectivity Checks: "conversorHex7Seg:H2"
+ 42. Port Connectivity Checks: "conversorHex7Seg:H1"
+ 43. Port Connectivity Checks: "conversorHex7Seg:H0"
+ 44. Port Connectivity Checks: "registradorGenerico:REGHEX5"
+ 45. Port Connectivity Checks: "registradorGenerico:REGHEX4"
+ 46. Port Connectivity Checks: "registradorGenerico:REGHEX3"
+ 47. Port Connectivity Checks: "registradorGenerico:REGHEX2"
+ 48. Port Connectivity Checks: "registradorGenerico:REGHEX1"
+ 49. Port Connectivity Checks: "registradorGenerico:REGHEX0"
+ 50. Port Connectivity Checks: "flipFlop:FFLED9"
+ 51. Port Connectivity Checks: "flipFlop:FFLED8"
+ 52. Port Connectivity Checks: "registradorGenerico:REG8LED"
+ 53. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECLSB"
+ 54. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECMSB"
+ 55. Port Connectivity Checks: "decoderEnderecos:DECEND"
+ 56. Port Connectivity Checks: "processador:PROCESSADOR|flipFlop:FFZ"
+ 57. Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina"
+ 58. Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer"
+ 59. Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:PC"
+ 60. Post-Synthesis Netlist Statistics for Top Partition
+ 61. Elapsed Time Per Partition
+ 62. Analysis & Synthesis Messages
 
 
 
@@ -86,13 +94,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Nov 02 13:07:58 2022       ;
+; Analysis & Synthesis Status     ; Successful - Thu Nov 03 23:53:27 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; relogioBEQ                                  ;
 ; Top-level Entity Name           ; relogioBEQ                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 635                                         ;
+; Total registers                 ; 95                                          ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -208,11 +216,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processors 6-12        ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -221,6 +225,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                              ; Library ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
+; stackSubRotina.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd              ;         ;
+; stack.vhd                        ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stack.vhd                       ;         ;
 ; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/bancoRegistradoresArqRegMem.vhd ;         ;
 ; relogioBEQ.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd                  ;         ;
 ; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd              ;         ;
@@ -244,76 +250,243 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 540            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 573            ;
-;     -- 7 input functions                    ; 18             ;
-;     -- 6 input functions                    ; 343            ;
-;     -- 5 input functions                    ; 41             ;
-;     -- 4 input functions                    ; 50             ;
-;     -- <=3 input functions                  ; 121            ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 635            ;
-;                                             ;                ;
-; I/O pins                                    ; 68             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 632            ;
-; Total fan-out                               ; 4880           ;
-; Average fan-out                             ; 3.63           ;
-+---------------------------------------------+----------------+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 80           ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 102          ;
+;     -- 7 input functions                    ; 18           ;
+;     -- 6 input functions                    ; 7            ;
+;     -- 5 input functions                    ; 13           ;
+;     -- 4 input functions                    ; 25           ;
+;     -- <=3 input functions                  ; 39           ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 95           ;
+;                                             ;              ;
+; I/O pins                                    ; 68           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[3]~input ;
+; Maximum fan-out                             ; 95           ;
+; Total fan-out                               ; 783          ;
+; Average fan-out                             ; 2.35         ;
++---------------------------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                      ; Entity Name                 ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-----------------------------+--------------+
-; |relogioBEQ                                  ; 573 (8)             ; 635 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |relogioBEQ                                                              ; relogioBEQ                  ; work         ;
-;    |conversorHex7Seg:H0|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H0                                          ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:H1|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H1                                          ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:H2|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H2                                          ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:H3|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H3                                          ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:H4|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H4                                          ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:H5|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H5                                          ; conversorHex7Seg            ; work         ;
-;    |decoderEnderecos:DECEND|                 ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|decoderEnderecos:DECEND                                      ; decoderEnderecos            ; work         ;
-;    |edgeDetector:DSKEY0|                     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|edgeDetector:DSKEY0                                          ; edgeDetector                ; work         ;
-;    |edgeDetector:DSKEY1|                     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|edgeDetector:DSKEY1                                          ; edgeDetector                ; work         ;
-;    |edgeDetector:DSKEYRES|                   ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|edgeDetector:DSKEYRES                                        ; edgeDetector                ; work         ;
-;    |flipFlop:FFKEY0|                         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|flipFlop:FFKEY0                                              ; flipFlop                    ; work         ;
-;    |flipFlop:FFKEY1|                         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|flipFlop:FFKEY1                                              ; flipFlop                    ; work         ;
-;    |flipFlop:FFKEYRES|                       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|flipFlop:FFKEYRES                                            ; flipFlop                    ; work         ;
-;    |flipFlop:FFLED8|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|flipFlop:FFLED8                                              ; flipFlop                    ; work         ;
-;    |flipFlop:FFLED9|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|flipFlop:FFLED9                                              ; flipFlop                    ; work         ;
-;    |memoriaRAM:MEM|                          ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|memoriaRAM:MEM                                               ; memoriaRAM                  ; work         ;
-;    |memoriaROM:ROM1|                         ; 94 (94)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|memoriaROM:ROM1                                              ; memoriaROM                  ; work         ;
-;    |processador:PROCESSADOR|                 ; 106 (0)             ; 83 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR                                      ; processador                 ; work         ;
-;       |ULA:ULA|                              ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|ULA:ULA                              ; ULA                         ; work         ;
-;       |bancoRegistradoresArqRegMem:BANCOREG| ; 26 (26)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG ; bancoRegistradoresArqRegMem ; work         ;
-;       |decoderInstru:DEC|                    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|decoderInstru:DEC                    ; decoderInstru               ; work         ;
-;       |flipFlop:FFZ|                         ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|flipFlop:FFZ                         ; flipFlop                    ; work         ;
-;       |muxGenerico2x1:MUX1|                  ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|muxGenerico2x1:MUX1                  ; muxGenerico2x1              ; work         ;
-;       |muxGenerico4x1:MUXJUMP|               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|muxGenerico4x1:MUXJUMP               ; muxGenerico4x1              ; work         ;
-;       |registradorGenerico:PC|               ; 4 (4)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC               ; registradorGenerico         ; work         ;
-;       |registradorGenerico:REGRET|           ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:REGRET           ; registradorGenerico         ; work         ;
-;       |somaConstante:incrementaPC|           ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|somaConstante:incrementaPC           ; somaConstante               ; work         ;
-;       |somadorGenerico:somaPC|               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|somadorGenerico:somaPC               ; somadorGenerico             ; work         ;
-;    |registradorGenerico:REG8LED|             ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REG8LED                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX0|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX0                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX1|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX1                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX2|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX2                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX3|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX3                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX4|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX4                                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REGHEX5|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX5                                  ; registradorGenerico         ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------+-----------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name         ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |relogioBEQ                                    ; 102 (0)             ; 95 (0)                    ; 0                 ; 0          ; 68   ; 0            ; |relogioBEQ                                                                                     ; relogioBEQ          ; work         ;
+;    |conversorHex7Seg:H0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H0                                                                 ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:H2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H2                                                                 ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:H3|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|conversorHex7Seg:H3                                                                 ; conversorHex7Seg    ; work         ;
+;    |memoriaROM:ROM1|                           ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|memoriaROM:ROM1                                                                     ; memoriaROM          ; work         ;
+;    |processador:PROCESSADOR|                   ; 61 (0)              ; 84 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR                                                             ; processador         ; work         ;
+;       |decoderInstru:DEC|                      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|decoderInstru:DEC                                           ; decoderInstru       ; work         ;
+;       |logicaDesvio:LOG_DESVIO|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|logicaDesvio:LOG_DESVIO                                     ; logicaDesvio        ; work         ;
+;       |muxGenerico4x1:MUXJUMP|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|muxGenerico4x1:MUXJUMP                                      ; muxGenerico4x1      ; work         ;
+;       |registradorGenerico:PC|                 ; 2 (2)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC                                      ; registradorGenerico ; work         ;
+;       |somaConstante:incrementaPC|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|somaConstante:incrementaPC                                  ; somaConstante       ; work         ;
+;       |somadorGenerico:somaPC|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|somadorGenerico:somaPC                                      ; somadorGenerico     ; work         ;
+;       |stackSubRotina:StackRET|                ; 29 (0)              ; 75 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET                                     ; stackSubRotina      ; work         ;
+;          |registradorGenerico:StackPointer|    ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer    ; registradorGenerico ; work         ;
+;          |somadorGenerico:SomaSubStackPointer| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer ; somadorGenerico     ; work         ;
+;          |stack:StackRotinas|                  ; 26 (26)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas                  ; stack               ; work         ;
+;    |registradorGenerico:REGHEX0|               ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX0                                                         ; registradorGenerico ; work         ;
+;    |registradorGenerico:REGHEX2|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX2                                                         ; registradorGenerico ; work         ;
+;    |registradorGenerico:REGHEX3|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogioBEQ|registradorGenerico:REGHEX3                                                         ; registradorGenerico ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                        ;
++-----------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                               ; Reason for Removal                          ;
++-----------------------------------------------------------------------------+---------------------------------------------+
+; registradorGenerico:REGHEX0|DOUT[3]                                         ; Stuck at GND due to stuck port data_in      ;
+; flipFlop:FFKEYRES|DOUT                                                      ; Lost fanout                                 ;
+; edgeDetector:DSKEYRES|saidaQ                                                ; Lost fanout                                 ;
+; flipFlop:FFKEY1|DOUT                                                        ; Lost fanout                                 ;
+; edgeDetector:DSKEY1|saidaQ                                                  ; Lost fanout                                 ;
+; flipFlop:FFKEY0|DOUT                                                        ; Lost fanout                                 ;
+; edgeDetector:DSKEY0|saidaQ                                                  ; Lost fanout                                 ;
+; registradorGenerico:REGHEX5|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:REGHEX4|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:REGHEX1|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:FFLED9|DOUT                                                        ; Stuck at GND due to stuck port clock_enable ;
+; flipFlop:FFLED8|DOUT                                                        ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:REG8LED|DOUT[0..7]                                      ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~16 ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~17 ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~18 ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~19 ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~12 ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~55                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~23                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~119                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~87                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~71                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~39                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~135                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~103                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~47                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~15                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~111                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~79                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~63                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~31                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~127                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~95                                                       ; Stuck at GND due to stuck port data_in      ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~13 ; Stuck at GND due to stuck port clock_enable ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~14 ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~57                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~25                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~121                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~89                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~73                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~41                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~137                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~105                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~49                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~17                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~113                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~81                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~65                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~33                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~129                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~97                                                       ; Stuck at GND due to stuck port data_in      ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~15 ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~58                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~74                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~50                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~66                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~26                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~42                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~18                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~34                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~122                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~138                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~114                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~130                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~90                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~106                                                      ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~82                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~98                                                       ; Stuck at GND due to stuck port data_in      ;
+; memoriaRAM:MEM|ram~59                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~27                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~123                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~91                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~75                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~43                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~139                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~107                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~51                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~19                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~115                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~83                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~67                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~35                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~131                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~99                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~60                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~76                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~52                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~68                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~28                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~44                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~20                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~36                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~124                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~140                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~116                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~132                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~92                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~108                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~84                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~100                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~61                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~29                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~125                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~93                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~77                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~45                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~141                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~109                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~53                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~21                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~117                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~85                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~69                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~37                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~133                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~101                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~62                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~78                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~54                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~70                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~30                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~46                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~22                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~38                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~126                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~142                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~118                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~134                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~94                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~110                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~86                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~102                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~56                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~72                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~48                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~64                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~24                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~40                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~16                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~32                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~120                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~136                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~112                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~128                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~88                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~104                                                      ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~80                                                       ; Stuck at GND due to stuck port clock_enable ;
+; memoriaRAM:MEM|ram~96                                                       ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 165                                     ;                                             ;
++-----------------------------------------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                            ;
++-----------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal             ; Registers Removed due to This Register                                  ;
++-----------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------+
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~12 ; Stuck at GND                   ; memoriaRAM:MEM|ram~119, memoriaRAM:MEM|ram~87, memoriaRAM:MEM|ram~39,   ;
+;                                                                             ; due to stuck port clock_enable ; memoriaRAM:MEM|ram~135, memoriaRAM:MEM|ram~103, memoriaRAM:MEM|ram~47,  ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~15, memoriaRAM:MEM|ram~111, memoriaRAM:MEM|ram~79,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~63, memoriaRAM:MEM|ram~31, memoriaRAM:MEM|ram~127,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~95                                                   ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~14 ; Stuck at GND                   ; memoriaRAM:MEM|ram~121, memoriaRAM:MEM|ram~89, memoriaRAM:MEM|ram~41,   ;
+;                                                                             ; due to stuck port clock_enable ; memoriaRAM:MEM|ram~137, memoriaRAM:MEM|ram~105, memoriaRAM:MEM|ram~49,  ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~17, memoriaRAM:MEM|ram~113, memoriaRAM:MEM|ram~81,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~65, memoriaRAM:MEM|ram~33, memoriaRAM:MEM|ram~129,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~97                                                   ;
+; processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador~15 ; Stuck at GND                   ; memoriaRAM:MEM|ram~50, memoriaRAM:MEM|ram~66, memoriaRAM:MEM|ram~42,    ;
+;                                                                             ; due to stuck port clock_enable ; memoriaRAM:MEM|ram~18, memoriaRAM:MEM|ram~34, memoriaRAM:MEM|ram~122,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~138, memoriaRAM:MEM|ram~114, memoriaRAM:MEM|ram~130, ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~90, memoriaRAM:MEM|ram~106, memoriaRAM:MEM|ram~82,   ;
+;                                                                             ;                                ; memoriaRAM:MEM|ram~98                                                   ;
+; flipFlop:FFKEYRES|DOUT                                                      ; Lost Fanouts                   ; edgeDetector:DSKEYRES|saidaQ                                            ;
+; flipFlop:FFKEY1|DOUT                                                        ; Lost Fanouts                   ; edgeDetector:DSKEY1|saidaQ                                              ;
+; flipFlop:FFKEY0|DOUT                                                        ; Lost Fanouts                   ; edgeDetector:DSKEY0|saidaQ                                              ;
++-----------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -321,26 +494,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 635   ;
+; Total registers                              ; 95    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 617   ;
+; Number of registers using Clock Enable       ; 72    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC|DOUT[5]   ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|muxGenerico2x1:MUX1|saida_MUX[6] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|logicaDesvio:LOG_DESVIO|saida[0] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|ULA:ULA|saida[7]                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC|DOUT[8]                                        ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |relogioBEQ|processador:PROCESSADOR|registradorGenerico:PC|DOUT[2]                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|logicaDesvio:LOG_DESVIO|saida[0]                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina|saida_MUX[0] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|ULA:ULA|saida[2]                                                      ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |relogioBEQ|processador:PROCESSADOR|decoderInstru:DEC|saida[3]                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------+
@@ -350,7 +525,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+-------+-------------------------------------------------+
 ; largura_dados    ; 8     ; Signed Integer                                  ;
 ; largura_endereco ; 9     ; Signed Integer                                  ;
-; simulacao        ; false ; Enumerated                                      ;
+; simulacao        ; true  ; Enumerated                                      ;
 +------------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -407,13 +582,55 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:REGRET ;
-+----------------+-------+------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                   ;
-+----------------+-------+------------------------------------------------------------------------+
-; larguradados   ; 9     ; Signed Integer                                                         ;
-+----------------+-------+------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET ;
++------------------+-------+-------------------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                              ;
++------------------+-------+-------------------------------------------------------------------+
+; larguradados     ; 9     ; Signed Integer                                                    ;
+; larguraenderecos ; 3     ; Signed Integer                                                    ;
++------------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; datawidth      ; 9     ; Signed Integer                                                                         ;
+; addrwidth      ; 3     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -656,20 +873,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------+
 ; Port Connectivity Checks: "registradorGenerico:REGHEX3" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; rst  ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                ;
+; rst    ; Input ; Info     ; Stuck at GND                ;
++--------+-------+----------+-----------------------------+
 
 
 +---------------------------------------------------------+
 ; Port Connectivity Checks: "registradorGenerico:REGHEX2" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; rst  ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                ;
+; rst    ; Input ; Info     ; Stuck at GND                ;
++--------+-------+----------+-----------------------------+
 
 
 +---------------------------------------------------------+
@@ -683,11 +902,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------+
 ; Port Connectivity Checks: "registradorGenerico:REGHEX0" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; rst  ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                ;
+; rst    ; Input ; Info     ; Stuck at GND                ;
++--------+-------+----------+-----------------------------+
 
 
 +---------------------------------------------+
@@ -736,6 +956,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoderEnderecos:DECEND"                                                                           ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; grupohabilita[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; grupohabilita[4]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------------------+
 ; Port Connectivity Checks: "processador:PROCESSADOR|flipFlop:FFZ" ;
 +------+-------+----------+----------------------------------------+
@@ -745,13 +975,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:REGRET" ;
-+------+-------+----------+------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                              ;
-+------+-------+----------+------------------------------------------------------+
-; rst  ; Input ; Info     ; Stuck at GND                                         ;
-+------+-------+----------+------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina" ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+; Port               ; Type  ; Severity ; Details                                                              ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+; entradaa_mux       ; Input ; Info     ; Stuck at GND                                                         ;
+; entradab_mux[2..1] ; Input ; Info     ; Stuck at GND                                                         ;
+; entradab_mux[0]    ; Input ; Info     ; Stuck at VCC                                                         ;
+; entradac_mux       ; Input ; Info     ; Stuck at VCC                                                         ;
+; entradad_mux       ; Input ; Info     ; Stuck at GND                                                         ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer" ;
++--------+-------+----------+----------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                          ;
++--------+-------+----------+----------------------------------------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                                                     ;
+; rst    ; Input ; Info     ; Stuck at GND                                                                     ;
++--------+-------+----------+----------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------+
@@ -769,30 +1013,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 635                         ;
-;     CLR               ; 3                           ;
-;     ENA               ; 617                         ;
-;     plain             ; 15                          ;
-; arriav_lcell_comb     ; 573                         ;
-;     arith             ; 35                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
+; arriav_ff             ; 95                          ;
+;     ENA               ; 72                          ;
+;     plain             ; 23                          ;
+; arriav_lcell_comb     ; 104                         ;
+;     arith             ; 18                          ;
+;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 8                           ;
-;         5 data inputs ; 16                          ;
+;         5 data inputs ; 3                           ;
 ;     extend            ; 18                          ;
 ;         7 data inputs ; 18                          ;
-;     normal            ; 520                         ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 82                          ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 50                          ;
-;         5 data inputs ; 25                          ;
-;         6 data inputs ; 343                         ;
+;     normal            ; 68                          ;
+;         0 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 25                          ;
+;         5 data inputs ; 10                          ;
+;         6 data inputs ; 7                           ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 6.56                        ;
+; Max LUT depth         ; 4.80                        ;
+; Average LUT depth     ; 2.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -811,9 +1052,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 02 13:07:52 2022
+    Info: Processing started: Thu Nov 03 23:53:21 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogioBEQ -c relogioBEQ
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file stacksubrotina.vhd
+    Info (12022): Found design unit 1: stackSubRotina-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 19
+    Info (12023): Found entity 1: stackSubRotina File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stack.vhd
+    Info (12022): Found design unit 1: stack-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stack.vhd Line: 18
+    Info (12023): Found entity 1: stack File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stack.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bancoregistradoresarqregmem.vhd
     Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/bancoRegistradoresArqRegMem.vhd Line: 23
     Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/bancoRegistradoresArqRegMem.vhd Line: 5
@@ -827,7 +1074,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file muxgene
     Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico4x1.vhd Line: 14
     Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico4x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
-    Info (12022): Found design unit 1: processador-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 30
+    Info (12022): Found design unit 1: processador-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 31
     Info (12023): Found entity 1: processador File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
     Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/buffer_3_state_8portas.vhd Line: 11
@@ -879,30 +1126,37 @@ Info (12021): Found 2 design units, including 1 entities, in source file somador
     Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/somadorGenerico.vhd Line: 17
     Info (12023): Found entity 1: somadorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/somadorGenerico.vhd Line: 5
 Info (12127): Elaborating entity "relogioBEQ" for the top level hierarchy
-Info (12128): Elaborating entity "processador" for hierarchy "processador:PROCESSADOR" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 90
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:PROCESSADOR|registradorGenerico:PC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 71
-Info (12128): Elaborating entity "somaConstante" for hierarchy "processador:PROCESSADOR|somaConstante:incrementaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 74
-Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:PROCESSADOR|somadorGenerico:somaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 77
-Info (12128): Elaborating entity "logicaDesvio" for hierarchy "processador:PROCESSADOR|logicaDesvio:LOG_DESVIO" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 81
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:PROCESSADOR|muxGenerico4x1:MUXJUMP" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 91
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:PROCESSADOR|muxGenerico2x1:MUX1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 106
-Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 114
-Info (12128): Elaborating entity "ULA" for hierarchy "processador:PROCESSADOR|ULA:ULA" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 122
-Info (12128): Elaborating entity "flipFlop" for hierarchy "processador:PROCESSADOR|flipFlop:FFZ" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 130
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "processador:PROCESSADOR|decoderInstru:DEC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 136
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 101
-Info (12128): Elaborating entity "decoderEnderecos" for hierarchy "decoderEnderecos:DECEND" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 106
+Info (12128): Elaborating entity "processador" for hierarchy "processador:PROCESSADOR" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 92
+Warning (10873): Using initial value X (don't care) for net "SP[3]" at processador.vhd(26) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 26
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:PROCESSADOR|registradorGenerico:PC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 72
+Info (12128): Elaborating entity "somaConstante" for hierarchy "processador:PROCESSADOR|somaConstante:incrementaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 75
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:PROCESSADOR|somadorGenerico:somaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 78
+Info (12128): Elaborating entity "logicaDesvio" for hierarchy "processador:PROCESSADOR|logicaDesvio:LOG_DESVIO" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 82
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:PROCESSADOR|muxGenerico4x1:MUXJUMP" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 92
+Info (12128): Elaborating entity "stackSubRotina" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 103
+Info (12128): Elaborating entity "stack" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 26
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 32
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 39
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico4x1:MUXStackSubRotina" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stackSubRotina.vhd Line: 44
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:PROCESSADOR|muxGenerico2x1:MUX1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 112
+Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 120
+Info (12128): Elaborating entity "ULA" for hierarchy "processador:PROCESSADOR|ULA:ULA" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 128
+Info (12128): Elaborating entity "flipFlop" for hierarchy "processador:PROCESSADOR|flipFlop:FFZ" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 136
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "processador:PROCESSADOR|decoderInstru:DEC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/processador.vhd Line: 142
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 104
+Info (12128): Elaborating entity "decoderEnderecos" for hierarchy "decoderEnderecos:DECEND" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 109
 Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoderEnderecos:DECEND|decoder3x8:DECMSB" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/decoderEnderecos.vhd Line: 32
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:MEM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 118
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG8LED" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 129
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGHEX0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 152
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:H0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 194
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:B3S_SW0to7" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 240
-Info (12128): Elaborating entity "buffer_3_state_mask" for hierarchy "buffer_3_state_mask:B3S_SW8" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 243
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DSKEY0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 253
-Info (276014): Found 2 instances of uninferred RAM logic
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:MEM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 121
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG8LED" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 132
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGHEX0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 162
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:H0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 218
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:B3S_SW0to7" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 264
+Info (12128): Elaborating entity "buffer_3_state_mask" for hierarchy "buffer_3_state_mask:B3S_SW8" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 267
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DSKEY0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 277
+Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:MEM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/memoriaRAM.vhd Line: 27
     Info (276007): RAM logic "processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/bancoRegistradoresArqRegMem.vhd Line: 29
+    Info (276007): RAM logic "processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas|mem" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/stack.vhd Line: 21
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "Barramento_Leitura[7]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd Line: 10
     Warning (13048): Converted tri-state node "Barramento_Leitura[6]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd Line: 10
@@ -912,16 +1166,65 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "Barramento_Leitura[2]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd Line: 10
     Warning (13048): Converted tri-state node "Barramento_Leitura[1]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd Line: 10
     Warning (13048): Converted tri-state node "Barramento_Leitura[0]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/muxGenerico2x1.vhd Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 17
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1261 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 11
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 13
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/relogioBEQ/relogioBEQ.vhd Line: 15
+Info (21057): Implemented 253 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1193 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4941 megabytes
-    Info: Processing ended: Wed Nov 02 13:07:58 2022
+    Info (21061): Implemented 185 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4910 megabytes
+    Info: Processing ended: Thu Nov 03 23:53:27 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:12
 
