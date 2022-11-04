@@ -1,0 +1,686 @@
+$comment
+	File created using the following command:
+		vcd file stackSubRotina.msim.vcd -direction
+$end
+$date
+	Thu Nov 03 23:58:45 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module stacksubrotina_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " Dado_in [8] $end
+$var wire 1 # Dado_in [7] $end
+$var wire 1 $ Dado_in [6] $end
+$var wire 1 % Dado_in [5] $end
+$var wire 1 & Dado_in [4] $end
+$var wire 1 ' Dado_in [3] $end
+$var wire 1 ( Dado_in [2] $end
+$var wire 1 ) Dado_in [1] $end
+$var wire 1 * Dado_in [0] $end
+$var wire 1 + Dado_out [8] $end
+$var wire 1 , Dado_out [7] $end
+$var wire 1 - Dado_out [6] $end
+$var wire 1 . Dado_out [5] $end
+$var wire 1 / Dado_out [4] $end
+$var wire 1 0 Dado_out [3] $end
+$var wire 1 1 Dado_out [2] $end
+$var wire 1 2 Dado_out [1] $end
+$var wire 1 3 Dado_out [0] $end
+$var wire 1 4 PushPop [1] $end
+$var wire 1 5 PushPop [0] $end
+$var wire 1 6 SP [2] $end
+$var wire 1 7 SP [1] $end
+$var wire 1 8 SP [0] $end
+
+$scope module i1 $end
+$var wire 1 9 gnd $end
+$var wire 1 : vcc $end
+$var wire 1 ; unknown $end
+$var wire 1 < devoe $end
+$var wire 1 = devclrn $end
+$var wire 1 > devpor $end
+$var wire 1 ? ww_devoe $end
+$var wire 1 @ ww_devclrn $end
+$var wire 1 A ww_devpor $end
+$var wire 1 B ww_clk $end
+$var wire 1 C ww_PushPop [1] $end
+$var wire 1 D ww_PushPop [0] $end
+$var wire 1 E ww_Dado_in [8] $end
+$var wire 1 F ww_Dado_in [7] $end
+$var wire 1 G ww_Dado_in [6] $end
+$var wire 1 H ww_Dado_in [5] $end
+$var wire 1 I ww_Dado_in [4] $end
+$var wire 1 J ww_Dado_in [3] $end
+$var wire 1 K ww_Dado_in [2] $end
+$var wire 1 L ww_Dado_in [1] $end
+$var wire 1 M ww_Dado_in [0] $end
+$var wire 1 N ww_Dado_out [8] $end
+$var wire 1 O ww_Dado_out [7] $end
+$var wire 1 P ww_Dado_out [6] $end
+$var wire 1 Q ww_Dado_out [5] $end
+$var wire 1 R ww_Dado_out [4] $end
+$var wire 1 S ww_Dado_out [3] $end
+$var wire 1 T ww_Dado_out [2] $end
+$var wire 1 U ww_Dado_out [1] $end
+$var wire 1 V ww_Dado_out [0] $end
+$var wire 1 W ww_SP [2] $end
+$var wire 1 X ww_SP [1] $end
+$var wire 1 Y ww_SP [0] $end
+$var wire 1 Z \Dado_out[0]~output_o\ $end
+$var wire 1 [ \Dado_out[1]~output_o\ $end
+$var wire 1 \ \Dado_out[2]~output_o\ $end
+$var wire 1 ] \Dado_out[3]~output_o\ $end
+$var wire 1 ^ \Dado_out[4]~output_o\ $end
+$var wire 1 _ \Dado_out[5]~output_o\ $end
+$var wire 1 ` \Dado_out[6]~output_o\ $end
+$var wire 1 a \Dado_out[7]~output_o\ $end
+$var wire 1 b \Dado_out[8]~output_o\ $end
+$var wire 1 c \SP[0]~output_o\ $end
+$var wire 1 d \SP[1]~output_o\ $end
+$var wire 1 e \SP[2]~output_o\ $end
+$var wire 1 f \clk~input_o\ $end
+$var wire 1 g \Dado_in[0]~input_o\ $end
+$var wire 1 h \PushPop[0]~input_o\ $end
+$var wire 1 i \PushPop[1]~input_o\ $end
+$var wire 1 j \StackPointer|DOUT[0]~0_combout\ $end
+$var wire 1 k \SomaSubStackPointer|Add0~0_combout\ $end
+$var wire 1 l \SomaSubStackPointer|Add0~1_combout\ $end
+$var wire 1 m \StackRotinas|mem~158_combout\ $end
+$var wire 1 n \StackRotinas|mem~59_q\ $end
+$var wire 1 o \StackRotinas|mem~159_combout\ $end
+$var wire 1 p \StackRotinas|mem~77_q\ $end
+$var wire 1 q \StackRotinas|mem~161_combout\ $end
+$var wire 1 r \StackRotinas|mem~68_q\ $end
+$var wire 1 s \StackRotinas|mem~162_combout\ $end
+$var wire 1 t \StackRotinas|mem~23_q\ $end
+$var wire 1 u \StackRotinas|mem~163_combout\ $end
+$var wire 1 v \StackRotinas|mem~41_q\ $end
+$var wire 1 w \StackRotinas|mem~165_combout\ $end
+$var wire 1 x \StackRotinas|mem~32_q\ $end
+$var wire 1 y \StackRotinas|mem~164_combout\ $end
+$var wire 1 z \StackRotinas|mem~14_q\ $end
+$var wire 1 { \StackRotinas|mem~122_combout\ $end
+$var wire 1 | \StackRotinas|mem~160_combout\ $end
+$var wire 1 } \StackRotinas|mem~50_q\ $end
+$var wire 1 ~ \StackRotinas|mem~86_combout\ $end
+$var wire 1 !! \Dado_in[1]~input_o\ $end
+$var wire 1 "! \StackRotinas|mem~60_q\ $end
+$var wire 1 #! \StackRotinas|mem~78_q\ $end
+$var wire 1 $! \StackRotinas|mem~69_q\ $end
+$var wire 1 %! \StackRotinas|mem~24_q\ $end
+$var wire 1 &! \StackRotinas|mem~42_q\ $end
+$var wire 1 '! \StackRotinas|mem~33_q\ $end
+$var wire 1 (! \StackRotinas|mem~15_q\ $end
+$var wire 1 )! \StackRotinas|mem~126_combout\ $end
+$var wire 1 *! \StackRotinas|mem~51_q\ $end
+$var wire 1 +! \StackRotinas|mem~90_combout\ $end
+$var wire 1 ,! \Dado_in[2]~input_o\ $end
+$var wire 1 -! \StackRotinas|mem~61_q\ $end
+$var wire 1 .! \StackRotinas|mem~79_q\ $end
+$var wire 1 /! \StackRotinas|mem~70_q\ $end
+$var wire 1 0! \StackRotinas|mem~25_q\ $end
+$var wire 1 1! \StackRotinas|mem~43_q\ $end
+$var wire 1 2! \StackRotinas|mem~34_q\ $end
+$var wire 1 3! \StackRotinas|mem~16_q\ $end
+$var wire 1 4! \StackRotinas|mem~130_combout\ $end
+$var wire 1 5! \StackRotinas|mem~52_q\ $end
+$var wire 1 6! \StackRotinas|mem~94_combout\ $end
+$var wire 1 7! \Dado_in[3]~input_o\ $end
+$var wire 1 8! \StackRotinas|mem~62_q\ $end
+$var wire 1 9! \StackRotinas|mem~80_q\ $end
+$var wire 1 :! \StackRotinas|mem~71_q\ $end
+$var wire 1 ;! \StackRotinas|mem~26_q\ $end
+$var wire 1 <! \StackRotinas|mem~44_q\ $end
+$var wire 1 =! \StackRotinas|mem~35_q\ $end
+$var wire 1 >! \StackRotinas|mem~17_q\ $end
+$var wire 1 ?! \StackRotinas|mem~134_combout\ $end
+$var wire 1 @! \StackRotinas|mem~53_q\ $end
+$var wire 1 A! \StackRotinas|mem~98_combout\ $end
+$var wire 1 B! \Dado_in[4]~input_o\ $end
+$var wire 1 C! \StackRotinas|mem~63_q\ $end
+$var wire 1 D! \StackRotinas|mem~81_q\ $end
+$var wire 1 E! \StackRotinas|mem~72_q\ $end
+$var wire 1 F! \StackRotinas|mem~27_q\ $end
+$var wire 1 G! \StackRotinas|mem~45_q\ $end
+$var wire 1 H! \StackRotinas|mem~36_q\ $end
+$var wire 1 I! \StackRotinas|mem~18_q\ $end
+$var wire 1 J! \StackRotinas|mem~138_combout\ $end
+$var wire 1 K! \StackRotinas|mem~54_q\ $end
+$var wire 1 L! \StackRotinas|mem~102_combout\ $end
+$var wire 1 M! \Dado_in[5]~input_o\ $end
+$var wire 1 N! \StackRotinas|mem~64_q\ $end
+$var wire 1 O! \StackRotinas|mem~82_q\ $end
+$var wire 1 P! \StackRotinas|mem~73_q\ $end
+$var wire 1 Q! \StackRotinas|mem~28_q\ $end
+$var wire 1 R! \StackRotinas|mem~46_q\ $end
+$var wire 1 S! \StackRotinas|mem~37_q\ $end
+$var wire 1 T! \StackRotinas|mem~19_q\ $end
+$var wire 1 U! \StackRotinas|mem~142_combout\ $end
+$var wire 1 V! \StackRotinas|mem~55_q\ $end
+$var wire 1 W! \StackRotinas|mem~106_combout\ $end
+$var wire 1 X! \Dado_in[6]~input_o\ $end
+$var wire 1 Y! \StackRotinas|mem~65_q\ $end
+$var wire 1 Z! \StackRotinas|mem~83_q\ $end
+$var wire 1 [! \StackRotinas|mem~74_q\ $end
+$var wire 1 \! \StackRotinas|mem~29_q\ $end
+$var wire 1 ]! \StackRotinas|mem~47_q\ $end
+$var wire 1 ^! \StackRotinas|mem~38_q\ $end
+$var wire 1 _! \StackRotinas|mem~20_q\ $end
+$var wire 1 `! \StackRotinas|mem~146_combout\ $end
+$var wire 1 a! \StackRotinas|mem~56_q\ $end
+$var wire 1 b! \StackRotinas|mem~110_combout\ $end
+$var wire 1 c! \Dado_in[7]~input_o\ $end
+$var wire 1 d! \StackRotinas|mem~66_q\ $end
+$var wire 1 e! \StackRotinas|mem~84_q\ $end
+$var wire 1 f! \StackRotinas|mem~75_q\ $end
+$var wire 1 g! \StackRotinas|mem~30_q\ $end
+$var wire 1 h! \StackRotinas|mem~48_q\ $end
+$var wire 1 i! \StackRotinas|mem~39_q\ $end
+$var wire 1 j! \StackRotinas|mem~21_q\ $end
+$var wire 1 k! \StackRotinas|mem~150_combout\ $end
+$var wire 1 l! \StackRotinas|mem~57_q\ $end
+$var wire 1 m! \StackRotinas|mem~114_combout\ $end
+$var wire 1 n! \Dado_in[8]~input_o\ $end
+$var wire 1 o! \StackRotinas|mem~67_q\ $end
+$var wire 1 p! \StackRotinas|mem~85_q\ $end
+$var wire 1 q! \StackRotinas|mem~76_q\ $end
+$var wire 1 r! \StackRotinas|mem~31_q\ $end
+$var wire 1 s! \StackRotinas|mem~49_q\ $end
+$var wire 1 t! \StackRotinas|mem~40_q\ $end
+$var wire 1 u! \StackRotinas|mem~22_q\ $end
+$var wire 1 v! \StackRotinas|mem~154_combout\ $end
+$var wire 1 w! \StackRotinas|mem~58_q\ $end
+$var wire 1 x! \StackRotinas|mem~118_combout\ $end
+$var wire 1 y! \StackPointer|DOUT\ [2] $end
+$var wire 1 z! \StackPointer|DOUT\ [1] $end
+$var wire 1 {! \StackPointer|DOUT\ [0] $end
+$var wire 1 |! \StackRotinas|ALT_INV_mem~40_q\ $end
+$var wire 1 }! \StackRotinas|ALT_INV_mem~22_q\ $end
+$var wire 1 ~! \StackRotinas|ALT_INV_mem~49_q\ $end
+$var wire 1 !" \StackRotinas|ALT_INV_mem~31_q\ $end
+$var wire 1 "" \StackRotinas|ALT_INV_mem~39_q\ $end
+$var wire 1 #" \StackRotinas|ALT_INV_mem~21_q\ $end
+$var wire 1 $" \StackRotinas|ALT_INV_mem~48_q\ $end
+$var wire 1 %" \StackRotinas|ALT_INV_mem~30_q\ $end
+$var wire 1 &" \StackRotinas|ALT_INV_mem~38_q\ $end
+$var wire 1 '" \StackRotinas|ALT_INV_mem~20_q\ $end
+$var wire 1 (" \StackRotinas|ALT_INV_mem~47_q\ $end
+$var wire 1 )" \StackRotinas|ALT_INV_mem~29_q\ $end
+$var wire 1 *" \StackRotinas|ALT_INV_mem~37_q\ $end
+$var wire 1 +" \StackRotinas|ALT_INV_mem~19_q\ $end
+$var wire 1 ," \StackRotinas|ALT_INV_mem~46_q\ $end
+$var wire 1 -" \StackRotinas|ALT_INV_mem~28_q\ $end
+$var wire 1 ." \StackRotinas|ALT_INV_mem~36_q\ $end
+$var wire 1 /" \StackRotinas|ALT_INV_mem~18_q\ $end
+$var wire 1 0" \StackRotinas|ALT_INV_mem~45_q\ $end
+$var wire 1 1" \StackRotinas|ALT_INV_mem~27_q\ $end
+$var wire 1 2" \StackRotinas|ALT_INV_mem~35_q\ $end
+$var wire 1 3" \StackRotinas|ALT_INV_mem~17_q\ $end
+$var wire 1 4" \StackRotinas|ALT_INV_mem~44_q\ $end
+$var wire 1 5" \StackRotinas|ALT_INV_mem~26_q\ $end
+$var wire 1 6" \StackRotinas|ALT_INV_mem~34_q\ $end
+$var wire 1 7" \StackRotinas|ALT_INV_mem~16_q\ $end
+$var wire 1 8" \StackRotinas|ALT_INV_mem~43_q\ $end
+$var wire 1 9" \StackRotinas|ALT_INV_mem~25_q\ $end
+$var wire 1 :" \StackRotinas|ALT_INV_mem~33_q\ $end
+$var wire 1 ;" \StackRotinas|ALT_INV_mem~15_q\ $end
+$var wire 1 <" \StackRotinas|ALT_INV_mem~42_q\ $end
+$var wire 1 =" \StackRotinas|ALT_INV_mem~24_q\ $end
+$var wire 1 >" \StackRotinas|ALT_INV_mem~32_q\ $end
+$var wire 1 ?" \StackRotinas|ALT_INV_mem~14_q\ $end
+$var wire 1 @" \StackRotinas|ALT_INV_mem~41_q\ $end
+$var wire 1 A" \StackRotinas|ALT_INV_mem~23_q\ $end
+$var wire 1 B" \StackRotinas|ALT_INV_mem~76_q\ $end
+$var wire 1 C" \StackRotinas|ALT_INV_mem~58_q\ $end
+$var wire 1 D" \StackRotinas|ALT_INV_mem~85_q\ $end
+$var wire 1 E" \StackRotinas|ALT_INV_mem~67_q\ $end
+$var wire 1 F" \StackRotinas|ALT_INV_mem~75_q\ $end
+$var wire 1 G" \StackRotinas|ALT_INV_mem~57_q\ $end
+$var wire 1 H" \StackRotinas|ALT_INV_mem~84_q\ $end
+$var wire 1 I" \StackRotinas|ALT_INV_mem~66_q\ $end
+$var wire 1 J" \StackRotinas|ALT_INV_mem~74_q\ $end
+$var wire 1 K" \StackRotinas|ALT_INV_mem~56_q\ $end
+$var wire 1 L" \StackRotinas|ALT_INV_mem~83_q\ $end
+$var wire 1 M" \StackRotinas|ALT_INV_mem~65_q\ $end
+$var wire 1 N" \StackRotinas|ALT_INV_mem~73_q\ $end
+$var wire 1 O" \StackRotinas|ALT_INV_mem~55_q\ $end
+$var wire 1 P" \StackRotinas|ALT_INV_mem~82_q\ $end
+$var wire 1 Q" \StackRotinas|ALT_INV_mem~64_q\ $end
+$var wire 1 R" \StackRotinas|ALT_INV_mem~72_q\ $end
+$var wire 1 S" \StackRotinas|ALT_INV_mem~54_q\ $end
+$var wire 1 T" \StackRotinas|ALT_INV_mem~81_q\ $end
+$var wire 1 U" \StackRotinas|ALT_INV_mem~63_q\ $end
+$var wire 1 V" \StackRotinas|ALT_INV_mem~71_q\ $end
+$var wire 1 W" \StackRotinas|ALT_INV_mem~53_q\ $end
+$var wire 1 X" \StackRotinas|ALT_INV_mem~80_q\ $end
+$var wire 1 Y" \StackRotinas|ALT_INV_mem~62_q\ $end
+$var wire 1 Z" \StackRotinas|ALT_INV_mem~70_q\ $end
+$var wire 1 [" \StackRotinas|ALT_INV_mem~52_q\ $end
+$var wire 1 \" \StackRotinas|ALT_INV_mem~79_q\ $end
+$var wire 1 ]" \StackRotinas|ALT_INV_mem~61_q\ $end
+$var wire 1 ^" \StackRotinas|ALT_INV_mem~69_q\ $end
+$var wire 1 _" \StackRotinas|ALT_INV_mem~51_q\ $end
+$var wire 1 `" \StackRotinas|ALT_INV_mem~78_q\ $end
+$var wire 1 a" \StackRotinas|ALT_INV_mem~60_q\ $end
+$var wire 1 b" \StackRotinas|ALT_INV_mem~68_q\ $end
+$var wire 1 c" \StackRotinas|ALT_INV_mem~50_q\ $end
+$var wire 1 d" \StackRotinas|ALT_INV_mem~77_q\ $end
+$var wire 1 e" \StackRotinas|ALT_INV_mem~59_q\ $end
+$var wire 1 f" \StackPointer|ALT_INV_DOUT\ [2] $end
+$var wire 1 g" \StackPointer|ALT_INV_DOUT\ [1] $end
+$var wire 1 h" \StackPointer|ALT_INV_DOUT\ [0] $end
+$var wire 1 i" \StackRotinas|ALT_INV_mem~154_combout\ $end
+$var wire 1 j" \StackRotinas|ALT_INV_mem~150_combout\ $end
+$var wire 1 k" \StackRotinas|ALT_INV_mem~146_combout\ $end
+$var wire 1 l" \StackRotinas|ALT_INV_mem~142_combout\ $end
+$var wire 1 m" \StackRotinas|ALT_INV_mem~138_combout\ $end
+$var wire 1 n" \StackRotinas|ALT_INV_mem~134_combout\ $end
+$var wire 1 o" \StackRotinas|ALT_INV_mem~130_combout\ $end
+$var wire 1 p" \StackRotinas|ALT_INV_mem~126_combout\ $end
+$var wire 1 q" \StackRotinas|ALT_INV_mem~122_combout\ $end
+$var wire 1 r" \ALT_INV_PushPop[1]~input_o\ $end
+$var wire 1 s" \ALT_INV_PushPop[0]~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+09
+1:
+x;
+1<
+1=
+1>
+1?
+1@
+1A
+1B
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+1f
+0g
+0h
+0i
+0j
+0k
+0l
+0m
+0n
+0o
+0p
+0q
+0r
+0s
+0t
+0u
+0v
+0w
+0x
+1y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+04!
+05!
+06!
+07!
+08!
+09!
+0:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+0R!
+0S!
+0T!
+0U!
+0V!
+0W!
+0X!
+0Y!
+0Z!
+0[!
+0\!
+0]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0c!
+0d!
+0e!
+0f!
+0g!
+0h!
+0i!
+0j!
+0k!
+0l!
+0m!
+0n!
+0o!
+0p!
+0q!
+0r!
+0s!
+0t!
+0u!
+0v!
+0w!
+0x!
+1|!
+1}!
+1~!
+1!"
+1""
+1#"
+1$"
+1%"
+1&"
+1'"
+1("
+1)"
+1*"
+1+"
+1,"
+1-"
+1."
+1/"
+10"
+11"
+12"
+13"
+14"
+15"
+16"
+17"
+18"
+19"
+1:"
+1;"
+1<"
+1="
+1>"
+1?"
+1@"
+1A"
+1B"
+1C"
+1D"
+1E"
+1F"
+1G"
+1H"
+1I"
+1J"
+1K"
+1L"
+1M"
+1N"
+1O"
+1P"
+1Q"
+1R"
+1S"
+1T"
+1U"
+1V"
+1W"
+1X"
+1Y"
+1Z"
+1["
+1\"
+1]"
+1^"
+1_"
+1`"
+1a"
+1b"
+1c"
+1d"
+1e"
+1i"
+1j"
+1k"
+1l"
+1m"
+1n"
+1o"
+1p"
+1q"
+1r"
+1s"
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+04
+05
+0+
+0,
+0-
+0.
+0/
+00
+01
+02
+03
+06
+07
+08
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0y!
+0z!
+0{!
+1f"
+1g"
+1h"
+$end
+#10000
+0!
+0B
+0f
+#20000
+1!
+14
+1)
+1B
+1C
+1L
+1!!
+1i
+1f
+0r"
+1j
+#30000
+0!
+0B
+0f
+#40000
+1!
+04
+0)
+15
+1B
+1D
+0C
+0L
+0!!
+0i
+1h
+1f
+0s"
+1r"
+1{!
+1(!
+1k
+1l
+0;"
+0h"
+0j
+0k
+0l
+1s
+0y
+1c
+1Y
+18
+#50000
+0!
+0B
+0f
+#60000
+1!
+05
+1B
+0D
+0h
+1f
+1s"
+0{!
+1j
+1h"
+0j
+0s
+1y
+1)!
+0p"
+0c
+1+!
+0Y
+08
+1[
+1U
+12
+#70000
+0!
+0B
+0f
+#80000
+1!
+1B
+1f
+0(!
+1;"
+0)!
+1p"
+0+!
+0[
+0U
+02
+#90000
+0!
+0B
+0f
+#100000
+1!
+1B
+1f
+#110000
+0!
+0B
+0f
+#120000
+1!
+1B
+1f
+#130000
+0!
+0B
+0f
+#140000
+1!
+1B
+1f
+#150000
+0!
+0B
+0f
+#160000
