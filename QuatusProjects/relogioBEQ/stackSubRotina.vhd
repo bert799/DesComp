@@ -9,9 +9,11 @@ entity stackSubRotina is
 	 );
 	port (
 		clk : in std_logic;
-		PushPop : in std_logic_vector(1 downto 0);
+		habilita : in std_logic;
+		PushPop : in std_logic;
 		Dado_in : in std_logic_vector (larguraDados-1 DOWNTO 0);
 		Dado_out : out std_logic_vector (larguraDados-1 DOWNTO 0);
+		SP_overflow : out std_logic;
 		SP : out std_logic_vector (larguraEnderecos-1 downto 0)
 	 );
 end entity;
@@ -33,7 +35,7 @@ StackPointer: entity work.registradorGenerico generic map (larguraDados => 3)
 	port map (DIN => stack_pointer_modificado,
 				DOUT => endereco_stack,
 				CLK => clk,
-				ENABLE => '1',
+				ENABLE => habilita,
 				RST => '0');
 
 SomaSubStackPointer: entity work.somadorGenerico generic map (larguraDados => 3)
@@ -41,14 +43,15 @@ SomaSubStackPointer: entity work.somadorGenerico generic map (larguraDados => 3)
 				entradaB => MUX_Out,
 				saida => stack_pointer_modificado);
 
-MUXStackSubRotina: entity work.muxGenerico4x1 generic map (larguraDados => 3)
-	port map (entradaA_MUX => "000",
+MUXStackSubRotina: entity work.muxGenerico2x1 generic map (larguraDados => 3)
+	port map (entradaA_MUX => "111",
 				entradaB_MUX => "001",
-				entradaC_MUX => "111",
-				entradaD_MUX => "000",
 				seletor_MUX => PushPop,
 				saida_MUX => MUX_Out);
 				
 SP <= endereco_stack;
+SP_overflow <= '1' when (habilita = '1' and PushPop = '1' and endereco_stack = "111") else 
+					'1' when (habilita = '1' and PushPop = '0' and endereco_stack = "000") else 
+					'0';
 
 end architecture;

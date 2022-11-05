@@ -88,6 +88,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[3]",
 					"strict" : false
 				}

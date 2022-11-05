@@ -23,6 +23,7 @@ entity processador is
 	 Data_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
 	 ROM_Address :  out  std_logic_vector(largura_enderecos-1 downto 0);
 	 Control :  out  std_logic_vector(3 downto 0);
+	 SP_overflow : out std_logic;
 	 SP : out std_logic_vector(3 downto 0)
   );
 end entity;
@@ -102,9 +103,11 @@ MUXJUMP :  entity work.muxGenerico4x1  generic map (larguraDados => largura_ende
 -- StackRET - stack de Retorno.
 StackRET : entity work.stackSubRotina   generic map (larguraDados => largura_enderecos)
           port map (clk => CLK,
-						  PushPop => PushPop,
+						  PushPop => PushPop(0),
+						  habilita => PushPop(1),
 						  Dado_in => IncrementaPC_OUT,
 						  Dado_out=> REGRET_MUX,
+						  SP_overflow => SP_overflow,
 						  SP => SP(2 downto 0));
 
 	

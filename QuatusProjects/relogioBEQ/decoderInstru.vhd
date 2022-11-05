@@ -34,7 +34,7 @@ saida <= "00000000011000" when opcode = NOP   else
 			"00010000011000" when opcode = JMP   else
 			"00000010011000" when opcode = JEQ   else
 			"00000000011110" when opcode = CEQ   else
-			"00100100011000" when opcode = JSR   else
+			"01100100011000" when opcode = JSR   else
 			"01001000011000" when opcode = RET   else
 			"00000000110010" when opcode = OPAND else
 			"10010000011000" when opcode = RJMP else

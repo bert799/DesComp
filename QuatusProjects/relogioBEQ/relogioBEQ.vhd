@@ -96,6 +96,7 @@ PROCESSADOR : entity work.processador   generic map (largura_dados => largura_da
 						  Data_OUT       => Barramento_Escrita,
 						  Data_Address   => Barramento_Enderecos,
 						  ROM_Address    => ROM_Address,
+						  SP_overflow    => LEDR(8),
 						  SP 				  => SP,
 						  Control        => Barramento_Controle);
 
@@ -146,7 +147,7 @@ FFLED9 : entity work.flipFlop
 
 
 LEDR(7 downto 0) <= GROUPLED_OUT;
-LEDR(8) <= LED8_OUT;
+--LEDR(8) <= LED8_OUT;
 LEDR(9) <= LED9_OUT;
 
 
