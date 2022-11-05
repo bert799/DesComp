@@ -1,0 +1,1061 @@
+Analysis & Synthesis report for Proj1EntregaFinal
+Sat Nov 05 18:25:38 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Proj1EntregaFinal
+ 11. Parameter Settings for User Entity Instance: processador:PROCESSADOR
+ 12. Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:PC
+ 13. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somaConstante:incrementaPC
+ 14. Parameter Settings for User Entity Instance: processador:PROCESSADOR|somadorGenerico:somaPC
+ 15. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico4x1:MUXJUMP
+ 16. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET
+ 17. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas
+ 18. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer
+ 19. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer
+ 20. Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico2x1:MUXStackSubRotina
+ 21. Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico2x1:MUX1
+ 22. Parameter Settings for User Entity Instance: processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG
+ 23. Parameter Settings for User Entity Instance: processador:PROCESSADOR|ULA:ULA
+ 24. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 25. Parameter Settings for User Entity Instance: memoriaRAM:MEM
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:REG8LED
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5
+ 33. Parameter Settings for User Entity Instance: divisorGenerico:BaseDeTempoUmSegundo
+ 34. Parameter Settings for User Entity Instance: divisorGenerico:BaseDeTempoAcelerada
+ 35. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_base_tempo
+ 36. Port Connectivity Checks: "flipFlop:FFBASETEMPO"
+ 37. Port Connectivity Checks: "flipFlop:FFKEYRES"
+ 38. Port Connectivity Checks: "flipFlop:FFKEY1"
+ 39. Port Connectivity Checks: "conversorHex7Seg:H5"
+ 40. Port Connectivity Checks: "conversorHex7Seg:H4"
+ 41. Port Connectivity Checks: "conversorHex7Seg:H3"
+ 42. Port Connectivity Checks: "conversorHex7Seg:H2"
+ 43. Port Connectivity Checks: "conversorHex7Seg:H1"
+ 44. Port Connectivity Checks: "conversorHex7Seg:H0"
+ 45. Port Connectivity Checks: "registradorGenerico:REGHEX5"
+ 46. Port Connectivity Checks: "registradorGenerico:REGHEX4"
+ 47. Port Connectivity Checks: "registradorGenerico:REGHEX3"
+ 48. Port Connectivity Checks: "registradorGenerico:REGHEX2"
+ 49. Port Connectivity Checks: "registradorGenerico:REGHEX1"
+ 50. Port Connectivity Checks: "registradorGenerico:REGHEX0"
+ 51. Port Connectivity Checks: "flipFlop:FFLED9"
+ 52. Port Connectivity Checks: "flipFlop:FFLED8"
+ 53. Port Connectivity Checks: "registradorGenerico:REG8LED"
+ 54. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECLSB"
+ 55. Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECMSB"
+ 56. Port Connectivity Checks: "processador:PROCESSADOR|flipFlop:FFZ"
+ 57. Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico2x1:MUXStackSubRotina"
+ 58. Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer"
+ 59. Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:PC"
+ 60. Port Connectivity Checks: "processador:PROCESSADOR"
+ 61. Post-Synthesis Netlist Statistics for Top Partition
+ 62. Elapsed Time Per Partition
+ 63. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Nov 05 18:25:38 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; Proj1EntregaFinal                           ;
+; Top-level Entity Name           ; Proj1EntregaFinal                           ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 742                                         ;
+; Total pins                      ; 68                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; Proj1EntregaFinal  ; Proj1EntregaFinal  ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processors 6-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
+; ULA.vhd                          ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/ULA.vhd                         ;         ;
+; stackSubRotina.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd              ;         ;
+; stack.vhd                        ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stack.vhd                       ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somadorGenerico.vhd             ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somaConstante.vhd               ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/registradorGenerico.vhd         ;         ;
+; processador.vhd                  ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd                 ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico4x1.vhd              ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd              ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaROM.vhd                  ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaRAM.vhd                  ;         ;
+; logicaDesvio.vhd                 ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/logicaDesvio.vhd                ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/flipFlop.vhd                    ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/edgeDetector.vhd                ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderInstru.vhd               ;         ;
+; decoderEnderecos.vhd             ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderEnderecos.vhd            ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoder3x8.vhd                  ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/conversorHex7Seg.vhd            ;         ;
+; buffer_3_state_mask.vhd          ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_mask.vhd         ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_8portas.vhd      ;         ;
+; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/bancoRegistradoresArqRegMem.vhd ;         ;
+; Proj1EntregaFinal.vhd            ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd           ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/divisorGenerico.vhd             ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 619            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 674            ;
+;     -- 7 input functions                    ; 37             ;
+;     -- 6 input functions                    ; 360            ;
+;     -- 5 input functions                    ; 26             ;
+;     -- 4 input functions                    ; 100            ;
+;     -- <=3 input functions                  ; 151            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 742            ;
+;                                             ;                ;
+; I/O pins                                    ; 68             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 739            ;
+; Total fan-out                               ; 5620           ;
+; Average fan-out                             ; 3.62           ;
++---------------------------------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                           ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Entity Name                 ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; |Proj1EntregaFinal                             ; 674 (16)            ; 742 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |Proj1EntregaFinal                                                                                     ; Proj1EntregaFinal           ; work         ;
+;    |conversorHex7Seg:H0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H0                                                                 ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:H1|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H1                                                                 ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:H2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H2                                                                 ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:H3|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H3                                                                 ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:H4|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H4                                                                 ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:H5|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|conversorHex7Seg:H5                                                                 ; conversorHex7Seg            ; work         ;
+;    |decoderEnderecos:DECEND|                   ; 22 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|decoderEnderecos:DECEND                                                             ; decoderEnderecos            ; work         ;
+;       |decoder3x8:DECMSB|                      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|decoderEnderecos:DECEND|decoder3x8:DECMSB                                           ; decoder3x8                  ; work         ;
+;    |divisorGenerico:BaseDeTempoAcelerada|      ; 20 (20)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|divisorGenerico:BaseDeTempoAcelerada                                                ; divisorGenerico             ; work         ;
+;    |divisorGenerico:BaseDeTempoUmSegundo|      ; 31 (31)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|divisorGenerico:BaseDeTempoUmSegundo                                                ; divisorGenerico             ; work         ;
+;    |edgeDetector:DSKEY1|                       ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|edgeDetector:DSKEY1                                                                 ; edgeDetector                ; work         ;
+;    |edgeDetector:DSKEYRES|                     ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|edgeDetector:DSKEYRES                                                               ; edgeDetector                ; work         ;
+;    |flipFlop:FFBASETEMPO|                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|flipFlop:FFBASETEMPO                                                                ; flipFlop                    ; work         ;
+;    |flipFlop:FFKEY1|                           ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|flipFlop:FFKEY1                                                                     ; flipFlop                    ; work         ;
+;    |flipFlop:FFKEYRES|                         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|flipFlop:FFKEYRES                                                                   ; flipFlop                    ; work         ;
+;    |flipFlop:FFLED8|                           ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|flipFlop:FFLED8                                                                     ; flipFlop                    ; work         ;
+;    |flipFlop:FFLED9|                           ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|flipFlop:FFLED9                                                                     ; flipFlop                    ; work         ;
+;    |memoriaRAM:MEM|                            ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|memoriaRAM:MEM                                                                      ; memoriaRAM                  ; work         ;
+;    |memoriaROM:ROM1|                           ; 109 (109)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|memoriaROM:ROM1                                                                     ; memoriaROM                  ; work         ;
+;    |muxGenerico2x1:MUX_base_tempo|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|muxGenerico2x1:MUX_base_tempo                                                       ; muxGenerico2x1              ; work         ;
+;    |processador:PROCESSADOR|                   ; 130 (0)             ; 149 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR                                                             ; processador                 ; work         ;
+;       |ULA:ULA|                                ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|ULA:ULA                                                     ; ULA                         ; work         ;
+;       |bancoRegistradoresArqRegMem:BANCOREG|   ; 24 (24)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG                        ; bancoRegistradoresArqRegMem ; work         ;
+;       |decoderInstru:DEC|                      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|decoderInstru:DEC                                           ; decoderInstru               ; work         ;
+;       |flipFlop:FFZ|                           ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|flipFlop:FFZ                                                ; flipFlop                    ; work         ;
+;       |muxGenerico2x1:MUX1|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|muxGenerico2x1:MUX1                                         ; muxGenerico2x1              ; work         ;
+;       |muxGenerico4x1:MUXJUMP|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|muxGenerico4x1:MUXJUMP                                      ; muxGenerico4x1              ; work         ;
+;       |registradorGenerico:PC|                 ; 4 (4)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|registradorGenerico:PC                                      ; registradorGenerico         ; work         ;
+;       |somaConstante:incrementaPC|             ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|somaConstante:incrementaPC                                  ; somaConstante               ; work         ;
+;       |somadorGenerico:somaPC|                 ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|somadorGenerico:somaPC                                      ; somadorGenerico             ; work         ;
+;       |stackSubRotina:StackRET|                ; 23 (0)              ; 75 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|stackSubRotina:StackRET                                     ; stackSubRotina              ; work         ;
+;          |registradorGenerico:StackPointer|    ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer    ; registradorGenerico         ; work         ;
+;          |somadorGenerico:SomaSubStackPointer| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer ; somadorGenerico             ; work         ;
+;          |stack:StackRotinas|                  ; 20 (20)             ; 72 (72)                   ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas                  ; stack                       ; work         ;
+;    |registradorGenerico:REG8LED|               ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REG8LED                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX0|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX0                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX1|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX1                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX2|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX2                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX3|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX3                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX4|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX4                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REGHEX5|               ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Proj1EntregaFinal|registradorGenerico:REGHEX5                                                         ; registradorGenerico         ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------+-----------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 742   ;
+; Number of registers using Synchronous Clear  ; 40    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 683   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Proj1EntregaFinal|processador:PROCESSADOR|registradorGenerico:PC|DOUT[4]   ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Proj1EntregaFinal|processador:PROCESSADOR|muxGenerico2x1:MUX1|saida_MUX[5] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Proj1EntregaFinal|processador:PROCESSADOR|logicaDesvio:LOG_DESVIO|saida[1] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Proj1EntregaFinal|processador:PROCESSADOR|ULA:ULA|saida[7]                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Proj1EntregaFinal ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; largura_dados    ; 8     ; Signed Integer                                         ;
+; largura_endereco ; 9     ; Signed Integer                                         ;
+; simulacao        ; false ; Enumerated                                             ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR ;
++-------------------+-------+------------------------------------------+
+; Parameter Name    ; Value ; Type                                     ;
++-------------------+-------+------------------------------------------+
+; largura_dados     ; 8     ; Signed Integer                           ;
+; largura_enderecos ; 9     ; Signed Integer                           ;
++-------------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|registradorGenerico:PC ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|somaConstante:incrementaPC ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                         ;
+; constante      ; 1     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|somadorGenerico:somaPC ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico4x1:MUXJUMP ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET ;
++------------------+-------+-------------------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                              ;
++------------------+-------+-------------------------------------------------------------------+
+; larguradados     ; 9     ; Signed Integer                                                    ;
+; larguraenderecos ; 3     ; Signed Integer                                                    ;
++------------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; datawidth      ; 9     ; Signed Integer                                                                         ;
+; addrwidth      ; 3     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico2x1:MUXStackSubRotina ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|muxGenerico2x1:MUX1 ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG ;
++---------------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                        ;
++---------------------+-------+-----------------------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                              ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                              ;
++---------------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: processador:PROCESSADOR|ULA:ULA ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaROM:ROM1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; datawidth      ; 16    ; Signed Integer                      ;
+; addrwidth      ; 9     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaRAM:MEM ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; datawidth      ; 8     ; Signed Integer                     ;
+; addrwidth      ; 6     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REG8LED ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX0 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX1 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX2 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX3 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX4 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGHEX5 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico:BaseDeTempoUmSegundo ;
++----------------+----------+-------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                  ;
++----------------+----------+-------------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                        ;
++----------------+----------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico:BaseDeTempoAcelerada ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; divisor        ; 25000 ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_base_tempo ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradados   ; 1     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFBASETEMPO" ;
++--------+-------+----------+----------------------+
+; Port   ; Type  ; Severity ; Details              ;
++--------+-------+----------+----------------------+
+; din    ; Input ; Info     ; Stuck at VCC         ;
+; enable ; Input ; Info     ; Stuck at VCC         ;
++--------+-------+----------+----------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFKEYRES" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; din    ; Input ; Info     ; Stuck at VCC      ;
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFKEY1" ;
++--------+-------+----------+-----------------+
+; Port   ; Type  ; Severity ; Details         ;
++--------+-------+----------+-----------------+
+; din    ; Input ; Info     ; Stuck at VCC    ;
+; enable ; Input ; Info     ; Stuck at VCC    ;
++--------+-------+----------+-----------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H5" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H4" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H3" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H2" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H1" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:H0" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX5" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX4" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX3" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX2" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX1" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGHEX0" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED9" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "flipFlop:FFLED8" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; rst  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REG8LED" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECLSB"                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoderEnderecos:DECEND|decoder3x8:DECMSB"                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; saida[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; saida[3..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|flipFlop:FFZ" ;
++------+-------+----------+----------------------------------------+
+; Port ; Type  ; Severity ; Details                                ;
++------+-------+----------+----------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                           ;
++------+-------+----------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico2x1:MUXStackSubRotina" ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+; Port               ; Type  ; Severity ; Details                                                              ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+; entradaa_mux       ; Input ; Info     ; Stuck at VCC                                                         ;
+; entradab_mux[2..1] ; Input ; Info     ; Stuck at GND                                                         ;
+; entradab_mux[0]    ; Input ; Info     ; Stuck at VCC                                                         ;
++--------------------+-------+----------+----------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer" ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                                                       ;
++------+-------+----------+------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR|registradorGenerico:PC" ;
++--------+-------+----------+------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                        ;
++--------+-------+----------+------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                   ;
+; rst    ; Input ; Info     ; Stuck at GND                                   ;
++--------+-------+----------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "processador:PROCESSADOR"                                                                   ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; sp_overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sp          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 742                         ;
+;     CLR               ; 3                           ;
+;     ENA               ; 683                         ;
+;     SCLR              ; 40                          ;
+;     plain             ; 16                          ;
+; arriav_lcell_comb     ; 674                         ;
+;     arith             ; 75                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 49                          ;
+;         4 data inputs ; 22                          ;
+;         5 data inputs ; 3                           ;
+;     extend            ; 37                          ;
+;         7 data inputs ; 37                          ;
+;     normal            ; 562                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 78                          ;
+;         5 data inputs ; 23                          ;
+;         6 data inputs ; 360                         ;
+; boundary_port         ; 68                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.30                       ;
+; Average LUT depth     ; 6.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sat Nov 05 18:25:32 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Proj1EntregaFinal -c Proj1EntregaFinal
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/ULA.vhd Line: 15
+    Info (12023): Found entity 1: ULA File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stacksubrotina.vhd
+    Info (12022): Found design unit 1: stackSubRotina-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 21
+    Info (12023): Found entity 1: stackSubRotina File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stack.vhd
+    Info (12022): Found design unit 1: stack-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stack.vhd Line: 19
+    Info (12023): Found entity 1: stack File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stack.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
+    Info (12022): Found design unit 1: processador-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 32
+    Info (12023): Found entity 1: processador File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico4x1.vhd
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoriarom.vhd
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaROM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file memoriaram.vhd
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaRAM.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file logicadesvio.vhd
+    Info (12022): Found design unit 1: logicaDesvio-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/logicaDesvio.vhd Line: 15
+    Info (12023): Found entity 1: logicaDesvio File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/logicaDesvio.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/flipFlop.vhd Line: 12
+    Info (12023): Found entity 1: flipFlop File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/flipFlop.vhd Line: 4
+Info (12021): Found 3 design units, including 1 entities, in source file edgedetector.vhd
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/edgeDetector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderinstru.vhd
+    Info (12022): Found design unit 1: decoderInstru-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderInstru.vhd Line: 10
+    Info (12023): Found entity 1: decoderInstru File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderInstru.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoderenderecos.vhd
+    Info (12022): Found design unit 1: decoderEnderecos-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderEnderecos.vhd Line: 11
+    Info (12023): Found entity 1: decoderEnderecos File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderEnderecos.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoder3x8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_mask.vhd
+    Info (12022): Found design unit 1: buffer_3_state_mask-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_mask.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_mask File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_mask.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state_8portas.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state.vhd
+    Info (12022): Found design unit 1: buffer_3_state-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/buffer_3_state.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoregistradoresarqregmem.vhd
+    Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/bancoRegistradoresArqRegMem.vhd Line: 23
+    Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/bancoRegistradoresArqRegMem.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file proj1entregafinal.vhd
+    Info (12022): Found design unit 1: Proj1EntregaFinal-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 23
+    Info (12023): Found entity 1: Proj1EntregaFinal File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file divisorgenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/divisorGenerico.vhd Line: 5
+Info (12127): Elaborating entity "Proj1EntregaFinal" for the top level hierarchy
+Info (12128): Elaborating entity "processador" for hierarchy "processador:PROCESSADOR" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 95
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:PROCESSADOR|registradorGenerico:PC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 73
+Info (12128): Elaborating entity "somaConstante" for hierarchy "processador:PROCESSADOR|somaConstante:incrementaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 76
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:PROCESSADOR|somadorGenerico:somaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 79
+Info (12128): Elaborating entity "logicaDesvio" for hierarchy "processador:PROCESSADOR|logicaDesvio:LOG_DESVIO" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 83
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "processador:PROCESSADOR|muxGenerico4x1:MUXJUMP" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 93
+Info (12128): Elaborating entity "stackSubRotina" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 104
+Info (12128): Elaborating entity "stack" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 28
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|registradorGenerico:StackPointer" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 35
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|somadorGenerico:SomaSubStackPointer" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 42
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:PROCESSADOR|stackSubRotina:StackRET|muxGenerico2x1:MUXStackSubRotina" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stackSubRotina.vhd Line: 47
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "processador:PROCESSADOR|muxGenerico2x1:MUX1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 115
+Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 123
+Info (12128): Elaborating entity "ULA" for hierarchy "processador:PROCESSADOR|ULA:ULA" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 131
+Info (12128): Elaborating entity "flipFlop" for hierarchy "processador:PROCESSADOR|flipFlop:FFZ" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 139
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "processador:PROCESSADOR|decoderInstru:DEC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/processador.vhd Line: 145
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 106
+Info (12128): Elaborating entity "decoderEnderecos" for hierarchy "decoderEnderecos:DECEND" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 111
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoderEnderecos:DECEND|decoder3x8:DECMSB" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/decoderEnderecos.vhd Line: 32
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:MEM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 123
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG8LED" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 134
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGHEX0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 157
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:H0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 199
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:B3S_SW0to7" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 245
+Info (12128): Elaborating entity "buffer_3_state_mask" for hierarchy "buffer_3_state_mask:B3S_SW8" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 248
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:DSKEY1" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 269
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:BaseDeTempoUmSegundo" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 299
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico:BaseDeTempoAcelerada" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 303
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_base_tempo" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 307
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer muxGenerico2x1:MUX_base_tempo|saida_MUX[0] File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+Info (276014): Found 3 instances of uninferred RAM logic
+    Info (276007): RAM logic "memoriaRAM:MEM|ram" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/memoriaRAM.vhd Line: 27
+    Info (276007): RAM logic "processador:PROCESSADOR|bancoRegistradoresArqRegMem:BANCOREG|registrador" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/bancoRegistradoresArqRegMem.vhd Line: 29
+    Info (276007): RAM logic "processador:PROCESSADOR|stackSubRotina:StackRET|stack:StackRotinas|mem" is uninferred due to asynchronous read logic File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/stack.vhd Line: 22
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "Barramento_Leitura[7]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[6]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[5]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[4]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[3]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[2]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[1]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Barramento_Leitura[0]" into a selector File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/muxGenerico2x1.vhd Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/P1entregaFinal/Proj1EntregaFinal.vhd Line: 13
+Info (21057): Implemented 1425 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 1357 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4907 megabytes
+    Info: Processing ended: Sat Nov 05 18:25:38 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
+
+
