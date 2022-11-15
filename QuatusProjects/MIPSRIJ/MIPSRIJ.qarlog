@@ -1,0 +1,25 @@
+Quartus Prime Archive log --	C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qarlog
+
+Archive:	C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qar
+Date:		Mon Nov 14 11:46:47 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qpf
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qsf
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/RAMMIPS.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/ULASomaSub.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform.vwf
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/bancoReg.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/estendeSinalGenerico.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/muxGenerico2x1.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/registradorGenerico.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/somaConstante.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
