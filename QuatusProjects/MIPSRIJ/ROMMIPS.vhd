@@ -25,7 +25,7 @@ architecture assincrona OF ROMMIPS IS
         tmp(3) := 6x"04" & "01000" & "01001" & x"000F"; --BEQ t0, t1, @15
 		  tmp(4) := 6x"00" & "01001" & "01010" & "01111" & "00000" & 6x"20"; --ADD t7 = t1 + t2 
         tmp(5) := 6x"00" & "01111" & "01011" & "01111" & "00000" & 6x"22"; --SUB t7 = t7 - t3
-		  tmp(19):= 6x"02" & 26x"4"; --JMP @4
+		  tmp(20):= 6x"02" & 26x"0004"; --JMP @4
         return tmp;
     end initMemory;
 

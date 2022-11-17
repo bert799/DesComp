@@ -1,155 +1,75 @@
 Determining the location of the ModelSim executable...
 
-Using: c:/intelfpga_lite/20.1/modelsim_ase/win32aloem/
+Using: /home/borg/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPSRIJ -c MIPSRIJ --vector_source="C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform.vwf" --testbench_file="C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPSRIJ -c MIPSRIJ --vector_source="/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform2.vwf" --testbench_file="/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/Waveform2.vwf.vht"
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 15 15:31:35 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPSRIJ -c MIPSRIJ --vector_source=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform.vwf --testbench_file=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/Waveform.vwf.vht
-
-
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Nov 17 17:18:54 2022Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPSRIJ -c MIPSRIJ --vector_source=/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform2.vwf --testbench_file=/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/Waveform2.vwf.vhtInfo (119006): Selected device 5CEBA4F23C7 for design "MIPSRIJ"
+ng output pin "saidaA[8]" in vector source file when writing test bench files
+oring output pin "saidaB[1]" in vector source file when writing test bench files
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/" MIPSRIJ -c MIPSRIJ
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/" MIPSRIJ -c MIPSRIJ
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Nov 15 15:31:36 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/ MIPSRIJ -c MIPSRIJ
-Info (204019): Generated file MIPSRIJ.vho in folder "C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4744 megabytes
-    Info: Processing ended: Tue Nov 15 15:31:37 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Nov 17 17:18:55 2022Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/ MIPSRIJ -c MIPSRIJInfo (119006): Selected device 5CEBA4F23C7 for design "MIPSRIJ"Info (204019): Generated file MIPSRIJ.vho in folder "/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings    Info: Peak virtual memory: 671 megabytes    Info: Processing ended: Thu Nov 17 17:18:55 2022    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:01
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ.do generated.
+/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ.do generated.
 
 Completed successfully. 
 
 **** Running the ModelSim simulation ****
 
-c:/intelfpga_lite/20.1/modelsim_ase/win32aloem//vsim -c -do MIPSRIJ.do
+/home/borg/intelFPGA_lite/20.1/modelsim_ase/linuxaloem//vsim -c -do MIPSRIJ.do
 
 Reading pref.tcl
-
 # 2020.1
-
 # do MIPSRIJ.do
 # ** Warning: (vlib-34) Library already exists at "work".
-
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:31:38 on Nov 15,2022
-# vcom -work work MIPSRIJ.vho 
+# Start time: 17:18:56 on Nov 17,2022# vcom -work work MIPSRIJ.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package dffeas_pack
-# -- Loading package altera_primitives_components
+# -- Loading package VITAL_Timing# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack# -- Loading package altera_primitives_components
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
-# -- Compiling entity MIPSRIJ
-# -- Compiling architecture structure of MIPSRIJ
-
-# End time: 15:31:39 on Nov 15,2022, Elapsed time: 0:00:01
+# -- Compiling entity bancoReg
+# -- Compiling architecture structure of bancoReg
+# End time: 17:18:56 on Nov 17,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 15:31:39 on Nov 15,2022
-# vcom -work work Waveform.vwf.vht 
-
+# Start time: 17:18:56 on Nov 17,2022# vcom -work work Waveform2.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity MIPSRIJ_vhd_vec_tst
-# -- Compiling architecture MIPSRIJ_arch of MIPSRIJ_vhd_vec_tst
-# End time: 15:31:39 on Nov 15,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-
-# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.MIPSRIJ_vhd_vec_tst 
-# Start time: 15:31:39 on Nov 15,2022
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.mipsrij_vhd_vec_tst(mipsrij_arch)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading altera.dffeas_pack
-# Loading altera.altera_primitives_components
-# Loading altera_lnsim.altera_lnsim_components
-# Loading cyclonev.cyclonev_atom_pack(body)
-# Loading cyclonev.cyclonev_components
-# Loading work.mipsrij(structure)
-# Loading ieee.std_logic_arith(body)
-# Loading cyclonev.cyclonev_io_obuf(arch)
-# Loading cyclonev.cyclonev_io_ibuf(arch)
-# Loading cyclonev.cyclonev_clkena(behavior)
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
-# Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 889191 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
+# -- Compiling entity bancoReg_vhd_vec_tst# -- Compiling architecture bancoReg_arch of bancoReg_vhd_vec_tst
+# End time: 17:18:56 on Nov 17,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.bancoReg_vhd_vec_tst # Start time: 17:18:56 on Nov 17,2022# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.bancoreg_vhd_vec_tst(bancoreg_arch)# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading altera.dffeas_pack# Loading altera.altera_primitives_components# Loading altera_lnsim.altera_lnsim_components# Loading cyclonev.cyclonev_atom_pack(body)# Loading cyclonev.cyclonev_components# Loading work.bancoreg(structure)# Loading ieee.std_logic_arith(body)# Loading cyclonev.cyclonev_io_obuf(arch)# Loading cyclonev.cyclonev_io_ibuf(arch)# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)# Loading altera.dffeas(vital_dffeas)# ** Warning: Design size of 301717 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.
 # after#34
-
-# End time: 15:31:41 on Nov 15,2022, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 1
-
+# End time: 17:18:57 on Nov 17,2022, Elapsed time: 0:00:01# Errors: 0, Warnings: 1
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform.vwf...
+Reading /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/Waveform2.vwf...
 
-Reading C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ.msim.vcd...
+Reading /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ_20221115153141.sim.vwf
+Writing the resulting VWF to /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/simulation/qsim/MIPSRIJ_20221117171857.sim.vwf
 
 Finished VCD to VWF conversion.
 

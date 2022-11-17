@@ -8,23 +8,26 @@ entity MIPSRIJ is
             simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
-	 CLOCK_50			: in std_logic;
-	 ULA_OP 				: in std_logic;
-	 WR,RD				: in std_logic;
-	 EN_REG  			: in std_logic;
-	 SEL_MUX_PC_JMP 	: in std_logic;
-	 Sel_MUX_ULA		: in std_logic;
-	 Sel_MUX_RD_ADDR 	: in std_logic;
-	 Sel_MUX_RB_IN 	: in std_logic;
-	 imediato_out		: out std_logic_vector(largura_dados - 1 downto 0);
-	 PC_OUT_sig 		: out std_logic_vector(largura_dados - 1 downto 0);
-	 ULA_OUT_sig 		: out std_logic_vector(largura_dados - 1 downto 0);
-	 RAM_OUT_sig 		: out std_logic_vector(largura_dados - 1 downto 0);
-	 RT_addr				: out std_logic_vector(4 downto 0);
-	 RS_addr 			: out std_logic_vector(4 downto 0);
-	 RD_addr 			: out std_logic_vector(4 downto 0);
-	 RT_OUT 				: out std_logic_vector(largura_dados - 1 downto 0);
-	 RS_OUT 				: out std_logic_vector(largura_dados - 1 downto 0)
+	 CLOCK_50				: in std_logic;
+	 ULA_OP 					: in std_logic;
+	 WR,RD					: in std_logic;
+	 EN_REG  				: in std_logic;
+	 SEL_MUX_PC_JMP_OUT 	: out std_logic;
+	 Sel_MUX_ULA			: in std_logic;
+	 Sel_MUX_RD_ADDR 		: in std_logic;
+	 Sel_MUX_RB_IN 		: in std_logic;
+	 BEQ						: in std_logic;
+	 shift_J					: out std_logic_vector(largura_dados - 1 downto 0);
+	 RB_MUX_OUT				: out std_logic_vector(largura_dados - 1 downto 0);	 
+	 instrucao_out 		: out std_logic_vector(largura_dados - 1 downto 0);
+	 PC_OUT_sig 			: out std_logic_vector(largura_dados - 1 downto 0);
+	 ULA_OUT_sig 			: out std_logic_vector(largura_dados - 1 downto 0);
+	 RAM_OUT_sig 			: out std_logic_vector(largura_dados - 1 downto 0);
+	 RT_addr					: out std_logic_vector(4 downto 0);
+	 RS_addr 				: out std_logic_vector(4 downto 0);
+	 RD_addr 				: out std_logic_vector(4 downto 0);
+	 RT_OUT 					: out std_logic_vector(largura_dados - 1 downto 0);
+	 RS_OUT 					: out std_logic_vector(largura_dados - 1 downto 0)
   );
 end entity;
 
@@ -55,6 +58,7 @@ architecture arquitetura of MIPSRIJ is
 	
 ---Imediato J----	
 	signal shift_imediato_J : std_logic_vector(largura_dados-1 downto 0);
+	signal SEL_MUX_PC_JMP : std_logic;
 	
 ---Banco Registradores----
 	signal MUX_RD_ADDR_OUT 	: std_logic_vector(4 downto 0);
@@ -91,7 +95,7 @@ puloPCBEQ: entity work.somadorGenerico generic map (larguraDados => largura_dado
 	port map (entradaA => IncrementaPC_OUT, entradaB => shift_imediato_I, saida => puloPC_BEQ_OUT);
 
 MUX_PC_BEQ : entity work.muxGenerico2x1 generic map(larguraDados => largura_dados)
-	port map (entradaA_MUX => IncrementaPC_OUT, entradaB_MUX => puloPC_BEQ_OUT, seletor_MUX => Flg_igual, saida_MUX => MUX_PC_BEQ_OUT);
+	port map (entradaA_MUX => IncrementaPC_OUT, entradaB_MUX => puloPC_BEQ_OUT, seletor_MUX => Flg_igual and BEQ, saida_MUX => MUX_PC_BEQ_OUT);
 
 shift_imediato_J(1 downto 0) <= "00";
 shift_imediato_J(27 downto 2) <= Imediato_J;
@@ -129,8 +133,11 @@ RAM: entity work.RAMMIPS
 
 Estende_imediato : entity work.estendeSinalGenerico
           port map (estendeSinal_IN => Imediato_I, estendeSinal_OUT => Imediato_I_extd);	
-	
-imediato_out 	<= RB_IN;
+
+instrucao_out <= instrucao;
+
+RB_MUX_OUT <= RB_IN;
+shift_J 	<= shift_imediato_J;
 PC_OUT_sig 		<= PC_OUT;
 ULA_OUT_sig 	<= ULA_OUT;
 RS_addr			<= EnderecoRegS;
@@ -139,5 +146,7 @@ RD_addr			<= MUX_RD_ADDR_OUT;
 RS_OUT			<= REGS_OUT;
 RT_OUT 			<= REGT_OUT;
 RAM_OUT_sig 	<= RAM_OUT;
+SEL_MUX_PC_JMP <= '1' when Opcode = "000010" else '0';
+SEL_MUX_PC_JMP_OUT <= SEL_MUX_PC_JMP;
 
 end architecture;
