@@ -5,10 +5,16 @@ entity MIPSentregaIntermediaria is
   -- Total de bits das entradas e saidas
   generic ( largura_dados : natural := 32;
             largura_endereco : natural := 32;
-            simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
+            simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
-	 CLOCK_50			: in std_logic
+	 CLOCK_50			: in std_logic;
+	 KEY 					: in std_logic_vector(3 downto 0);
+	 FPGA_RESET_N 		: in std_logic;
+	 SW 					: in std_logic_vector(9 downto 0);
+	 
+	 HEX0, HEX1, HEX2, HEX3, HEX4, HEX5 : out std_logic_vector (6 DOWNTO 0);
+    LEDR  				: out std_logic_vector(9 downto 0)
   );
 end entity;
 
@@ -69,6 +75,9 @@ architecture arquitetura of MIPSentregaIntermediaria is
 	
 ---RAM---
 	signal RAM_OUT : std_logic_vector(largura_dados-1 downto 0);
+	
+---Display---
+	signal MUX_Display_OUT: std_logic_vector(largura_dados-1 downto 0);
 	
   
 begin
@@ -138,111 +147,57 @@ RAM: entity work.RAMMIPS
 Estende_imediato : entity work.estendeSinalGenerico
           port map (estendeSinal_IN => Imediato_I, estendeSinal_OUT => Imediato_I_extd);
 			 
-		
-		
---------- LEDs ----------
-REG8LED : entity work.registradorGenerico   generic map (larguraDados => largura_dados)
-          port map (DIN => Barramento_Escrita, 
-			           DOUT => GROUPLED_OUT,
-						  ENABLE => Habilita8LED, 
-						  CLK => CLK, 
-						  RST => '0');
 
-
-
-FFLED8 : entity work.flipFlop
-          port map (DIN => Barramento_Escrita(0), DOUT => LED8_OUT, ENABLE => HabilitaLED8, CLK => CLK, RST => '0');
 			 
-FFLED9 : entity work.flipFlop
-          port map (DIN => Barramento_Escrita(0), DOUT => LED9_OUT, ENABLE => HabilitaLED9, CLK => CLK, RST => '0');
+MUX_Display: entity work.muxGenerico2x1 generic map(larguraDados => largura_dados)
+	port map (entradaA_MUX => PC_OUT, entradaB_MUX => ULA_OUT, seletor_MUX => SW(0), saida_MUX => MUX_Display_OUT);			 
 
-
-LEDR(7 downto 0) <= GROUPLED_OUT;
-LEDR(8) <= LED8_OUT;
-LEDR(9) <= LED9_OUT;
+	
+	
+--------- LEDs ----------
+LEDR(3 downto 0) <= MUX_Display_OUT(27 downto 24);
+LEDR(7 downto 4) <= MUX_Display_OUT(31 downto 28);
 
 
 
 -------- HEXs -----------
-REGHEX0 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX0_OUT,
-						  ENABLE => HabilitaHEX0, 
-						  CLK => CLK, 
-						  RST => '0');
-						  
-REGHEX1 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX1_OUT,
-						  ENABLE => HabilitaHEX1, 
-						  CLK => CLK, 
-						  RST => '0');
-						  
-REGHEX2 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX2_OUT,
-						  ENABLE => HabilitaHEX2, 
-						  CLK => CLK, 
-						  RST => '0');
-						  
-REGHEX3 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX3_OUT,
-						  ENABLE => HabilitaHEX3, 
-						  CLK => CLK, 
-						  RST => '0');
-						  
-REGHEX4 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX4_OUT,
-						  ENABLE => HabilitaHEX4, 
-						  CLK => CLK, 
-						  RST => '0');
-						  
-REGHEX5 : entity work.registradorGenerico   generic map (larguraDados => 4)
-          port map (DIN => Barramento_Escrita(3 downto 0), 
-			           DOUT => HEX5_OUT,
-						  ENABLE => HabilitaHEX5, 
-						  CLK => CLK, 
-						  RST => '0');
-
 H0 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX0_OUT,
+        port map(dadoHex => MUX_Display_OUT(3 downto 0),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
                  saida7seg => HEX0);
 
 H1 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX1_OUT,
+        port map(dadoHex => MUX_Display_OUT(7 downto 4),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
                  saida7seg => HEX1);
 					  
 H2 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX2_OUT,
+        port map(dadoHex => MUX_Display_OUT(11 downto 8),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
                  saida7seg => HEX2);
 					  
 H3 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX3_OUT,
+        port map(dadoHex => MUX_Display_OUT(15 downto 12),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
                  saida7seg => HEX3);
 					  
 H4 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX4_OUT,
+        port map(dadoHex => MUX_Display_OUT(19 downto 16),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',
                  saida7seg => HEX4);
 			  
 H5 :  entity work.conversorHex7Seg
-        port map(dadoHex => HEX5_OUT,
+        port map(dadoHex => MUX_Display_OUT(23 downto 20),
                  apaga =>  '0',
                  negativo => '0',
                  overFlow =>  '0',

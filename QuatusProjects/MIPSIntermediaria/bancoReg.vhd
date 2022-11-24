@@ -51,8 +51,8 @@ function initMemory
 begin
     process(clk) is
     begin
-        --if (rising_edge(clk)) then
-		  if (falling_edge(clk)) then
+        if (rising_edge(clk)) then
+		  --if (falling_edge(clk)) then
             if (escreveC = '1') then
                 registrador(to_integer(unsigned(enderecoC))) := dadoEscritaC;
             end if;

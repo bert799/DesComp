@@ -26,10 +26,10 @@ architecture arquitetura of ComponenteDeControle is
 		UnidadeDeControle : entity work.UnidadeDeControle
 				port map(opcode=>opcode , saida=>palavraDeControle);
 				
-		DecoderOpcode : entity work.DecoderOpcode
+		DecOpcode : entity work.DecoderOpcode
 				port map(opcode=>opcode , saida=>saidaDecOp);
 				
-		DecoderFunct : entity work.DecoderFunct
+		DecFunct : entity work.DecoderFunct
 				port map(funct=>funct , saida=>saidaDecFun);
 				
 		MUX_ULA_OP : entity work.muxGenerico2x1 generic map(larguraDados => 3)
