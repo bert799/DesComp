@@ -1,0 +1,1510 @@
+Analysis & Elaboration report for MIPSentregaIntermediaria
+Wed Nov 23 23:17:11 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |MIPSentregaIntermediaria
+  5. Parameter Settings for User Entity Instance: registradorGenerico:PC
+  6. Parameter Settings for User Entity Instance: somaConstante:incrementaPC
+  7. Parameter Settings for User Entity Instance: somadorGenerico:puloPCBEQ
+  8. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_BEQ
+  9. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_JMP
+ 10. Parameter Settings for User Entity Instance: ROMMIPS:ROM
+ 11. Parameter Settings for User Entity Instance: ComponenteDeControle:DECODER|muxGenerico2x1:MUX_ULA_OP
+ 12. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_RD_ADDR
+ 13. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_REG_BLOCK_IN
+ 14. Parameter Settings for User Entity Instance: bancoReg:REG_BLOCK
+ 15. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA
+ 16. Parameter Settings for User Entity Instance: ULAMIPS:ULA
+ 17. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit0|mux2x1:MUXB
+ 18. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit0|mux4x1:MUXOUT
+ 19. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit1|mux2x1:MUXB
+ 20. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit1|mux4x1:MUXOUT
+ 21. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit2|mux2x1:MUXB
+ 22. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit2|mux4x1:MUXOUT
+ 23. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit3|mux2x1:MUXB
+ 24. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit3|mux4x1:MUXOUT
+ 25. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit4|mux2x1:MUXB
+ 26. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit4|mux4x1:MUXOUT
+ 27. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit5|mux2x1:MUXB
+ 28. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit5|mux4x1:MUXOUT
+ 29. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit6|mux2x1:MUXB
+ 30. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit6|mux4x1:MUXOUT
+ 31. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit7|mux2x1:MUXB
+ 32. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit7|mux4x1:MUXOUT
+ 33. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit8|mux2x1:MUXB
+ 34. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit8|mux4x1:MUXOUT
+ 35. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit9|mux2x1:MUXB
+ 36. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit9|mux4x1:MUXOUT
+ 37. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit10|mux2x1:MUXB
+ 38. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit10|mux4x1:MUXOUT
+ 39. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit11|mux2x1:MUXB
+ 40. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit11|mux4x1:MUXOUT
+ 41. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit12|mux2x1:MUXB
+ 42. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit12|mux4x1:MUXOUT
+ 43. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit13|mux2x1:MUXB
+ 44. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit13|mux4x1:MUXOUT
+ 45. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit14|mux2x1:MUXB
+ 46. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit14|mux4x1:MUXOUT
+ 47. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit15|mux2x1:MUXB
+ 48. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit15|mux4x1:MUXOUT
+ 49. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit16|mux2x1:MUXB
+ 50. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit16|mux4x1:MUXOUT
+ 51. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit17|mux2x1:MUXB
+ 52. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit17|mux4x1:MUXOUT
+ 53. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit18|mux2x1:MUXB
+ 54. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit18|mux4x1:MUXOUT
+ 55. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit19|mux2x1:MUXB
+ 56. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit19|mux4x1:MUXOUT
+ 57. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit20|mux2x1:MUXB
+ 58. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit20|mux4x1:MUXOUT
+ 59. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit21|mux2x1:MUXB
+ 60. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit21|mux4x1:MUXOUT
+ 61. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit22|mux2x1:MUXB
+ 62. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit22|mux4x1:MUXOUT
+ 63. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit23|mux2x1:MUXB
+ 64. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit23|mux4x1:MUXOUT
+ 65. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit24|mux2x1:MUXB
+ 66. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit24|mux4x1:MUXOUT
+ 67. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit25|mux2x1:MUXB
+ 68. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit25|mux4x1:MUXOUT
+ 69. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit26|mux2x1:MUXB
+ 70. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit26|mux4x1:MUXOUT
+ 71. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit27|mux2x1:MUXB
+ 72. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit27|mux4x1:MUXOUT
+ 73. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit28|mux2x1:MUXB
+ 74. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit28|mux4x1:MUXOUT
+ 75. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit29|mux2x1:MUXB
+ 76. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit29|mux4x1:MUXOUT
+ 77. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit30|mux2x1:MUXB
+ 78. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit30|mux4x1:MUXOUT
+ 79. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit31:ULAbit31|mux2x1:MUXB
+ 80. Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit31:ULAbit31|mux4x1:MUXOUT
+ 81. Parameter Settings for User Entity Instance: RAMMIPS:RAM
+ 82. Parameter Settings for User Entity Instance: estendeSinalGenerico:Estende_imediato
+ 83. Analysis & Elaboration Settings
+ 84. Port Connectivity Checks: "RAMMIPS:RAM"
+ 85. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit31:ULAbit31"
+ 86. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit30"
+ 87. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit29"
+ 88. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit28"
+ 89. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit27"
+ 90. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit26"
+ 91. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit25"
+ 92. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit24"
+ 93. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit23"
+ 94. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit22"
+ 95. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit21"
+ 96. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit20"
+ 97. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit19"
+ 98. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit18"
+ 99. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit17"
+100. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit16"
+101. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit15"
+102. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit14"
+103. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit13"
+104. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit12"
+105. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit11"
+106. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit10"
+107. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit9"
+108. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit8"
+109. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit7"
+110. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit6"
+111. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit5"
+112. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit4"
+113. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit3"
+114. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit2"
+115. Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit1"
+116. Port Connectivity Checks: "ComponenteDeControle:DECODER"
+117. Port Connectivity Checks: "muxGenerico2x1:MUX_PC_JMP"
+118. Port Connectivity Checks: "somadorGenerico:puloPCBEQ"
+119. Port Connectivity Checks: "registradorGenerico:PC"
+120. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Wed Nov 23 23:17:11 2022       ;
+; Quartus Prime Version         ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                 ; MIPSentregaIntermediaria                    ;
+; Top-level Entity Name         ; MIPSentregaIntermediaria                    ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |MIPSentregaIntermediaria ;
++------------------+-------+---------------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                          ;
++------------------+-------+---------------------------------------------------------------+
+; largura_dados    ; 32    ; Signed Integer                                                ;
+; largura_endereco ; 32    ; Signed Integer                                                ;
+; simulacao        ; false ; Enumerated                                                    ;
++------------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:PC ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somaConstante:incrementaPC ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                 ;
+; constante      ; 4     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somadorGenerico:puloPCBEQ ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_BEQ ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_JMP ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ROMMIPS:ROM ;
++-----------------+-------+--------------------------------+
+; Parameter Name  ; Value ; Type                           ;
++-----------------+-------+--------------------------------+
+; datawidth       ; 32    ; Signed Integer                 ;
+; addrwidth       ; 32    ; Signed Integer                 ;
+; memoryaddrwidth ; 6     ; Signed Integer                 ;
++-----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ComponenteDeControle:DECODER|muxGenerico2x1:MUX_ULA_OP ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; larguradados   ; 3     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_RD_ADDR ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; larguradados   ; 5     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_REG_BLOCK_IN ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bancoReg:REG_BLOCK ;
++---------------------+-------+-----------------------------------+
+; Parameter Name      ; Value ; Type                              ;
++---------------------+-------+-----------------------------------+
+; larguradados        ; 32    ; Signed Integer                    ;
+; larguraendbancoregs ; 5     ; Signed Integer                    ;
++---------------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; larguradados   ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit0|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit0|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit1|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit1|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit2|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit2|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit3|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit3|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit4|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit4|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit5|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit5|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit6|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit6|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit7|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit7|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit8|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit8|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit9|mux2x1:MUXB ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit9|mux4x1:MUXOUT ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit10|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit10|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit11|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit11|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit12|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit12|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit13|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit13|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit14|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit14|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit15|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit15|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit16|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit16|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit17|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit17|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit18|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit18|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit19|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit19|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit20|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit20|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit21|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit21|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit22|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit22|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit23|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit23|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit24|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit24|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit25|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit25|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit26|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit26|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit27|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit27|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit28|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit28|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit29|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit29|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit30|mux2x1:MUXB ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit:ULAbit30|mux4x1:MUXOUT ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit31:ULAbit31|mux2x1:MUXB ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULAMIPS:ULA|ULAbit31:ULAbit31|mux4x1:MUXOUT ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAMMIPS:RAM ;
++-----------------+-------+--------------------------------+
+; Parameter Name  ; Value ; Type                           ;
++-----------------+-------+--------------------------------+
+; datawidth       ; 32    ; Signed Integer                 ;
+; addrwidth       ; 32    ; Signed Integer                 ;
+; memoryaddrwidth ; 6     ; Signed Integer                 ;
++-----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: estendeSinalGenerico:Estende_imediato ;
++--------------------+-------+-------------------------------------------------------+
+; Parameter Name     ; Value ; Type                                                  ;
++--------------------+-------+-------------------------------------------------------+
+; larguradadoentrada ; 16    ; Signed Integer                                        ;
+; larguradadosaida   ; 32    ; Signed Integer                                        ;
++--------------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                                       ;
++---------------------------------------------------------------------------------+--------------------------+--------------------------+
+; Option                                                                          ; Setting                  ; Default Value            ;
++---------------------------------------------------------------------------------+--------------------------+--------------------------+
+; Device                                                                          ; 5CEBA4F23C7              ;                          ;
+; Top-level entity name                                                           ; MIPSentregaIntermediaria ; MIPSentregaIntermediaria ;
+; Family name                                                                     ; Cyclone V                ; Cyclone V                ;
+; Maximum processors allowed for parallel compilation                             ; All                      ;                          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                      ;                          ;
+; VHDL Version                                                                    ; VHDL_2008                ; VHDL_1993                ;
+; Use smart compilation                                                           ; Off                      ; Off                      ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                       ; On                       ;
+; Enable compact report table                                                     ; Off                      ; Off                      ;
+; Restructure Multiplexers                                                        ; Auto                     ; Auto                     ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                      ; Off                      ;
+; Create Debugging Nodes for IP Cores                                             ; Off                      ; Off                      ;
+; Preserve fewer node names                                                       ; On                       ; On                       ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                   ; Enable                   ;
+; Verilog Version                                                                 ; Verilog_2001             ; Verilog_2001             ;
+; State Machine Processing                                                        ; Auto                     ; Auto                     ;
+; Safe State Machine                                                              ; Off                      ; Off                      ;
+; Extract Verilog State Machines                                                  ; On                       ; On                       ;
+; Extract VHDL State Machines                                                     ; On                       ; On                       ;
+; Ignore Verilog initial constructs                                               ; Off                      ; Off                      ;
+; Iteration limit for constant Verilog loops                                      ; 5000                     ; 5000                     ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                      ; 250                      ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                       ; On                       ;
+; Infer RAMs from Raw Logic                                                       ; On                       ; On                       ;
+; Parallel Synthesis                                                              ; On                       ; On                       ;
+; DSP Block Balancing                                                             ; Auto                     ; Auto                     ;
+; NOT Gate Push-Back                                                              ; On                       ; On                       ;
+; Power-Up Don't Care                                                             ; On                       ; On                       ;
+; Remove Redundant Logic Cells                                                    ; Off                      ; Off                      ;
+; Remove Duplicate Registers                                                      ; On                       ; On                       ;
+; Ignore CARRY Buffers                                                            ; Off                      ; Off                      ;
+; Ignore CASCADE Buffers                                                          ; Off                      ; Off                      ;
+; Ignore GLOBAL Buffers                                                           ; Off                      ; Off                      ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                      ; Off                      ;
+; Ignore LCELL Buffers                                                            ; Off                      ; Off                      ;
+; Ignore SOFT Buffers                                                             ; On                       ; On                       ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                      ; Off                      ;
+; Optimization Technique                                                          ; Balanced                 ; Balanced                 ;
+; Carry Chain Length                                                              ; 70                       ; 70                       ;
+; Auto Carry Chains                                                               ; On                       ; On                       ;
+; Auto Open-Drain Pins                                                            ; On                       ; On                       ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                      ; Off                      ;
+; Auto ROM Replacement                                                            ; On                       ; On                       ;
+; Auto RAM Replacement                                                            ; On                       ; On                       ;
+; Auto DSP Block Replacement                                                      ; On                       ; On                       ;
+; Auto Shift Register Replacement                                                 ; Auto                     ; Auto                     ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                     ; Auto                     ;
+; Auto Clock Enable Replacement                                                   ; On                       ; On                       ;
+; Strict RAM Replacement                                                          ; Off                      ; Off                      ;
+; Allow Synchronous Control Signals                                               ; On                       ; On                       ;
+; Force Use of Synchronous Clear Signals                                          ; Off                      ; Off                      ;
+; Auto Resource Sharing                                                           ; Off                      ; Off                      ;
+; Allow Any RAM Size For Recognition                                              ; Off                      ; Off                      ;
+; Allow Any ROM Size For Recognition                                              ; Off                      ; Off                      ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                      ; Off                      ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                       ; On                       ;
+; Ignore translate_off and synthesis_off directives                               ; Off                      ; Off                      ;
+; Timing-Driven Synthesis                                                         ; On                       ; On                       ;
+; Report Parameter Settings                                                       ; On                       ; On                       ;
+; Report Source Assignments                                                       ; On                       ; On                       ;
+; Report Connectivity Checks                                                      ; On                       ; On                       ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                      ; Off                      ;
+; Synchronization Register Chain Length                                           ; 3                        ; 3                        ;
+; Power Optimization During Synthesis                                             ; Normal compilation       ; Normal compilation       ;
+; HDL message level                                                               ; Level2                   ; Level2                   ;
+; Suppress Register Optimization Related Messages                                 ; Off                      ; Off                      ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                     ; 5000                     ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                     ; 5000                     ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                      ; 100                      ;
+; Clock MUX Protection                                                            ; On                       ; On                       ;
+; Auto Gated Clock Conversion                                                     ; Off                      ; Off                      ;
+; Block Design Naming                                                             ; Auto                     ; Auto                     ;
+; SDC constraint protection                                                       ; Off                      ; Off                      ;
+; Synthesis Effort                                                                ; Auto                     ; Auto                     ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                       ; On                       ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                      ; Off                      ;
+; Analysis & Synthesis Message Level                                              ; Medium                   ; Medium                   ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                     ; Auto                     ;
+; Resource Aware Inference For Block RAM                                          ; On                       ; On                       ;
+; Automatic Parallel Synthesis                                                    ; On                       ; On                       ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                      ; Off                      ;
++---------------------------------------------------------------------------------+--------------------------+--------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "RAMMIPS:RAM"    ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; habilita ; Input ; Info     ; Stuck at VCC ;
++----------+-------+----------+--------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit31:ULAbit31" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit30" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit29" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit28" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit27" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit26" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit25" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit24" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit23" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit22" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit21" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit20" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit19" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit18" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit17" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit16" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit15" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit14" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit13" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit12" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit11" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit10" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit9" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit8" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit7" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit6" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit5" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit4" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit3" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit2" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "ULAMIPS:ULA|ULAbit:ULAbit1" ;
++------+-------+----------+------------------------------+
+; Port ; Type  ; Severity ; Details                      ;
++------+-------+----------+------------------------------+
+; slt  ; Input ; Info     ; Stuck at GND                 ;
++------+-------+----------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ComponenteDeControle:DECODER"                                                                       ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; palavradecontrole[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "muxGenerico2x1:MUX_PC_JMP" ;
++--------------------+-------+----------+---------------+
+; Port               ; Type  ; Severity ; Details       ;
++--------------------+-------+----------+---------------+
+; entradab_mux[1..0] ; Input ; Info     ; Stuck at GND  ;
++--------------------+-------+----------+---------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "somadorGenerico:puloPCBEQ" ;
++----------------+-------+----------+-------------------+
+; Port           ; Type  ; Severity ; Details           ;
++----------------+-------+----------+-------------------+
+; entradab[1..0] ; Input ; Info     ; Stuck at GND      ;
++----------------+-------+----------+-------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:PC" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
+; rst    ; Input ; Info     ; Stuck at GND           ;
++--------+-------+----------+------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Wed Nov 23 23:17:06 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSentregaIntermediaria -c MIPSentregaIntermediaria --analysis_and_elaboration
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mux4x1.vhd
+    Info (12022): Found design unit 1: mux4x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux4x1.vhd Line: 14
+    Info (12023): Found entity 1: mux4x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux4x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mux2x1.vhd
+    Info (12022): Found design unit 1: mux2x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux2x1.vhd Line: 14
+    Info (12023): Found entity 1: mux2x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mipsrij.vhd
+    Info (12022): Found design unit 1: MIPSRIJ-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSRIJ.vhd Line: 35
+    Info (12023): Found entity 1: MIPSRIJ File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSRIJ.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ulabit31.vhd
+    Info (12022): Found design unit 1: ULAbit31-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit31.vhd Line: 22
+    Info (12023): Found entity 1: ULAbit31 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit31.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ulabit.vhd
+    Info (12022): Found design unit 1: ULAbit-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd Line: 22
+    Info (12023): Found entity 1: ULAbit File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somador1bit.vhd
+    Info (12022): Found design unit 1: somador1Bit-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somador1Bit.vhd Line: 12
+    Info (12023): Found entity 1: somador1Bit File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somador1Bit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file unidadedecontrole.vhd
+    Info (12022): Found design unit 1: UnidadeDeControle-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/UnidadeDeControle.vhd Line: 12
+    Info (12023): Found entity 1: UnidadeDeControle File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/UnidadeDeControle.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoderopcode.vhd
+    Info (12022): Found design unit 1: DecoderOpcode-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd Line: 12
+    Info (12023): Found entity 1: DecoderOpcode File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoderfunct.vhd
+    Info (12022): Found design unit 1: DecoderFunct-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd Line: 12
+    Info (12023): Found entity 1: DecoderFunct File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentedecontrole.vhd
+    Info (12022): Found design unit 1: ComponenteDeControle-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 13
+    Info (12023): Found entity 1: ComponenteDeControle File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ulasomasub.vhd
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULASomaSub.vhd Line: 15
+    Info (12023): Found entity 1: ULASomaSub File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULASomaSub.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somaconstante.vhd
+    Info (12022): Found design unit 1: somaConstante-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somaConstante.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rommips.vhd
+    Info (12022): Found design unit 1: ROMMIPS-assincrona File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ROMMIPS.vhd Line: 15
+    Info (12023): Found entity 1: ROMMIPS File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ROMMIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registradorgenerico.vhd
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/registradorGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file rammips.vhd
+    Info (12022): Found design unit 1: RAMMIPS-assincrona File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/RAMMIPS.vhd Line: 18
+    Info (12023): Found entity 1: RAMMIPS File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/RAMMIPS.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file muxgenerico2x1.vhd
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/muxGenerico2x1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mipsinstructioni.vhd
+    Info (12022): Found design unit 1: mipsInstructionI-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstructionI.vhd Line: 28
+    Info (12023): Found entity 1: mipsInstructionI File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstructionI.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file mipsinstr.vhd
+    Info (12022): Found design unit 1: mipsInstR-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstR.vhd Line: 26
+    Info (12023): Found entity 1: mipsInstR File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file estendesinalgenerico.vhd
+    Info (12022): Found design unit 1: estendeSinalGenerico-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/estendeSinalGenerico.vhd Line: 19
+    Info (12023): Found entity 1: estendeSinalGenerico File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/estendeSinalGenerico.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoreg.vhd
+    Info (12022): Found design unit 1: bancoReg-comportamento File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/bancoReg.vhd Line: 30
+    Info (12023): Found entity 1: bancoReg File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/bancoReg.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mipsentregaintermediaria.vhd
+    Info (12022): Found design unit 1: MIPSentregaIntermediaria-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 16
+    Info (12023): Found entity 1: MIPSentregaIntermediaria File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ulamips.vhd
+    Info (12022): Found design unit 1: ULAMIPS-arquitetura File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAMIPS.vhd Line: 19
+    Info (12023): Found entity 1: ULAMIPS File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAMIPS.vhd Line: 4
+Info (12127): Elaborating entity "MIPSentregaIntermediaria" for the top level hierarchy
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 82
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 85
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "somadorGenerico:puloPCBEQ" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 90
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_PC_BEQ" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 93
+Info (12128): Elaborating entity "ROMMIPS" for hierarchy "ROMMIPS:ROM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 103
+Info (12128): Elaborating entity "ComponenteDeControle" for hierarchy "ComponenteDeControle:DECODER" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 107
+Info (12128): Elaborating entity "UnidadeDeControle" for hierarchy "ComponenteDeControle:DECODER|UnidadeDeControle:UnidadeDeControle" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 26
+Info (12128): Elaborating entity "DecoderOpcode" for hierarchy "ComponenteDeControle:DECODER|DecoderOpcode:DecoderOpcode" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 29
+Info (10041): Inferred latch for "saida[0]" at DecoderOpcode.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd Line: 15
+Info (10041): Inferred latch for "saida[1]" at DecoderOpcode.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd Line: 15
+Info (10041): Inferred latch for "saida[2]" at DecoderOpcode.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd Line: 15
+Info (12128): Elaborating entity "DecoderFunct" for hierarchy "ComponenteDeControle:DECODER|DecoderFunct:DecoderFunct" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 32
+Info (10041): Inferred latch for "saida[0]" at DecoderFunct.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd Line: 15
+Info (10041): Inferred latch for "saida[1]" at DecoderFunct.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd Line: 15
+Info (10041): Inferred latch for "saida[2]" at DecoderFunct.vhd(15) File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd Line: 15
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "ComponenteDeControle:DECODER|muxGenerico2x1:MUX_ULA_OP" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd Line: 35
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_RD_ADDR" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 111
+Info (12128): Elaborating entity "bancoReg" for hierarchy "bancoReg:REG_BLOCK" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 117
+Info (12128): Elaborating entity "ULAMIPS" for hierarchy "ULAMIPS:ULA" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 131
+Info (12128): Elaborating entity "ULAbit" for hierarchy "ULAMIPS:ULA|ULAbit:ULAbit0" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAMIPS.vhd Line: 59
+Info (12128): Elaborating entity "mux2x1" for hierarchy "ULAMIPS:ULA|ULAbit:ULAbit0|mux2x1:MUXB" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd Line: 29
+Info (12128): Elaborating entity "somador1Bit" for hierarchy "ULAMIPS:ULA|ULAbit:ULAbit0|somador1Bit:SOM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd Line: 35
+Info (12128): Elaborating entity "mux4x1" for hierarchy "ULAMIPS:ULA|ULAbit:ULAbit0|mux4x1:MUXOUT" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd Line: 42
+Info (12128): Elaborating entity "ULAbit31" for hierarchy "ULAMIPS:ULA|ULAbit31:ULAbit31" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAMIPS.vhd Line: 400
+Info (12128): Elaborating entity "RAMMIPS" for hierarchy "RAMMIPS:RAM" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 134
+Info (12128): Elaborating entity "estendeSinalGenerico" for hierarchy "estendeSinalGenerico:Estende_imediato" File: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd Line: 138
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Wed Nov 23 23:17:11 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
+
+
