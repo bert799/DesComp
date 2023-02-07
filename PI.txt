@@ -1,0 +1,102 @@
+library ieee;
+
+
+use ieee.std_logic_1164.all;
+
+
+
+
+
+entity questao5 is
+
+
+generic (dataWidth : natural := 32);
+
+port(
+
+CLK : in std_logic;
+
+
+selecao_MUX : in std_logic;
+
+
+PC_in : in std_logic_vector(dataWidth-1 downto 0);
+
+
+PC_out : out std_logic_vector(dataWidth-1 downto 0)
+
+
+);
+
+end entity;
+
+
+
+
+
+architecture arquitetura of questao5 is
+
+
+signal prox_PC : std_logic_vector(dataWidth-1 downto 0) ;
+
+
+signal PC_constante : std_logic_vector(dataWidth-1 downto 0) ;
+
+
+signal PC_contador : std_logic_vector(dataWidth-1 downto 0) ;
+
+begin
+
+
+Contador_1 : entity work.Contador generic map (dataWidth => dataWidth)
+
+
+port map (
+
+entrada_A => PC_contador,
+
+
+entrada_B => '1' ,
+
+
+saida => PC_constante
+
+
+);
+
+
+MUX _PC: entity work.MUX generic map (dataWidth => dataWidth)
+
+port map (
+
+entrada_A => PC_in ,
+
+entrada_B => PC_constante,
+
+sel => selecao_MUX,
+
+
+saida => prox_PC
+
+
+);
+
+PC_1 : entity work.PC generic map (dataWidth => dataWidth)
+
+port map (
+
+CLK => CLK,
+
+
+entrada => prox_PC,
+
+
+saida=> PC_contador
+
+
+);
+
+PC_out <= PC_contador;
+
+
+end architecture;

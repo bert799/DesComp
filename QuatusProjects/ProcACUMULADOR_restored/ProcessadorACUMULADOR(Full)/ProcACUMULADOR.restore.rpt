@@ -1,0 +1,123 @@
+Restore Archived Project report for ProcACUMULADOR
+Sat Dec 10 12:19:59 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Sat Dec 10 12:19:59 2022 ;
+; Revision Name                   ; ProcACUMULADOR                        ;
+; Top-level Entity Name           ; ProcACUMULADOR                        ;
+; Family                          ; Cyclone V                             ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/ProcACUMULADOR.qar' into the '/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/ProcACUMULADOR_restored/' directory
+Info: Generated report 'ProcACUMULADOR.restore.rpt'
+Info (23030): Evaluation of Tcl script /home/borg/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 576 megabytes
+    Info: Processing ended: Sat Dec 10 12:19:59 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++----------------------------------------------------------------------------------------+
+; Files Restored                                                                         ;
++----------------------------------------------------------------------------------------+
+; File Name                                                                              ;
++----------------------------------------------------------------------------------------+
+; qar_info.json                                                                          ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/ROMCaracteres.vhd                               ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/VGA_Tile_32x32.sdc                              ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/calcMemAddr.vhd                                 ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/controladorVGA.vhd                              ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/driverVGA.vhd                                   ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/dual_port_ram.vhd                               ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/geradorCaracteres.vhd                           ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/interfaceVGA.vhd                                ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/memoriaRAMVGA.vhd                               ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/muxGenerico.vhd                                 ;
+; (MaquinaEstado)VGA_Tile_32x32_restored/somadorGenerico.vhd                             ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/Flip_Flop.vhd                   ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/PS2Keyboard.sdc                 ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/PS2_Keyboard_Interface.vhd      ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/divisorGenericoComRESET.vhd     ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/divisorGenerico_e_Interface.vhd ;
+; PS2Keyboard-2022-11-16/PS2Keyboard-2022-10-28_restored/serial_parallel_shift.vhd       ;
+; ProcessadorACUMULADOR(Full)/CODIGO_TESTE_ARQCOMPmemoria.vhd                            ;
+; ProcessadorACUMULADOR(Full)/COLORsimple_dual_port_ram_dual_clock.vhd                   ;
+; ProcessadorACUMULADOR(Full)/CPU.vhd                                                    ;
+; ProcessadorACUMULADOR(Full)/Entrega4.vhd                                               ;
+; ProcessadorACUMULADOR(Full)/ProcACUMULADOR.qpf                                         ;
+; ProcessadorACUMULADOR(Full)/ProcACUMULADOR.qsf                                         ;
+; ProcessadorACUMULADOR(Full)/ProcACUMULADOR.vhd                                         ;
+; ProcessadorACUMULADOR(Full)/ULASomaSub.vhd                                             ;
+; ProcessadorACUMULADOR(Full)/assignment_defaults.qdf                                    ;
+; ProcessadorACUMULADOR(Full)/buffer_3_state.vhd                                         ;
+; ProcessadorACUMULADOR(Full)/buffer_3_state_8portas.vhd                                 ;
+; ProcessadorACUMULADOR(Full)/conversorHex7Seg.vhd                                       ;
+; ProcessadorACUMULADOR(Full)/db/stp1_auto_stripped.stp                                  ;
+; ProcessadorACUMULADOR(Full)/decoder3x8.vhd                                             ;
+; ProcessadorACUMULADOR(Full)/decoderInstru.vhd                                          ;
+; ProcessadorACUMULADOR(Full)/divisorGenerico.vhd                                        ;
+; ProcessadorACUMULADOR(Full)/edgeDetector.vhd                                           ;
+; ProcessadorACUMULADOR(Full)/flipFlop.vhd                                               ;
+; ProcessadorACUMULADOR(Full)/hexReg.vhd                                                 ;
+; ProcessadorACUMULADOR(Full)/jumpLogic.vhd                                              ;
+; ProcessadorACUMULADOR(Full)/memoria.vhd                                                ;
+; ProcessadorACUMULADOR(Full)/memoriaRAM.vhd                                             ;
+; ProcessadorACUMULADOR(Full)/memoriaROMVGA.vhd                                          ;
+; ProcessadorACUMULADOR(Full)/memoriaSCAN_ASCII.vhd                                      ;
+; ProcessadorACUMULADOR(Full)/muxGenerico2x1.vhd                                         ;
+; ProcessadorACUMULADOR(Full)/muxGenerico4x1.vhd                                         ;
+; ProcessadorACUMULADOR(Full)/registradorGenerico.vhd                                    ;
+; ProcessadorACUMULADOR(Full)/registradorGenericoFORCE_WRITE.vhd                         ;
+; ProcessadorACUMULADOR(Full)/simple_dual_port_ram_dual_clock.vhd                        ;
+; ProcessadorACUMULADOR(Full)/somaConstante.vhd                                          ;
+; ProcessadorACUMULADOR(Full)/stp1.stp                                                   ;
++----------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+

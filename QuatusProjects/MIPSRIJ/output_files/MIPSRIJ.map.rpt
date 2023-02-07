@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MIPSRIJ
-Thu Nov 17 17:18:50 2022
+Fri Nov 18 10:07:59 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,7 +14,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |bancoReg
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ROMMIPS
  10. Post-Synthesis Netlist Statistics for Top Partition
  11. Elapsed Time Per Partition
  12. Analysis & Synthesis Messages
@@ -44,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Nov 17 17:18:50 2022       ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 18 10:07:59 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; MIPSRIJ                                     ;
-; Top-level Entity Name           ; bancoReg                                    ;
+; Top-level Entity Name           ; ROMMIPS                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1024                                        ;
-; Total pins                      ; 113                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
-; Top-level entity name                                                           ; bancoReg           ; MIPSRIJ            ;
+; Top-level entity name                                                           ; ROMMIPS            ; MIPSRIJ            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
@@ -162,52 +162,47 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
-; bancoReg.vhd                     ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/bancoReg.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; ROMMIPS.vhd                      ; yes             ; User VHDL File  ; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1105      ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 639       ;
-;     -- 7 input functions                    ; 576       ;
-;     -- 6 input functions                    ; 32        ;
-;     -- 5 input functions                    ; 2         ;
-;     -- 4 input functions                    ; 0         ;
-;     -- <=3 input functions                  ; 29        ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 1024      ;
-;                                             ;           ;
-; I/O pins                                    ; 113       ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1024      ;
-; Total fan-out                               ; 7512      ;
-; Average fan-out                             ; 3.98      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 9                 ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 11                ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 7                 ;
+;     -- 5 input functions                    ; 4                 ;
+;     -- 4 input functions                    ; 0                 ;
+;     -- <=3 input functions                  ; 0                 ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 64                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; Endereco[3]~input ;
+; Maximum fan-out                             ; 11                ;
+; Total fan-out                               ; 147               ;
+; Average fan-out                             ; 1.06              ;
++---------------------------------------------+-------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,7 +210,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |bancoReg                  ; 639 (639)           ; 1024 (1024)               ; 0                 ; 0          ; 113  ; 0            ; |bancoReg           ; bancoReg    ; work         ;
+; |ROMMIPS                   ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 64   ; 0            ; |ROMMIPS            ; ROMMIPS     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -225,24 +220,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1024  ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |bancoReg ;
-+---------------------+-------+--------------------------------------------+
-; Parameter Name      ; Value ; Type                                       ;
-+---------------------+-------+--------------------------------------------+
-; larguraDados        ; 32    ; Signed Integer                             ;
-; larguraEndBancoRegs ; 5     ; Signed Integer                             ;
-+---------------------+-------+--------------------------------------------+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ROMMIPS ;
++-----------------+-------+-----------------------------------------------+
+; Parameter Name  ; Value ; Type                                          ;
++-----------------+-------+-----------------------------------------------+
+; dataWidth       ; 32    ; Signed Integer                                ;
+; addrWidth       ; 32    ; Signed Integer                                ;
+; memoryAddrWidth ; 6     ; Signed Integer                                ;
++-----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -251,19 +247,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1024                        ;
-;     ENA               ; 1024                        ;
-; arriav_lcell_comb     ; 639                         ;
-;     extend            ; 576                         ;
-;         7 data inputs ; 576                         ;
-;     normal            ; 63                          ;
-;         1 data inputs ; 29                          ;
-;         5 data inputs ; 2                           ;
-;         6 data inputs ; 32                          ;
-; boundary_port         ; 113                         ;
+; arriav_lcell_comb     ; 15                          ;
+;     normal            ; 15                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 7                           ;
+; boundary_port         ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.57                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -282,7 +275,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 17 17:18:44 2022
+    Info: Processing started: Fri Nov 18 10:07:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPSRIJ -c MIPSRIJ
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
@@ -315,20 +308,59 @@ Info (12021): Found 2 design units, including 1 entities, in source file bancoRe
 Info (12021): Found 2 design units, including 1 entities, in source file MIPSRIJ.vhd
     Info (12022): Found design unit 1: MIPSRIJ-arquitetura File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.vhd Line: 35
     Info (12023): Found entity 1: MIPSRIJ File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.vhd Line: 4
-Info (12127): Elaborating entity "bancoReg" for the top level hierarchy
+Info (12127): Elaborating entity "ROMMIPS" for the top level hierarchy
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "registrador" is uninferred due to asynchronous read logic File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/bancoReg.vhd Line: 52
+    Info (276004): RAM logic "memROM" is uninferred due to inappropriate RAM size File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 32
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Dado[4]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[6]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[7]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[8]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[9]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[10]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[15]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[18]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[20]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[25]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
+    Warning (13410): Pin "Dado[30]" is stuck at GND File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1747 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 49 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 1634 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 483 megabytes
-    Info: Processing ended: Thu Nov 17 17:18:50 2022
+Warning (21074): Design contains 26 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Endereco[0]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[1]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[8]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[9]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[10]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[11]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[12]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[13]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[14]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[15]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[16]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[17]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[18]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[19]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[20]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[21]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[22]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[23]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[24]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[25]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[26]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[27]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[28]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[29]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[30]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+    Warning (15610): No output dependent on input pin "Endereco[31]" File: /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/ROMMIPS.vhd Line: 11
+Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 11 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Fri Nov 18 10:07:59 2022
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 

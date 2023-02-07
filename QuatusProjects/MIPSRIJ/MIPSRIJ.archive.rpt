@@ -1,5 +1,5 @@
 Archive Project report for MIPSRIJ
-Mon Nov 14 11:46:47 2022
+Fri Nov 18 10:08:44 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Mon Nov 14 11:46:47 2022 ;
+; Archive Project Status ; Successful - Fri Nov 18 10:08:44 2022 ;
 ; Revision Name          ; MIPSRIJ                               ;
-; Top-level Entity Name  ; MIPSRIJ                               ;
+; Top-level Entity Name  ; ROMMIPS                               ;
 ; Family                 ; Cyclone V                             ;
 +------------------------+---------------------------------------+
 
@@ -51,40 +51,44 @@ Info: File Set 'Source control' contains:
     Info: Automatically detected source files
 Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
 Info: Archive will store files relative to the closest common parent directory
-Info (13213): Using common directory C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/
+Info (13213): Using common directory /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive 'C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qar'
+Info: Generated archive '/home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/MIPSRIJ.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'MIPSRIJ.archive.rpt'
-Info (23030): Evaluation of Tcl script c:/intelfpga_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info (23030): Evaluation of Tcl script /home/borg/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Mon Nov 14 11:46:47 2022
+    Info: Peak virtual memory: 579 megabytes
+    Info: Processing ended: Fri Nov 18 10:08:44 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
-+--------------------------------------------------------------+
-; Files Archived                                               ;
-+--------------------------------------------------------------+
-; File Name                                                    ;
-+--------------------------------------------------------------+
-; bancoReg.vhd                                                 ;
-; c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf ;
-; estendeSinalGenerico.vhd                                     ;
-; MIPSRIJ.qpf                                                  ;
-; MIPSRIJ.qsf                                                  ;
-; MIPSRIJ.vhd                                                  ;
-; muxGenerico2x1.vhd                                           ;
-; RAMMIPS.vhd                                                  ;
-; registradorGenerico.vhd                                      ;
-; ROMMIPS.vhd                                                  ;
-; somaConstante.vhd                                            ;
-; somadorGenerico.vhd                                          ;
-; ULASomaSub.vhd                                               ;
-; Waveform.vwf                                                 ;
-+--------------------------------------------------------------+
++------------------------------------------------------------------------+
+; Files Archived                                                         ;
++------------------------------------------------------------------------+
+; File Name                                                              ;
++------------------------------------------------------------------------+
+; /home/borg/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf ;
+; bancoReg.vhd                                                           ;
+; db/MIPSRIJ.cmp.rdb                                                     ;
+; estendeSinalGenerico.vhd                                               ;
+; MIPSRIJ.qpf                                                            ;
+; MIPSRIJ.qsf                                                            ;
+; MIPSRIJ.vhd                                                            ;
+; muxGenerico2x1.vhd                                                     ;
+; RAMMIPS.vhd                                                            ;
+; registradorGenerico.vhd                                                ;
+; ROMMIPS.vhd                                                            ;
+; somaConstante.vhd                                                      ;
+; somadorGenerico.vhd                                                    ;
+; ULASomaSub.vhd                                                         ;
+; Waveform.vwf                                                           ;
+; Waveform1.vwf                                                          ;
+; Waveform2.vwf                                                          ;
+; Waveform3.vwf                                                          ;
++------------------------------------------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Assembler report for MIPSRIJ
-Tue Nov 15 15:31:23 2022
+Fri Nov 18 10:08:14 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/output_files/MIPSRIJ.sof
+  5. Assembler Device Options: MIPSRIJ.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Nov 15 15:31:23 2022 ;
+; Assembler Status      ; Successful - Fri Nov 18 10:08:14 2022 ;
 ; Revision Name         ; MIPSRIJ                               ;
-; Top-level Entity Name ; MIPSRIJ                               ;
+; Top-level Entity Name ; ROMMIPS                               ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CEBA4F23C7                           ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                       ;
-+-------------------------------------------------------------------------------------------------+
-; File Name                                                                                       ;
-+-------------------------------------------------------------------------------------------------+
-; C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/output_files/MIPSRIJ.sof ;
-+-------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                               ;
++-----------------------------------------------------------------------------------------+
+; File Name                                                                               ;
++-----------------------------------------------------------------------------------------+
+; /home/borg/Documents/insper6Sem/DesComp/QuatusProjects/MIPSRIJ/output_files/MIPSRIJ.sof ;
++-----------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSRIJ/output_files/MIPSRIJ.sof ;
-+----------------+----------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                  ;
-+----------------+----------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x008955A9                                                                                               ;
-; Checksum       ; 0x008955A9                                                                                               ;
-+----------------+----------------------------------------------------------------------------------------------------------+
++---------------------------------------+
+; Assembler Device Options: MIPSRIJ.sof ;
++----------------+----------------------+
+; Option         ; Setting              ;
++----------------+----------------------+
+; JTAG usercode  ; 0x004E5DB3           ;
+; Checksum       ; 0x004E5DB3           ;
++----------------+----------------------+
 
 
 +--------------------+
@@ -78,13 +78,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Nov 15 15:31:20 2022
+    Info: Processing started: Fri Nov 18 10:08:12 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off MIPSRIJ -c MIPSRIJ
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Tue Nov 15 15:31:23 2022
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 483 megabytes
+    Info: Processing ended: Fri Nov 18 10:08:14 2022
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

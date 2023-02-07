@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Nov 17 17:18:50 2022
+Analysis & Synthesis Status : Successful - Fri Nov 18 10:07:59 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : MIPSRIJ
-Top-level Entity Name : bancoReg
+Top-level Entity Name : ROMMIPS
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1024
-Total pins : 113
+Total registers : 0
+Total pins : 64
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
