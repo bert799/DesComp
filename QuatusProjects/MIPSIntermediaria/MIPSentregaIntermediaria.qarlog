@@ -1,0 +1,38 @@
+Quartus Prime Archive log --	C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.qarlog
+
+Archive:	C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.qar
+Date:		Thu Nov 24 00:23:28 2022
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ComponenteDeControle.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderFunct.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/DecoderOpcode.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSRIJ.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.qpf
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.qsf
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/MIPSentregaIntermediaria.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/RAMMIPS.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ROMMIPS.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAMIPS.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULASomaSub.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/ULAbit31.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/UnidadeDeControle.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/bancoReg.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/conversorHex7Seg.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/estendeSinalGenerico.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstR.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mipsInstructionI.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux2x1.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/mux4x1.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/muxGenerico2x1.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/registradorGenerico.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somaConstante.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somador1Bit.vhd
+C:/Users/Bernardo/Documents/Insper/6Sem/DesComp/QuatusProjects/MIPSIntermediaria/somadorGenerico.vhd
+c:/intelfpga_lite/20.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 27 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
